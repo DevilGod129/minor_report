@@ -1,0 +1,44 @@
+# LaTeX intermediate and log files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.acn
+*.acr
+*.alg
+
+# Output files
+*.pdf
+*.dvi
+*.ps
+
+# Editor-specific
+.vscode/
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Backup or swap files
+*.bak
+*.swp
+*~
+
+# Mac system files (in case someone uses macOS)
+.DS_Store
