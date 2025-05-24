@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.23)  24 MAY 2025 23:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.23)  25 MAY 2025 00:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -713,77 +713,79 @@ Chapter 1.
 [1
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 19.
+
+[2]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 31.
  (C:\Program Files\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
 
-[2])
+[3])
 
-[3]
+[4]
 Chapter 2.
 (chapters/ch2lit.tex
 
-[4
+[5
 
 ])
 
-[5]
+[6]
 Chapter 3.
 (chapters/ch3relatedtheory.tex
-<images/3.1.png, id=43, 602.25pt x 451.6875pt>
+<images/3.1.png, id=46, 602.25pt x 451.6875pt>
 File: images/3.1.png Graphic file (type png)
 <use images/3.1.png>
 Package pdftex.def Info: images/3.1.png  used on input line 7.
 (pdftex.def)             Requested size: 226.48395pt x 169.86484pt.
-<images/fig3.2.png, id=45, 553.06625pt x 406.51875pt>
+<images/fig3.2.png, id=48, 553.06625pt x 406.51875pt>
 File: images/fig3.2.png Graphic file (type png)
 <use images/fig3.2.png>
 Package pdftex.def Info: images/fig3.2.png  used on input line 18.
 (pdftex.def)             Requested size: 226.48395pt x 166.46906pt.
 
 
-[6
+[7
 
  <./images/3.1.png>]
-<images/fig3.3.jpg, id=50, 1084.05pt x 632.3625pt>
+<images/fig3.3.jpg, id=54, 1084.05pt x 632.3625pt>
 File: images/fig3.3.jpg Graphic file (type jpg)
 <use images/fig3.3.jpg>
 Package pdftex.def Info: images/fig3.3.jpg  used on input line 29.
 (pdftex.def)             Requested size: 226.48395pt x 132.11496pt.
 
 
-[7 <./images/fig3.2.png> <./images/fig3.3.jpg>]
-<images/3.4.png, id=55, 513.41812pt x 350.81062pt>
+[8 <./images/fig3.2.png> <./images/fig3.3.jpg>]
+<images/3.4.png, id=58, 513.41812pt x 350.81062pt>
 File: images/3.4.png Graphic file (type png)
 <use images/3.4.png>
 Package pdftex.def Info: images/3.4.png  used on input line 40.
 (pdftex.def)             Requested size: 226.48395pt x 154.75325pt.
 
 
-[8 <./images/3.4.png>])
+[9 <./images/3.4.png>])
 
-[9]
+[10]
 Chapter 4.
 (chapters/ch4feasability.tex
 
-[10
+[11
 
 ])
 
-[11]
+[12]
 Chapter 5.
 (chapters/ch5methodology.tex
 
-[12
+[13
 
 ])
 
-[13]
+[14]
 Chapter 6.
 (chapters/ch6result.tex)
 
-[14
+[15
 
 ] (ganttchart.tex
 Missing character: There is no - in font nullfont!
@@ -824,15 +826,15 @@ Missing character: There is no 0 in font nullfont!
 Missing character: There is no 1 in font nullfont!
 )
 
-[15
+[16
 
 ] (cost estimation.tex)
 
-[16
+[17
 
 ] (references.tex)
 
-[17
+[18
 
 ] (main.aux)
  ***********
@@ -843,15 +845,15 @@ L3 programming layer <2025-04-14>
 Here is how much of TeX's memory you used:
  22955 strings out of 469941
  529580 string characters out of 5479471
- 981551 words of memory out of 5000000
+ 981549 words of memory out of 5000000
  49328 multiletter control sequences out of 15000+600000
  647391 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,9n,91p,1236b,930s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (23 pages, 1672433 bytes).
+Output written on main.pdf (24 pages, 1674353 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
+ 107 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

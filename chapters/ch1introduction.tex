@@ -1,37 +1,55 @@
 \section{Background Theory}
-The rapid advancement of human-computer interaction (HCI) technologies has paved the way beyond traditional input devices towards more intuitive interfaces. Among these, Gesture-based systems have emerged as a powerful mode of interaction where users engage with digital systems through physical movements, particularly of the hands. Human hands are capable of complex movements and precise control, making them an ideal medium for gesture-based input. This evolution is particularly significant in applications such as gaming, virtual and augmented reality, assistive technology, and robotics.
+The rapid integration of robotics into healthcare environments is transforming traditional caregiving approaches. With rising demands for efficient patient management in hospitals, hostels, and elderly care centers, autonomous service robots are becoming an innovative solution. These robots, especially those capable of delivering medications and supplies, offer consistent, scheduled, and contactless services that reduce human error and free up valuable time for medical personnel.
 
-Leveraging this, modern wearable systems incorporate a variety of sensors to translate hand and finger gestures into digital commands. The MPU6050, a 6-DoF inertial measurement unit (IMU) combining a 3-axis gyroscope and a 3-axis accelerometer, is widely used for real-time tracking of wrist orientation and movement, crucial for recognizing hand gestures [1], [2]. For detecting finger movements, flex sensors are employed, which vary resistance based on bending, providing analog signals proportional to flexion [3]. Additionally, mechanical switches, activated by levers attached to finger components, offer a digital input method with tactile feedback. Data from these sensors are processed by microcontrollers like the Arduino Mega, which provides ample I/O support. For seamless interaction with external applications, the ESP8266 Wi-Fi module facilitates wireless data transmission, ensuring low-latency communication between the wearable device and the host system , ensuring real-time interaction within the gaming environment [4].
+Among the various robotic systems being developed, line-following robots have gained attention for their simplicity, reliability, and adaptability in structured indoor environments like hospital wards or dormitories with fixed bed layouts. These robots navigate by following predefined paths, typically using infrared (IR) sensors to detect contrasting lines on the floor. Such navigation is especially useful for environments where precise, repeatable routes are needed to deliver medication trays to specific beds.
 
-Device housing commonly utilizes 3D-printed PLA filament, chosen for its lightweight properties, customizability, and suitability for ergonomic wearable enclosures that maintain sensor positioning and comfort during extended use [5]. In the software domain, gesture data is mapped to real-time responses within a digital environment. Game engines, such as Unreal Engine, support external hardware integration, enabling the visualization of hand movements from a first-person perspective [6]. This establishes a seamless connection between physical actions and virtual reactions, particularly effective in immersive puzzle-based or simulation games. Ultimately, gesture-based input systems enhance user experience by aligning digital control with natural human motion, proving ideal for applications ranging from gaming to assistive technology.
+The proposed system enhances this concept by introducing a three-compartment modular robot. The bottom compartment houses motion components, including motors, wheels, sensors, and batteries, making it the foundation for navigation and mobility. The middle compartment is dedicated to general storage, such as medical equipment, water, or additional medicine trays. The top compartment features a smart pill dispenser powered by a Raspberry Pi and a camera. This setup allows the robot to identify patients using facial recognition algorithms and dispense medicine according to a preset time schedule, minimizing the chances of human error and increasing medication adherence.
+
+To ensure robust interaction and real-time tracking, the system can integrate wireless communication modules (e.g., Wi-Fi or Bluetooth) to connect with a central server or a mobile application. This allows healthcare providers to monitor the robot’s location, view pill dispensing logs, and modify schedules as needed. The use of AI in facial recognition and scheduling also paves the way for personalized patient care, enabling the robot to adapt to individual needs.
+
+Modularity in the robot’s design adds another layer of practicality. Each compartment is detachable and independently upgradable, enabling easy maintenance, swift replacements, and the possibility of repurposing the robot for different tasks (e.g., food delivery, waste collection) by simply swapping modules. Lightweight yet durable materials like 3D-printed PLA or ABS plastic are ideal for building these components, ensuring comfort, stability, and structural integrity.
+
+In the broader context, this project reflects the growing intersection of robotics, AI, and healthcare—a convergence that is expected to redefine service delivery in hospitals. By aligning routine medical tasks with intelligent automation, such systems not only improve efficiency but also offer a glimpse into the future of compassionate, technology-driven patient care.
 
 \vspace{1.5\baselineskip} 
 
 \section{Problem Statement}
-Modern digital interaction interfaces, particularly in gaming, continue to struggle with creating truly immersive user experiences. Traditional input devices like keyboards, mouse, and gamepads impose artificial constraints on user interaction, fundamentally disconnecting players from the virtual environment. Although modern technologies have introduced motion controllers and VR peripherals, they are often expensive, bulky, or dependent on proprietary software and hardware ecosystems, making them inaccessible for general-purpose or educational use. Existing gesture-based systems typically employ either flex sensors or IMU sensors alone, leading to either limited resolution in motion tracking or high computational complexity. These systems often fail to provide intuitive, responsive control without noticeable latency or drift, especially in low-cost implementations, rendering them ineffective for seamless, real-time interactive experiences.  
+Modern healthcare systems—particularly in resource-constrained settings such as public hospitals, mass hostels, and elderly care facilities—face ongoing challenges in ensuring timely, consistent, and personalized delivery of medication. Relying on human staff for routine tasks such as distributing pills or tracking medication schedules often results in inefficiencies, human error, and missed doses, especially during peak workloads or emergencies. While existing medical robots offer partial automation, they are typically expensive, non-modular, or dependent on proprietary software, limiting their adaptability and scalability in practical environments.
 
-This project addresses these critical challenges by developing an innovative, low-cost, real-time gesture recognition system by integrating a hybrid sensor approach combining MPU6050, flex sensors, and tactile switches into a custom wearable interface. The system will serve as a natural, responsive hand-based input interface for controlling a first-person perspective game developed in Unreal Engine. The system aims to minimize computational latency, enhance gesture recognition accuracy, and provide tactile feedback while being affordable, modifiable, and scalable. This project also explores the potential of wearable gesture systems in creating immersive interactive experiences by translating physical hand movements into precise, real-time virtual actions. 
+Furthermore, most delivery bots lack intelligent interaction capabilities. They often depend solely on line-following navigation without integrating patient identification, flexible routing, or automated scheduling, making them unsuitable for truly personalized or responsive care. Pill-dispensing mechanisms in these systems are also generally basic, lacking integration with facial recognition, scheduling, or patient feedback mechanisms.
+
+This project addresses these limitations by developing a low-cost, modular, and intelligent line-following medical assistant robot equipped with a smart pill dispensing system. The robot combines real-time navigation, multi-compartment storage, and a top-mounted AI-driven module featuring a Raspberry Pi and camera for facial recognition and time-based pill dispensing. The modular design allows each compartment—motion, storage, and dispenser—to be independently upgraded or replaced, ensuring long-term flexibility, easy maintenance, and expandability.
+
+By integrating low-cost hardware components with machine learning and wireless communication, this project aims to deliver a scalable solution that enhances healthcare automation. It enables accurate, personalized medication delivery while reducing staff workload, minimizing human error, and supporting future integration with mobile apps or hospital information systems. Ultimately, the system reimagines patient-care interaction by aligning routine medical services with smart, autonomous, and context-aware robotic assistance. 
 
 \vspace{1.5\baselineskip} 
 
 \section{Objectives}
+The primary objective of this project is to design and develop a modular, intelligent line-following medical assistant robot capable of navigating hospital or hostel rooms and delivering personalized medications through an AI-powered pill dispenser. The key objectives are:
 \begin{itemize}
-    \item To design and develop a wearable hardware system that captures real-time hand and finger movements using MPU6050, flex sensors, and mechanical switches.
-    \item To integrate the hardware inputs into a simulation-based game environment developed in Unreal Engine, enabling real-time gesture-based control.
-    \item To process and transmit gesture data from the wearable device to a host system using Arduino Mega and ESP8266 for wireless communication.
-    \item To evaluate the system's responsiveness and accuracy in mapping physical gestures to virtual hand movements for immersive interaction.
+    
+    \item To develop a robust line-following mechanism using infrared sensors for reliable indoor navigation.
+    \item To implement a modular three-compartment architecture consisting of:
+    \subitem Bottom: Motion and power unit
+    \subitem Middle: Storage trays
+    \subitem Top: Raspberry Pi-powered smart pill dispenser
+    \item To integrate AI-based facial recognition for identifying patients and ensuring correct pill delivery.
+    \item To schedule pill dispensing based on real-time clock or external input for personalized and timely delivery.
+    \item To create a centralized mobile or web-based application for monitoring robot logs, modifying pill schedules, and tracking delivery status.
+    \item To maintain affordability, scalability, and ease of maintenance by using low-cost sensors, 3D-printed housings, and open-source software/hardware.
 \end{itemize}
 
 \vspace{1.5\baselineskip} 
 
 \section{Scope}
-The project encompasses several key areas for development and future expansion:
+This project is focused on creating a prototype of a healthcare delivery robot optimized for structured environments like hospital wards and student hostels. The scope includes:
 \begin{itemize}
-    \item Integration with machine learning models to improve gesture recognition accuracy
-    \item Addition of haptic feedback for more immersive interaction
-    \item Expansion to full-body motion capture using additional wearable sensors
-    \item Development of a mobile or desktop interface for visualizing and mapping gestures
-    \item Incorporating voice + gesture multimodal control systems
+    \item Development of an autonomous line-following base that can navigate pre-defined paths.
+    \item Designing 3D-printed modular compartments with quick-connect mechanisms for easy upgrades or replacements.
+    \item Implementing facial recognition using a Raspberry Pi and camera to authenticate patients before dispensing medication.
+    \item Building a basic pill dispensing mechanism controlled by a servo or motor, programmed via scheduled inputs.
+    \item Building a basic pill dispensing mechanism controlled by a servo or motor, programmed via scheduled inputs.
+    \item Data logging for dosage history, delivery time, and patient interaction.
 \end{itemize}
 \vspace{1.5\baselineskip}
 \section{Applications}
