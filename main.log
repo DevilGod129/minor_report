@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.23)  24 MAY 2025 08:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.23)  24 MAY 2025 21:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/Prasun Paudel/Desktop/Minor/major-report/main.tex"
-(c:/Users/Prasun Paudel/Desktop/Minor/major-report/main.tex
+**"c:/Users/Prasun Paudel/Desktop/Minor/minor_report/main.tex"
+(c:/Users/Prasun Paudel/Desktop/Minor/minor_report/main.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
 (C:\Program Files\MiKTeX\tex/latex/base\report.cls
@@ -843,13 +843,13 @@ L3 programming layer <2025-04-14>
 Here is how much of TeX's memory you used:
  22955 strings out of 469941
  529580 string characters out of 5479471
- 981551 words of memory out of 5000000
+ 980551 words of memory out of 5000000
  49328 multiletter control sequences out of 15000+600000
  647391 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,9n,91p,1236b,930s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (23 pages, 1672424 bytes).
+Output written on main.pdf (23 pages, 1672419 bytes).
 PDF statistics:
  104 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
