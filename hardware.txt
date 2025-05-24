@@ -1,0 +1,18 @@
+| Component                                 | Quantity | Purpose                                             |
+| ----------------------------------------- | -------- | --------------------------------------------------- |
+| Momentary Tactile Push Button             | 25 pcs   | Detect individual finger bends via levers           |
+
+**| MPU Sensor (e.g., MPU6050)                | 5-6 pcs  | Detect motion, tilt, and orientation of hand        |
+**| ESP8266      with cable                             | 1        | Optional: For wireless communication if used        |
+**| Arduino (Mega)  with cable                      | 1        | Core controller handling sensor and switch input    |
+| Springs (0.4 mm wire diameter)            | 10 pcs   | Reset lever position after bend                     |
+**| Bend/Flex Sensor                          | Optional | Alternative to mechanical levers                    |
+| PLA Filament (1 kg)                       | -        | 3D printing custom parts like rings, levers, mounts |               |
+| Hardcase Gloves with Anti-slip (fallback) | 1 pair   | Ergonomic and durable fallback design               |
+| Superglue (Vega)                          | -        | Assembly and mounting of components                 |
+| Enamel Wire                               | -        | Internal signal wiring                              |
+| Connecting Wire                           | 1m       | Arduino to switch/MPU wiring                       
+Li-IOn Battery      3.7V                    |      4
+3D Printing Access                          |
+Joystick with extra cable                   |
+                            

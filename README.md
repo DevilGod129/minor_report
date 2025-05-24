@@ -1,4 +1,4 @@
-# Minor Poject Report
+# Minor Project Report
 
 This is the report of our minor project written and compiled in latex.
 

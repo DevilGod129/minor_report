@@ -1,0 +1,57 @@
+\section{Hardware}
+
+\textbf{MPU6050 Sensor:} The MPU6050 is a widely used 6-axis MEMS-based Inertial Measurement Unit (IMU) that integrates a 3-axis accelerometer and a 3-axis gyroscope within a single chip.It is capable of detecting linear acceleration in the range of ±2g to ±16g and angular velocity from ±250°/s to ±2000°/s, making it highly suitable for motion tracking and gesture recognition applications. A notable feature of the MPU6050 is its onboard Digital Motion Processor (DMP), which performs real-time sensor fusion using algorithms such as Kalman or complementary filtering. This significantly reduces noise and drift in gyroscopic data, enabling stable orientation tracking through the calculation of quaternions or Euler angles (roll, pitch, and yaw). The sensor communicates with microcontrollers through the I²C interface, supporting clock speeds between 100 kHz and 400 kHz for efficient data exchange. Its compact design, reliability, and real-time capabilities make it ideal for wearable systems. It enables precise and responsive motion capture for interactive systems in gesture-based applications.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width=0.5\textwidth]{images/3.1.png}
+\caption{\textbf{MPU6050 Sensor}}
+\label{fig:3.1}
+\end{figure}
+
+\vspace{1.5\baselineskip} % Adds 1.5 line spaces before next section
+
+\textbf{Arduino Mega:} The Arduino Mega is an open-source microcontroller board based on the ATmega2560, designed for projects requiring extensive input/output operations and greater memory capacity. It features 54 digital I/O pins, 16 analog inputs, and four UARTs for serial communication, making it suitable for complex hardware interfacing. With 256 KB of flash memory and a 16 MHz clock speed, it can handle multiple sensors and real-time data processing efficiently. In this project, the Arduino Mega serves as the central controller, managing input from multiple MPU6050 sensors and switches to ensure accurate and synchronized gesture-based interactions within the game environment.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width=0.5\textwidth]{images/fig3.2.png}
+\caption{\textbf{Arduino Uno Board}}
+\label{fig:3.2}
+\end{figure}
+
+\vspace{1.5\baselineskip} % Adds 1.5 line spaces before next section
+
+\textbf{ESP8266}: The ESP8266 is a low-cost, high-performance Wi-Fi microcontroller based on a 32-bit RISC CPU core (Tensilica L106), operating at 80–160 MHz. It integrates TCP/IP protocol stack and supports IEEE 802.11 b/g/n standards, enabling wireless connectivity with low power consumption (~80 mA active mode). It enables devices to connect to wireless networks and communicate over the internet or within local networks. The ESP8266 supports multiple modes such as station, access point, and both simultaneously, making it highly versatile for wireless communication. It can be programmed using the Arduino IDE and is capable of handling HTTP requests, data transfer, and remote control functionalities. The ESP8266 is used to explore wireless communication possibilities between the hardware controller and the game system, potentially allowing untethered interaction.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width=0.5\textwidth]{images/fig3.3.jpg}
+\caption{\textbf{ESP8266 Wi-Fi Module}}
+\label{fig:3.3}
+\end{figure}
+
+\vspace{1.5\baselineskip} % Adds 1.5 line spaces before next section
+
+\textbf{Flex Sensors: }Flex sensors are passive resistive devices that change their resistance based on the amount of bend applied to them. Typically constructed using a flexible substrate coated with conductive ink, their resistance increases as the sensor is bent. This property allows them to detect the degree of bending or curvature, making them suitable for applications involving motion capture, wearable electronics, and gesture recognition. When integrated with microcontrollers, the analog resistance change can be converted into meaningful input data. In this project, flex sensors are considered for detecting finger movements by measuring the degree of bend in each finger.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width=0.5\textwidth]{images/3.4.png}
+\caption{\textbf{Flex Sensor}}
+\label{fig:3.4}
+\end{figure}
+
+
+\section{Software}
+
+\textbf{Arduino IDE:} The Arduino Integrated Development Environment (IDE) is the core programming tool for the Arduino Uno microcontroller in this project. Using C/C++, it configures the microcontroller to process digital signals from switches and analog data from MPU6050 sensors. Essential libraries like Wire.h and MPU650.h manage I²C communication, while serial protocols handle data transmission to the rendering engine. The IDE's debugging tools, including serial monitors, are crucial for verifying signal integrity and latency. Firmware algorithms integrate sensor fusion and debouncing logic for accurate gesture detection. This open-source platform significantly aids rapid prototyping and hardware-software integration for real-time interactive systems.
+
+\textbf{Rendering Engine:} The Rendering Engine is a fundamental software component that generates real-time visual output based on physical hand gestures captured by the hardware. Initially considering Unreal Engine, this prototype utilizes Blender's integrated EEVEE and Cycles engines for rendering and simulation. The engine displays a first-person perspective with visible virtual hands, mirroring gestures like finger bends and wrist rotations instantly. This real-time visual feedback is vital for player immersion and interaction. The engine processes data from the microcontroller, supplied through middleware, to dynamically adjust hand poses and object interactions. Its capability to reflect hardware input with minimal latency ensures intuitive and responsive gameplay, serving as the core of the gesture-controlled gaming experience. Optimized for low latency with GPU acceleration, it manages environmental elements and physics simulations via Blender's Python API.
+
+\textbf{Blender:} Blender is an open-source 3D creation suite which is utilized for designing and developing game assets. This includes 3D modeling, UV mapping, texturing, and rigging, crucial for creating realistic hand models and interactive objects. Blender's EEVEE and Cycles engines provide real-time previews and high-fidelity final renders, respectively. Its Python scripting capabilities facilitate customization and workflow automation. Blender functions as both a design tool and a visual integration layer, ensuring in-game visuals accurately reflect physical gestures captured by the hardware with minimal latency through automated workflows linking it to the Arduino's output. 
+
+\textbf{Python:} Python serves as the middleware layer, connecting hardware data with the rendering engine. Custom scripts, utilizing libraries like PySerial, parse serial data from the Arduino, converting raw sensor values into actionable game inputs. Python's integration with Blender via the bpy module maps gestures to in-game animations and automates tasks. It can also be used externally to interpret sensor data and relay it to the rendering engine via custom protocols. Python's versatility and extensive library support are crucial for efficient data translation and seamless interaction between the wearable hardware and the virtual environment, enabling real-time mapping of physical movements to game commands. 
+
+%\section{Dataset}
+%\lipsum[4-8]

@@ -1,0 +1,48 @@
+\section{Background Theory}
+The rapid advancement of human-computer interaction (HCI) technologies has paved the way beyond traditional input devices towards more intuitive interfaces. Among these, Gesture-based systems have emerged as a powerful mode of interaction where users engage with digital systems through physical movements, particularly of the hands. Human hands are capable of complex movements and precise control, making them an ideal medium for gesture-based input. This evolution is particularly significant in applications such as gaming, virtual and augmented reality, assistive technology, and robotics.
+
+Leveraging this, modern wearable systems incorporate a variety of sensors to translate hand and finger gestures into digital commands. The MPU6050, a 6-DoF inertial measurement unit (IMU) combining a 3-axis gyroscope and a 3-axis accelerometer, is widely used for real-time tracking of wrist orientation and movement, crucial for recognizing hand gestures [1], [2]. For detecting finger movements, flex sensors are employed, which vary resistance based on bending, providing analog signals proportional to flexion [3]. Additionally, mechanical switches, activated by levers attached to finger components, offer a digital input method with tactile feedback. Data from these sensors are processed by microcontrollers like the Arduino Mega, which provides ample I/O support. For seamless interaction with external applications, the ESP8266 Wi-Fi module facilitates wireless data transmission, ensuring low-latency communication between the wearable device and the host system , ensuring real-time interaction within the gaming environment [4].
+
+Device housing commonly utilizes 3D-printed PLA filament, chosen for its lightweight properties, customizability, and suitability for ergonomic wearable enclosures that maintain sensor positioning and comfort during extended use [5]. In the software domain, gesture data is mapped to real-time responses within a digital environment. Game engines, such as Unreal Engine, support external hardware integration, enabling the visualization of hand movements from a first-person perspective [6]. This establishes a seamless connection between physical actions and virtual reactions, particularly effective in immersive puzzle-based or simulation games. Ultimately, gesture-based input systems enhance user experience by aligning digital control with natural human motion, proving ideal for applications ranging from gaming to assistive technology.
+
+\vspace{1.5\baselineskip} 
+
+\section{Problem Statement}
+Modern digital interaction interfaces, particularly in gaming, continue to struggle with creating truly immersive user experiences. Traditional input devices like keyboards, mouse, and gamepads impose artificial constraints on user interaction, fundamentally disconnecting players from the virtual environment. Although modern technologies have introduced motion controllers and VR peripherals, they are often expensive, bulky, or dependent on proprietary software and hardware ecosystems, making them inaccessible for general-purpose or educational use. Existing gesture-based systems typically employ either flex sensors or IMU sensors alone, leading to either limited resolution in motion tracking or high computational complexity. These systems often fail to provide intuitive, responsive control without noticeable latency or drift, especially in low-cost implementations, rendering them ineffective for seamless, real-time interactive experiences.  
+
+This project addresses these critical challenges by developing an innovative, low-cost, real-time gesture recognition system by integrating a hybrid sensor approach combining MPU6050, flex sensors, and tactile switches into a custom wearable interface. The system will serve as a natural, responsive hand-based input interface for controlling a first-person perspective game developed in Unreal Engine. The system aims to minimize computational latency, enhance gesture recognition accuracy, and provide tactile feedback while being affordable, modifiable, and scalable. This project also explores the potential of wearable gesture systems in creating immersive interactive experiences by translating physical hand movements into precise, real-time virtual actions. 
+
+\vspace{1.5\baselineskip} 
+
+\section{Objectives}
+\begin{itemize}
+    \item To design and develop a wearable hardware system that captures real-time hand and finger movements using MPU6050, flex sensors, and mechanical switches.
+    \item To integrate the hardware inputs into a simulation-based game environment developed in Unreal Engine, enabling real-time gesture-based control.
+    \item To process and transmit gesture data from the wearable device to a host system using Arduino Mega and ESP8266 for wireless communication.
+    \item To evaluate the system's responsiveness and accuracy in mapping physical gestures to virtual hand movements for immersive interaction.
+\end{itemize}
+
+\vspace{1.5\baselineskip} 
+
+\section{Scope}
+The project encompasses several key areas for development and future expansion:
+\begin{itemize}
+    \item Integration with machine learning models to improve gesture recognition accuracy
+    \item Addition of haptic feedback for more immersive interaction
+    \item Expansion to full-body motion capture using additional wearable sensors
+    \item Development of a mobile or desktop interface for visualizing and mapping gestures
+    \item Incorporating voice + gesture multimodal control systems
+\end{itemize}
+\vspace{1.5\baselineskip}
+\section{Applications}
+The data glove system finds applications in various fields including:
+\begin{itemize}
+    \item Virtual and Augmented Reality (VAR)
+    \item Assistive Technology
+    \item Gaming
+    \item Robotics Control
+    \item Smart Environments / IoT Applications
+    \item Educational Tools
+\end{itemize}
+
+

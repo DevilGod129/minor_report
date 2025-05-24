@@ -1,0 +1,32 @@
+\begin{center}
+\resizebox{\textwidth}{!}{%
+\begin{ganttchart}[
+    hgrid,
+    vgrid,
+    time slot format=isodate-yearmonth,
+    time slot unit=month,
+    x unit=1.6cm,
+    y unit chart=1.6cm,
+    y unit title=1cm,
+    title height=1,
+    bar height=0.6,
+    bar/.append style={fill=blue!50},
+    group right shift=0,
+    group top shift=0.4,
+    group height=.3,
+    bar label font=\normalsize,
+    bar label node/.append style={align=left, text width=4cm},
+    group label node/.append style={align=left, text width=4cm}
+]{2025-05}{2026-04}
+    \gantttitlecalendar{year, month=shortname} \\
+
+    % Project Phases
+    \ganttbar[bar/.append style={fill=gray!70}]{Project Initiation}{2025-05-01}{2025-08-15} \\
+    \ganttbar[bar/.append style={fill=gray!50}]{Research \& Requirements}{2025-05-15}{2025-09-15} \\
+    \ganttbar[bar/.append style={fill=gray!50}]{Design}{2025-07-01}{2025-09-30} \\
+    \ganttbar[bar/.append style={fill=gray!50}]{Software \& Simulation}{2025-09-01}{2026-04-30} \\
+    \ganttbar[bar/.append style={fill=gray!70}]{Hardware Assembling}{2025-09-15}{2026-04-30} \\
+    \ganttbar[bar/.append style={fill=gray!50}]{Documentation}{2025-06-01}{2026-04-30}
+\end{ganttchart}%
+}
+\end{center}

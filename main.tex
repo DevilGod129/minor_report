@@ -1,0 +1,192 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[a4paper,
+    left=1.25in,
+    right=1in,
+    top=1in,
+    bottom=1in]{geometry} % Required for inserting images
+\usepackage{fullpage}
+\usepackage{mathptmx}
+\usepackage{titletoc}
+\usepackage[titles]{tocloft}
+\usepackage{booktabs}   % For professional table formatting
+\usepackage{array}      % For enhanced table control
+\usepackage{siunitx}    % For proper number formatting
+%\usepackage{geometry}   % To adjust page margins
+\usepackage{float}
+
+\usepackage{lipsum}
+\usepackage{acronym}
+\usepackage{graphicx}
+% Add to your main document preamble
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,fit,positioning}
+\graphicspath{ {./images/} }
+\usepackage{pgfgantt}
+
+% Line spacing
+\usepackage{setspace}  
+\onehalfspacing  % or use \singlespacing or \doublespacing as needed
+
+% Paragraph spacing
+\setlength{\parskip}{0.75em}  % space between paragraphs
+\setlength{\parindent}{0pt}   % no indentation (you already have this)
+
+% Custom font sizes for headings
+\usepackage{sectsty} % to customize section font sizes
+
+% Normal text font size is already 12pt (from documentclass)
+
+% Normal heading style (like \textbf 12pt) - redefine \normalfont
+\renewcommand\normalsize{\fontsize{12}{14}\selectfont} % 12pt font with 14pt baseline skip
+
+% Section headings (14pt)
+\sectionfont{\fontsize{14}{16}\selectfont\bfseries} 
+
+% Subsection headings (optional, keep smaller)
+\subsectionfont{\fontsize{12}{14}\selectfont\bfseries}
+
+% Chapter (main heading) size (16pt bold centered)
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\fontsize{16}{18}\selectfont\centering}
+  {\chaptername\ \thechapter}{1em}{}
+
+\renewcommand*\contentsname{Table of Contents}
+
+% Redefine the \numberline command for figures
+\newlength{\mylen}
+\renewcommand{\cftdotsep}{0.5}
+\renewcommand{\cftfigpresnum}{\hspace*{-1.5em}\figurename\enspace}
+\renewcommand{\cftfigaftersnum}{:}
+\settowidth{\mylen}{\cftfigpresnum\cftfigaftersnum}
+\addtolength{\cftfignumwidth}{\mylen}
+
+
+\renewcommand{\cftdotsep}{0.5}
+\renewcommand{\cfttabpresnum}{\hspace*{-1.5em}\tablename\enspace}
+\renewcommand{\cfttabaftersnum}{:}
+\settowidth{\mylen}{\cfttabpresnum\cfttabaftersnum}
+\addtolength{\cfttabnumwidth}{\mylen}
+
+
+\titlecontents{chapter}
+[5.5em] %5.3
+{\smallskip}
+{\contentslabel[\bfseries{\chaptername}~\thecontentslabel{:}]{5.5em}\textbf}%\thecontentslabel
+{\hspace*{-5.5em}\textbf}% unnumbered chapters
+{\titlerule*[0.35pc]{.}\contentspage}[\smallskip]%
+
+\titlecontents{section}
+[1.5em] % i
+{\smallskip}
+{\thecontentslabel\enspace}%\thecontentslabel
+{\hspace*{-5.5em}}
+{\titlerule*[0.35pc]{.}\contentspage}%]
+
+\titlecontents{subsection}
+[7.12em] %
+{\smallskip}
+{\thecontentslabel\enspace}%\thecontentslabel
+{\hspace*{7.12em}}
+{\titlerule*[0.35pc]{.}\contentspage}
+
+\makeatletter
+\renewcommand{\@makechapterhead}[1]{%\vspace*{50 pt}%
+{\setlength{\parindent}{0pt}\normalfont
+\bfseries\Huge\chaptername{\hspace*{0.25em}}\centering\thechapter{:}\ #1
+\par\nobreak\vspace{16 pt}}}
+\makeatother
+
+\makeatletter
+\renewcommand{\@makeschapterhead}[1]{%\vspace*{50 pt}%
+{\setlength{\parindent}{0pt}\normalfont
+\bfseries\Huge\centering\ #1
+\par\nobreak\vspace{16 pt}}}
+\makeatother
+
+\title{Major}
+\author{Mahan Sigdel}
+\date{May 2025}
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\input{titlepage}
+
+\pagenumbering{roman}
+
+\chapter*{Acknowledgement}
+\addcontentsline{toc}{chapter}{Acknowledgement}
+\label{acknowledgement}
+\input{acknowledgement}
+
+%\chapter*{Abstract}
+%\addcontentsline{toc}{chapter}{Abstract}
+%\label{abstract}
+%\input{abstract}
+
+\tableofcontents
+\thispagestyle{empty}
+\addtocounter{page}{-1}
+\newpage
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\newpage
+
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+\newpage
+
+\chapter*{List of Abbreviation}
+\addcontentsline{toc}{chapter}{List of Abbreviation}
+\label{abbreviation}
+\input{abbreviation}
+\newpage
+
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+\label{introduction}
+\input{chapters/ch1introduction}
+
+\chapter{Literature Review}
+\label{literaturereview}
+\input{chapters/ch2lit}
+
+\chapter{Related Theory}
+\label{relatedtheory}
+\input{chapters/ch3relatedtheory}
+
+\chapter{Feasibility Study}
+\label{feasiblity}
+\input{chapters/ch4feasability}
+
+\chapter{Methodology}
+\label{methodology}
+\input{chapters/ch5methodology}
+
+\chapter{Expected Output}
+\label{result}
+\input{chapters/ch6result}
+
+\chapter*{Gantt Chart}
+\addcontentsline{toc}{chapter}{Gantt Chart}
+\label{ganttchart}
+\input{ganttchart}
+
+\chapter*{Cost Estimation}
+\addcontentsline{toc}{chapter}{Cost Estimation}
+\label{cost estimation}
+\input{cost estimation}
+
+
+\chapter*{References}
+\addcontentsline{toc}{chapter}{References}
+\label{references}
+\input{references}
+%\bibliographystyle{plain} % or another style like ieee, unsrt, etc.
+%\bibliography{references} % references.bib (no .bib extension)
+
+
+\end{document}

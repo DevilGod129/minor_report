@@ -1,0 +1,81 @@
+\section{System Block Diagram}
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[node distance=2cm, auto, >=latex', thick]
+        % Sensor nodes
+        \node[draw, rectangle, rounded corners, minimum width=2cm, minimum height=1cm] (mpu) {MPU6050};
+        \node[draw, rectangle, rounded corners, minimum width=2cm, minimum height=1cm, below left=1cm and 2cm of mpu] (flex) {Flex Sensors};
+        \node[draw, rectangle, rounded corners, minimum width=2cm, minimum height=1cm, below right=1cm and 2cm of mpu] (tactile) {Tactile Switches};
+        
+        % Processing node
+        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, below=3cm of mpu] (micro) {Arduino Mega};
+        
+        % Calibration node
+        \node[draw, rectangle, minimum width=2.5cm, minimum height=0.8cm, below=1.5cm of micro] (calibration) {Data Calibration};
+        
+        % Communication node
+        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, below=1.5cm of calibration] (comm) {Serial Communication};
+        
+        % Software nodes
+        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, below=1.5cm of comm] (pc) {PC Interface};
+        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, below=1.5cm of pc] (unreal) {Unreal Engine};
+        
+        % Output node
+        \node[draw, rectangle, minimum width=3.5cm, minimum height=1cm, below=1.5cm of unreal] (virtual) {3D Hand Model};
+
+        % Connections
+        \draw[->] (mpu) -- (micro);
+        \draw[->] (flex) -- (micro);
+        \draw[->] (tactile) -- (micro);
+        \draw[->] (micro) -- (calibration);
+        \draw[->] (calibration) -- (comm);
+        \draw[->] (comm) -- (pc);
+        \draw[->] (pc) -- (unreal);
+        \draw[->] (unreal) -- (virtual);
+
+    \end{tikzpicture}
+    \caption{Detailed Block Diagram of Hand Motion Replicator System}
+    \label{fig:block_diagram}
+\end{figure}
+
+\section{Algorithm}
+\begin{enumerate}
+    \item System Initialization
+    \begin{itemize}
+        \item Configure MPU6050 for 6-DoF motion tracking
+        \item Initialize analog inputs for flex sensors
+        \item Set up digital inputs for tactile switches
+        \item Configure serial communication parameters
+    \end{itemize}
+    \item Sensor Data Acquisition
+    \begin{itemize}
+        \item Read accelerometer and gyroscope data from MPU6050
+        \item Measure resistance values from flex sensors
+        \item Monitor state of tactile switches
+        \item Apply calibration offsets
+    \end{itemize}
+    \item Data Processing
+    \begin{itemize}
+        \item Filter sensor noise using moving average
+        \item Calculate hand orientation from IMU data
+        \item Convert flex sensor values to finger angles
+        \item Detect finger press events
+    \end{itemize}
+    \item Data Transmission
+    \begin{itemize}
+        \item Package processed data into structured format
+        \item Implement error checking
+        \item Transmit data packets via serial communication
+    \end{itemize}
+    \item Virtual Model Update
+    \begin{itemize}
+        \item Parse received data packets
+        \item Update hand skeleton parameters
+        \item Apply inverse kinematics for finger movements
+        \item Render updated hand model
+    \end{itemize}
+\end{enumerate}
+
+
+
