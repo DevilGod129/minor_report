@@ -1,12 +1,17 @@
-
-
 \begin{itemize}
-    \item \textbf{Real-time Hand Motion Tracking:} \\
-    The system will accurately track and measure hand movements using the MPU6050 sensor for orientation (±2° accuracy), flex sensors for finger bending (0° to 90° range), and tactile switches for touch detection. The combined sensor data will provide comprehensive hand position and gesture information with minimal latency (<100ms).
+    \item \textbf{Autonomous Line Following and Navigation:} \\
+    The system will accurately follow predefined paths using IR sensor arrays, with a line detection accuracy of over 95\% on high-contrast surfaces. The square DC geared motors, controlled by an Arduino Mega, will ensure smooth and stable movement across hospital or hostel corridors. The robot will maintain a consistent speed suitable for indoor navigation (approx. 0.3–0.5 m/s), with minimal deviation from the line path even at junctions and turns.
 
-    \item \textbf{Virtual Hand Replication:} \\
-    The tracked hand movements will be replicated in real-time on a 3D hand model in Unreal Engine. The virtual hand will accurately mirror all finger movements, hand rotations, and touch interactions with smooth articulation and natural movement visualization. The system will maintain a consistent frame rate above 30 FPS to ensure fluid motion reproduction.
+    \item \textbf{Scheduled Pill Dispensing with Patient Recognition:} \\
+    The top-mounted camera module, connected to the Raspberry Pi, will perform real-time facial recognition of patients using trained models with an expected accuracy of over 90\% in well-lit environments. Based on patient identity and the stored schedule, the system will trigger the appropriate servo motor to dispense the correct dosage from the designated pill compartment. The dispensing process will be completed within 3–5 seconds of successful identification.
 
-    \item \textbf{Interactive Response System:} \\
-    The system will provide immediate feedback through the virtual hand model, responding to user inputs with less than 50ms latency. This includes accurate finger bend representation (±5° accuracy), precise hand orientation tracking, and immediate response to touch inputs with over 95\% reliability. The communication system will maintain a stable 60 Hz update rate to ensure seamless interaction between the physical and virtual hands.
+    \item \textbf{Modular Operation and System Feedback:} \\
+    Each compartment of the bot will operate semi-independently under a unified control system. The Raspberry Pi and Arduino will communicate via serial protocol to synchronize motion with dispensing operations. The system will provide LED or sound-based feedback for key actions—such as arrival at a patient’s bed, successful identification, and pill dispensing—ensuring operational transparency.
+
+    \item \textbf{Real-Time Processing and Minimal Latency:} \\
+    The facial recognition and pill dispensing processes will maintain a latency of under 1 second, ensuring quick and reliable patient interactions. The line-following subsystem will update motor commands at over 50 Hz, providing responsive and accurate path tracking. Power-efficient components will enable up to 1–2 hours of autonomous operation on a single battery charge, depending on the load.
+
+    \item \textbf{Scalable and Adaptable Framework:} \\
+    The modular design allows for easy expansion—additional compartments or storage trays can be added for more patients or different types of medicines. The robot can also be reprogrammed to follow new routes or modified to integrate RFID or QR code-based patient recognition as future enhancements.
 \end{itemize}
+

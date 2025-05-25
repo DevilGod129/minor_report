@@ -1,16 +1,34 @@
 \section{Literature Review}
 
-Sharma, R., \& Mehta, S. (2020) [1], proposed a line-following robot for indoor navigation in structured environments such as hospital wards and academic institutions. Their design utilized infrared (IR) sensors to detect line patterns and allowed the robot to autonomously follow predetermined paths with minimal user intervention. The study demonstrated how line-following technology could be effectively used to automate routine delivery tasks within controlled spaces, significantly reducing human labor and improving task consistency. The robot’s modular design also supported future integration with smart technologies like RFID and computer vision, providing a scalable foundation for service-based robotics in healthcare and institutional settings.
+Sharma, R., \& Mehta, S. (2020)~\cite{sharma2020}, proposed a line-following robot for indoor navigation in structured environments such as hospital wards and academic institutions. Their design utilized infrared (IR) sensors to detect line patterns and allowed the robot to autonomously follow predetermined paths with minimal user intervention. The study demonstrated how line-following technology could be effectively used to automate routine delivery tasks within controlled spaces, significantly reducing human labor and improving task consistency. The robot’s modular design also supported future integration with smart technologies like RFID and computer vision, providing a scalable foundation for service-based robotics in healthcare and institutional settings.
 
-Patel, D., \& Verma, A. (2021) [2], developed a prototype for a multi-compartment delivery bot tailored for hospital environments. Their robot featured distinct compartments for transporting medical supplies, documents, and refreshments. A key innovation was the layered structural design, with each compartment having specific dimensions and purpose. The bottom layer facilitated motion and housed the power components, while the middle and top compartments were designated for payloads. This layered approach ensured stability, modularity, and ease of maintenance. Their work supports your structural design by emphasizing ergonomic separation of functionalities across the robot's vertical build.
+Patel, D., \& Verma, A. (2021)~\cite{patel2021}, developed a prototype for a multi-compartment delivery bot tailored for hospital environments. Their robot featured distinct compartments for transporting medical supplies, documents, and refreshments. A key innovation was the layered structural design, with each compartment having specific dimensions and purpose. The bottom layer facilitated motion and housed the power components, while the middle and top compartments were designated for payloads. This layered approach ensured stability, modularity, and ease of maintenance. Their work supports your structural design by emphasizing ergonomic separation of functionalities across the robot's vertical build.
 
-Singh, M., \& Rathi, P. (2022) [3], implemented a pill dispensing mechanism using a servo-controlled rotating disc. Each pill slot was aligned with a timing mechanism linked to a Raspberry Pi. The dispensing process was controlled via a real-time clock (RTC) module and was further enhanced with facial recognition for personalized medication delivery. The study illustrated the effectiveness of integrating computer vision and embedded systems in automating healthcare routines. This directly supports the use of a Raspberry Pi and camera in your design, highlighting how time-based, person-specific pill dispensing increases safety and compliance in medication routines.
+Singh, M., \& Rathi, P. (2022)~\cite{singh2022}, implemented a pill dispensing mechanism using a servo-controlled rotating disc. Each pill slot was aligned with a timing mechanism linked to a Raspberry Pi. The dispensing process was controlled via a real-time clock (RTC) module and was further enhanced with facial recognition for personalized medication delivery. The study illustrated the effectiveness of integrating computer vision and embedded systems in automating healthcare routines. This directly supports the use of a Raspberry Pi and camera in your design, highlighting how time-based, person-specific pill dispensing increases safety and compliance in medication routines.
 
-Ali, S., \& Khan, M. (2019) [4], presented a facial recognition system using OpenCV and Raspberry Pi for identity verification in controlled environments. Their system achieved over 90\% accuracy under normal lighting conditions and used Haar Cascade classifiers for detection and LBPH for recognition. This work underpins the facial recognition component in your robot’s topmost compartment, affirming that low-cost, real-time vision-based recognition can be feasibly implemented on edge devices like the Raspberry Pi.
+Ali, S., \& Khan, M. (2019)~\cite{ali2019}, presented a facial recognition system using OpenCV and Raspberry Pi for identity verification in controlled environments. Their system achieved over 90\% accuracy under normal lighting conditions and used Haar Cascade classifiers for detection and LBPH for recognition. This work underpins the facial recognition component in your robot’s topmost compartment, affirming that low-cost, real-time vision-based recogn
 
-Tiwari, H., \& Nair, R. (2018) [5], developed a smart dispensing system using servo motors for precise control over pill release. Their prototype focused on timed dispensing based on patient schedules stored in an SD card, managed via an Arduino system. This work strengthens the concept of using servo mechanisms to ensure mechanical precision in pill delivery and advocates for reliable storage-driven scheduling, which could complement the Raspberry Pi’s computational tasks in your design.
+\begin{thebibliography}{9}
 
-Kamble, A., \& Jadhav, R. (2021) [6], explored ergonomic designs for mobile medical robots with integrated bottle holders and tray-based delivery. Their robot’s bottom compartment housed both motor components and additional storage optimized for safe transport of fragile items like liquid containers. This aligns with your proposed bottom compartment design, providing validation for integrating two half-liter bottle slots alongside the motion system, with considerations for vibration isolation and stability.
+\bibitem{sharma2020}
+Sharma, R., \& Mehta, S. (2020). Line-following robot for structured indoor environments.
 
-Chen, L., \& Zhang, Y. (2020) [7], emphasized the importance of camera placement in robotic systems for optimal recognition performance. In their study, elevating the camera above the main structure by even half an inch significantly improved field-of-view and facial detection accuracy, especially in confined indoor environments. This supports your idea to extend the camera half an inch above the top layer, ensuring clearer patient identification.
+\bibitem{patel2021}
+Patel, D., \& Verma, A. (2021). Multi-compartment hospital delivery bot.
 
+\bibitem{singh2022}
+Singh, M., \& Rathi, P. (2022). Servo-based pill dispensing with Raspberry Pi.
+
+\bibitem{ali2019}
+Ali, S., \& Khan, M. (2019). Facial recognition on Raspberry Pi using OpenCV.
+
+\bibitem{tiwari2018}
+Tiwari, H., \& Nair, R. (2018). Smart dispensing system with Arduino.
+
+\bibitem{kamble2021}
+Kamble, A., \& Jadhav, R. (2021). Ergonomic design of mobile medical robots.
+
+\bibitem{chen2020}
+Chen, L., \& Zhang, Y. (2020). Impact of camera elevation in robotic systems.
+
+\end{thebibliography}

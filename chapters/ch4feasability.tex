@@ -1,43 +1,25 @@
 \section{Technical Feasibility}
 
- The project demonstrates strong technical feasibility by combining electronics, communica
-tion, and information processing in a practical and achievable manner. The Arduino Mega
- microcontroller acts as the brain of the system, providing sufficient processing power and I/O
- pins to accommodate multiple sensor inputs, including MPU6050 sensors, tactile push buttons,
- and optional flex sensors. These electronic components assist in accurately detecting hand
- gestures and finger movements. For communication, the ESP8266 module is considered for
- wireless data transfer between the hardware system and the game engine, facilitating real-time
- interaction with low delay. Serial communication protocols (either wired or wireless) will be
- utilized to ensure smooth and continuous data exchange from the Arduino to the computer
- running the game.
+The project demonstrates strong technical feasibility by integrating robotics, automation, computer vision, and embedded systems in a practical and structured manner. The robot follows a modular design approach, dividing the system into three distinct compartments—bottom for motion, middle for storage, and top for pill dispensing—facilitating easier development, testing, and maintenance.
 
-  The information processing aspect involves translating raw sensor inputs into meaningful com
-mands for the game. This includes gesture detection using both switch activations and motion
- readings from the MPU. All of this will be managed using standard Arduino programming,
- with open-source libraries that expedite development. The modular hardware setup allows for
- f
- lexible testing, updates, and part replacement if necessary. Our design supports iterative devel
-opment, meaning we can test and improve as we build. Key strengths of the project include its
- adaptability, cost-effective components, and future scalability, making it a reliable and feasible
- system to implement with the tools and skills available to our team.
+The bottom compartment handles mobility and line-following functionality, employing square DC geared motors that provide stable torque and compact integration within the chassis. Line-following is achieved through an array of IR sensors, managed by an Arduino Mega, which offers ample processing power and I/O ports to interface with motor drivers (e.g., L298N), sensor inputs, and communication modules.
+
+The top compartment incorporates a Raspberry Pi equipped with a camera module for real-time patient recognition via facial recognition. This high-level processing unit manages time-based scheduling and activates a servo-driven pill dispensing mechanism based on the patient’s identity and medication schedule. A Real-Time Clock (RTC) module ensures accurate timing even during power fluctuations.
+
+Communication between the Arduino and Raspberry Pi is established via UART or I2C protocols, enabling smooth coordination between navigation and pill dispensing functions. Wi-Fi modules (ESP8266/ESP32) are included for cloud integration, data logging, and alerts to healthcare personnel.
+
+The system processes sensor data and camera inputs to make real-time decisions. Facial recognition utilizes open-source Python libraries such as OpenCV and \texttt{face\_recognition}, while the Arduino manages real-time control using standard libraries.
+
+The modular hardware design ensures flexibility for part replacement, independent testing of sections, and future upgrades. The square motors offer robust and efficient movement, well-suited for indoor hospital or hostel environments. Overall, the project stands out for its adaptability, structured architecture, cost-effective components, and scalability, making it a technically feasible and reliable solution.
 
 \section{Economic Feasibility}
 
- The proposed system demonstrates strong economic feasibility with a cost-effective approach
- to hardware development and implementation. Most of the required electronic components
- and sensors are readily available in the local market and within our college resources. The
- primary components, like Arduino Mega, ESP8266, MPU sensors, and connecting wires, are
- economically accessible, with relatively low procurement costs compared to specialized gam
-ing interface systems. The use of PLA filament provides a budget-friendly prototyping solu
-tion, allowing multiple design iterations without significant financial investment. Open-source
- software platforms like Arduino IDE and Unreal rendering Engine further reduce development
- expenses by eliminating expensive proprietary software licensing costs.
+The proposed system exhibits strong economic feasibility through a cost-effective approach to hardware development and deployment. Most required components—such as the Arduino Mega, Raspberry Pi, IR sensors, servo motors, and square DC motors—are readily available in local electronics markets and commonly stocked in standard college laboratories. These components are significantly more affordable compared to commercial healthcare robots, making the system accessible for educational and research use.
 
- The project’s modular design enables incremental development, meaning team members can
- progressively invest in components as needed, spreading out potential expenses. Potential cost savings are achieved through utilizing existing college laboratory equipment and leveraging
- team members’ existing technical skills, which minimizes additional training or external con
-sultation expenses. The overall economic viability is enhanced by the project’s scalable na
-ture, potential for future refinement, and the use of widely available, low-cost technological
- components. The minimal financial requirements make this project an economically attractive
- research and development initiative within the current institutional infrastructure.
+Open-source platforms like the Arduino IDE and Python-based tools including OpenCV and \texttt{face\_recognition} eliminate the need for expensive proprietary software, substantially reducing development costs. Additionally, 3D printing parts using PLA filament allows low-cost prototyping and quick design iterations, enabling multiple refinements without heavy financial burden.
 
+The project’s modular design supports incremental development—each compartment (movement, storage, dispensing) can be developed and tested separately, which spreads financial investment over time and improves budget management. Many components can be reused or repurposed during testing and final deployment, maximizing resource efficiency.
+
+Further savings come from leveraging existing college infrastructure, such as power supplies, testing equipment, and computer systems, alongside the technical expertise of the team, which minimizes or eliminates external consultancy or training expenses.
+
+In summary, the use of affordable, off-the-shelf components, open-source software, and in-house prototyping ensures strong economic viability. The scalable and adaptable design makes this solution ideal for healthcare automation in resource-constrained environments like government hospitals and orphanages.
