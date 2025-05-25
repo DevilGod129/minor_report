@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.24)  26 MAY 2025 00:52
+=======
+<<<<<<< HEAD
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.23)  26 MAY 2025 00:17
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.5.24)  26 MAY 2025 00:36
+>>>>>>> 842a049bf8cfbd13c3d5c347b852a8c84f611198
+>>>>>>> b15a50c6a880c4c64d75032b12ccec2800d17946
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/rasde/OneDrive/Desktop/minor/minor_report/main.tex
-(c:/Users/rasde/OneDrive/Desktop/minor/minor_report/main.tex
+**"c:/Users/Prasun Paudel/Desktop/Minor/minor_report/main.tex"
+(c:/Users/Prasun Paudel/Desktop/Minor/minor_report/main.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
 (C:\Program Files\MiKTeX\tex/latex/base\report.cls
@@ -651,7 +659,7 @@ Package pdftex.def Info: images/kec.png  used on input line 19.
 
 [1
 
-{C:/Users/rasde/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc} <./images/kec.png>]) (acknowledgement.tex)
+{C:/Users/Prasun Paudel/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc} <./images/kec.png>]) (acknowledgement.tex)
 
 [1
 
@@ -849,12 +857,17 @@ L3 programming layer <2025-04-14>
  ) 
 Here is how much of TeX's memory you used:
  22955 strings out of 469941
+<<<<<<< HEAD
  529595 string characters out of 5479497
  981550 words of memory out of 5000000
+=======
+ 529580 string characters out of 5479471
+ 981549 words of memory out of 5000000
+>>>>>>> b15a50c6a880c4c64d75032b12ccec2800d17946
  49328 multiletter control sequences out of 15000+600000
  647391 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,91p,1235b,930s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,9n,91p,1236b,930s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Program Files/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
 Output written on main.pdf (24 pages, 1675042 bytes).
 PDF statistics:
