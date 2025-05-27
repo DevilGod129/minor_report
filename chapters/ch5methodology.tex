@@ -1,34 +1,29 @@
 \section{System Block Diagram}
 
 \begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}[node distance=1.8cm and 2cm, auto, >=latex', thick]
+\centering
+\begin{tikzpicture}[node distance=1.6cm and 2cm, auto, >=latex', thick]
 
-        % Main Nodes
-        \node[draw, rectangle, minimum width=2.8cm, minimum height=1cm] (ir) {IR SENSOR};
-        \node[draw, rectangle, minimum width=2.8cm, minimum height=1cm, below=of ir] (arduino) {ARDUINO};
-        \node[draw, rectangle, minimum width=2.8cm, minimum height=1cm, below=of arduino] (serial) {Serial Communication};
-        \node[draw, rectangle, minimum width=2.8cm, minimum height=1cm, below=of serial] (pi) {Raspberry Pi};
-        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, below=of pi] (interface) {Raspberry Interface};
-        \node[draw, rectangle, minimum width=2.8cm, minimum height=1cm, below=of interface] (pill) {Pill Dispenser};
+    % Nodes
+    \node[draw, rectangle, rounded corners, minimum width=3.5cm, minimum height=1cm] (camera) {Camera};
+    \node[draw, rectangle, rounded corners, minimum width=4cm, minimum height=1.2cm, below=of camera] (pi) {Raspberry Pi};
+    \node[draw, rectangle, rounded corners, minimum width=4cm, minimum height=1cm, below=of pi] (arduino) {Arduino (2-Way Communication)};
 
-        % Side Labels (just rectangles)
-        \node[draw, rectangle, minimum width=2.8cm, minimum height=1cm, right=3cm of arduino] (motion) {MOTION};
-        \node[draw, rectangle, minimum width=3.5cm, minimum height=1cm, right=3cm of interface] (camera) {Raspberry Camera Read};
+    % Bottom layer nodes
+    \node[draw, rectangle, rounded corners, minimum width=3cm, minimum height=0.9cm, below left=1.2cm and 1.8cm of arduino] (ir) {IR Sensor};
+    \node[draw, rectangle, rounded corners, minimum width=3cm, minimum height=0.9cm, below=1.2cm of arduino] (motor) {Motor Controller};
+    \node[draw, rectangle, rounded corners, minimum width=3cm, minimum height=0.9cm, below right=1.2cm and 1.8cm of arduino] (servo) {Servo Controller};
 
-        % Connections
-        \draw[->] (ir) -- (arduino);
-        \draw[->] (arduino) -- (serial);
-        \draw[->] (serial) -- (pi);
-        \draw[->] (pi) -- (interface);
-        \draw[->] (interface) -- (pill);
-        \draw[->] (arduino) -- (motion);
-        \draw[->] (camera) -- (interface);
-        \draw[->, bend left=80] (pill.west) to (ir.west);
+    % Arrows
+    \draw[->] (camera) -- (pi);
+    \draw[<->] (pi) -- (arduino); % Two-way communication
+    \draw[->] (arduino) -- (ir);
+    \draw[->] (arduino) -- (motor);
+    \draw[->] (arduino) -- (servo);
 
-    \end{tikzpicture}
-    \caption{Block Diagram of Pill Dispenser with IR and Raspberry Pi}
-    \label{fig:pill_diagram}
+\end{tikzpicture}
+\caption{Block Diagram: Raspberry Pi with Camera, Arduino and Peripheral Controllers}
+\label{fig:block_diagram}
 \end{figure}
 
 
