@@ -2,42 +2,35 @@
 
 \begin{figure}[h!]
     \centering
-    \begin{tikzpicture}[node distance=2cm, auto, >=latex', thick]
-        % Sensor nodes
-        \node[draw, rectangle, rounded corners, minimum width=2cm, minimum height=1cm] (mpu) {MPU6050};
-        \node[draw, rectangle, rounded corners, minimum width=2cm, minimum height=1cm, below left=1cm and 2cm of mpu] (flex) {Flex Sensors};
-        \node[draw, rectangle, rounded corners, minimum width=2cm, minimum height=1cm, below right=1cm and 2cm of mpu] (tactile) {Tactile Switches};
-        
-        % Processing node
-        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, below=3cm of mpu] (micro) {Arduino Mega};
-        
-        % Calibration node
-        \node[draw, rectangle, minimum width=2.5cm, minimum height=0.8cm, below=1.5cm of micro] (calibration) {Data Calibration};
-        
-        % Communication node
-        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, below=1.5cm of calibration] (comm) {Serial Communication};
-        
-        % Software nodes
-        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, below=1.5cm of comm] (pc) {PC Interface};
-        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, below=1.5cm of pc] (unreal) {Unreal Engine};
-        
-        % Output node
-        \node[draw, rectangle, minimum width=3.5cm, minimum height=1cm, below=1.5cm of unreal] (virtual) {3D Hand Model};
+    \begin{tikzpicture}[node distance=1.8cm and 2cm, auto, >=latex', thick]
+
+        % Main Nodes
+        \node[draw, rectangle, minimum width=2.8cm, minimum height=1cm] (ir) {IR SENSOR};
+        \node[draw, rectangle, minimum width=2.8cm, minimum height=1cm, below=of ir] (arduino) {ARDUINO};
+        \node[draw, rectangle, minimum width=2.8cm, minimum height=1cm, below=of arduino] (serial) {Serial Communication};
+        \node[draw, rectangle, minimum width=2.8cm, minimum height=1cm, below=of serial] (pi) {Raspberry Pi};
+        \node[draw, rectangle, minimum width=3cm, minimum height=1cm, below=of pi] (interface) {Raspberry Interface};
+        \node[draw, rectangle, minimum width=2.8cm, minimum height=1cm, below=of interface] (pill) {Pill Dispenser};
+
+        % Side Labels (just rectangles)
+        \node[draw, rectangle, minimum width=2.8cm, minimum height=1cm, right=3cm of arduino] (motion) {MOTION};
+        \node[draw, rectangle, minimum width=3.5cm, minimum height=1cm, right=3cm of interface] (camera) {Raspberry Camera Read};
 
         % Connections
-        \draw[->] (mpu) -- (micro);
-        \draw[->] (flex) -- (micro);
-        \draw[->] (tactile) -- (micro);
-        \draw[->] (micro) -- (calibration);
-        \draw[->] (calibration) -- (comm);
-        \draw[->] (comm) -- (pc);
-        \draw[->] (pc) -- (unreal);
-        \draw[->] (unreal) -- (virtual);
+        \draw[->] (ir) -- (arduino);
+        \draw[->] (arduino) -- (serial);
+        \draw[->] (serial) -- (pi);
+        \draw[->] (pi) -- (interface);
+        \draw[->] (interface) -- (pill);
+        \draw[->] (arduino) -- (motion);
+        \draw[->] (camera) -- (interface);
+        \draw[->, bend left=80] (pill.west) to (ir.west);
 
     \end{tikzpicture}
-    \caption{Detailed Block Diagram of Hand Motion Replicator System}
-    \label{fig:block_diagram}
+    \caption{Block Diagram of Pill Dispenser with IR and Raspberry Pi}
+    \label{fig:pill_diagram}
 \end{figure}
+
 
 \section{Algorithm}
 \begin{enumerate}
