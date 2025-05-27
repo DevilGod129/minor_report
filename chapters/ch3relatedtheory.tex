@@ -1,45 +1,56 @@
 \section{Hardware}
 
-\textbf{MPU6050 Sensor:} The MPU6050 is a widely used 6-axis MEMS-based Inertial Measurement Unit (IMU) that integrates a 3-axis accelerometer and a 3-axis gyroscope within a single chip.It is capable of detecting linear acceleration in the range of ±2g to ±16g and angular velocity from ±250°/s to ±2000°/s, making it highly suitable for motion tracking and gesture recognition applications. A notable feature of the MPU6050 is its onboard Digital Motion Processor (DMP), which performs real-time sensor fusion using algorithms such as Kalman or complementary filtering. This significantly reduces noise and drift in gyroscopic data, enabling stable orientation tracking through the calculation of quaternions or Euler angles (roll, pitch, and yaw). The sensor communicates with microcontrollers through the I²C interface, supporting clock speeds between 100 kHz and 400 kHz for efficient data exchange. Its compact design, reliability, and real-time capabilities make it ideal for wearable systems. It enables precise and responsive motion capture for interactive systems in gesture-based applications.
+\textbf{Johnson Motor:} In this project, the Johnson motor plays a crucial role in the mobility and navigation system of the robot. As a geared DC motor known for its high torque and moderate speed, the Johnson motor is ideal for driving the wheels of the line-following robot, especially in environments such as hospital wards or hostels where smooth and controlled movement is essential. Its robust build and metal gearbox allow it to handle the weight of the robot's three compartments, including the lower section for motion and trays, the middle for storage, and the top for pill dispensing. The motor’s torque ensures that the robot can move efficiently even while carrying a moderate load, without stalling or losing stability. Since the robot needs to follow a pre-defined path using line-following sensors, the Johnson motor provides the precision required to maneuver accurately around corners, stop at designated points like patient beds, and resume movement seamlessly. Its compatibility with motor driver modules like the L298N allows for easy integration into the robot’s electronic control system, enabling direction and speed control through microcontrollers or the Raspberry Pi. Additionally, Johnson motors operate at low voltage (typically 6V to 12V), which aligns well with the power requirements of compact, battery-operated robots.
 
 \begin{figure}[htbp!]
 \centering
-\includegraphics[width=0.5\textwidth]{images/3.1.png}
-\caption{\textbf{MPU6050 Sensor}}
+\includegraphics[width=0.5\textwidth]{images/3.1.jpg}
+\caption{\textbf{Johnson Motor}}
 \label{fig:3.1}
 \end{figure}
 
 \vspace{1.5\baselineskip} % Adds 1.5 line spaces before next section
 
-\textbf{Arduino Mega:} The Arduino Mega is an open-source microcontroller board based on the ATmega2560, designed for projects requiring extensive input/output operations and greater memory capacity. It features 54 digital I/O pins, 16 analog inputs, and four UARTs for serial communication, making it suitable for complex hardware interfacing. With 256 KB of flash memory and a 16 MHz clock speed, it can handle multiple sensors and real-time data processing efficiently. In this project, the Arduino Mega serves as the central controller, managing input from multiple MPU6050 sensors and switches to ensure accurate and synchronized gesture-based interactions within the game environment.
+\textbf{Raspberry pi 4:} In this project, the Raspberry Pi 4 with 4GB RAM serves as the central processing unit for managing high-level tasks such as patient recognition, time-based scheduling, and controlling the pill dispensing mechanism. With its quad-core processor and sufficient RAM, the Raspberry Pi 4 efficiently handles image processing tasks using a connected camera module to recognize patients either through facial recognition or QR code scanning. It also maintains an internal clock (with or without an external RTC module) to ensure pills are dispensed accurately according to schedule. The 4GB RAM allows for smooth multitasking, such as running Python scripts for motor control, image recognition algorithms, and logging data, all at once without lag. The Raspberry Pi also communicates with external hardware like servo motors for pill dispensing and the motor driver for controlling movement if necessary. Additionally, its GPIO pins can be used to interface with sensors and control systems, while built-in Wi-Fi and Bluetooth allow for wireless updates, alerts, or remote monitoring through a mobile app or web interface. In summary, the Raspberry Pi 4 (4GB) provides the computing power and flexibility needed to control smart operations in the top compartment of the robot, making it an intelligent and autonomous medical assistant.
 
 \begin{figure}[htbp!]
 \centering
-\includegraphics[width=0.5\textwidth]{images/fig3.2.png}
-\caption{\textbf{Arduino Uno Board}}
+\includegraphics[width=0.5\textwidth]{images/fig3.2.jpg}
+\caption{\textbf{Raspberry pi 4}}
 \label{fig:3.2}
 \end{figure}
 
 \vspace{1.5\baselineskip} % Adds 1.5 line spaces before next section
 
-\textbf{ESP8266}: The ESP8266 is a low-cost, high-performance Wi-Fi microcontroller based on a 32-bit RISC CPU core (Tensilica L106), operating at 80–160 MHz. It integrates TCP/IP protocol stack and supports IEEE 802.11 b/g/n standards, enabling wireless connectivity with low power consumption (~80 mA active mode). It enables devices to connect to wireless networks and communicate over the internet or within local networks. The ESP8266 supports multiple modes such as station, access point, and both simultaneously, making it highly versatile for wireless communication. It can be programmed using the Arduino IDE and is capable of handling HTTP requests, data transfer, and remote control functionalities. The ESP8266 is used to explore wireless communication possibilities between the hardware controller and the game system, potentially allowing untethered interaction.
+\textbf{Arduino UNO}: In this project, the Arduino Uno plays a critical role as the microcontroller responsible for handling low-level hardware operations, particularly in the bottom compartment of the robot. It is used to read input from IR sensors for line-following, control the Johnson motors via a motor driver (such as the L298N), and manage other components like buzzers or LEDs for alerts. The Arduino Uno is well-suited for this task due to its simplicity, reliability, and ease of programming. With 14 digital I/O pins and 6 analog inputs, it can easily interface with multiple IR sensors, motors, and additional modules if needed. It operates on 5V logic, making it compatible with most common robotic components. The Arduino continuously reads sensor data and processes it in real time to make decisions about movement—like turning left or right, stopping at specific points, or correcting its path. It can be programmed using the Arduino IDE with simple C/C++ code, making development and debugging accessible even for beginners. In this project, the Arduino Uno ensures stable and responsive control over the robot’s motion system, allowing the Raspberry Pi to focus on higher-level tasks such as patient recognition and pill dispensing in the upper compartment.
 
 \begin{figure}[htbp!]
 \centering
-\includegraphics[width=0.5\textwidth]{images/fig3.3.jpg}
-\caption{\textbf{ESP8266 Wi-Fi Module}}
+\includegraphics[width=0.5\textwidth]{images/fig3.3.png}
+\caption{\textbf{Arduino UNO}}
 \label{fig:3.3}
 \end{figure}
 
 \vspace{1.5\baselineskip} % Adds 1.5 line spaces before next section
 
-\textbf{Flex Sensors: }Flex sensors are passive resistive devices that change their resistance based on the amount of bend applied to them. Typically constructed using a flexible substrate coated with conductive ink, their resistance increases as the sensor is bent. This property allows them to detect the degree of bending or curvature, making them suitable for applications involving motion capture, wearable electronics, and gesture recognition. When integrated with microcontrollers, the analog resistance change can be converted into meaningful input data. In this project, flex sensors are considered for detecting finger movements by measuring the degree of bend in each finger.
+\textbf{IR array Sensors: }In this project, the IR (Infrared) sensor is a key component used in the bottom compartment of the robot to enable line-following capability. IR sensors work by emitting infrared light and detecting its reflection from surfaces. When placed near the ground, they can distinguish between dark lines (which absorb more light) and lighter backgrounds (which reflect more light). By strategically placing multiple IR sensors on the bottom of the robot, the system can detect and follow a black line on a white surface or vice versa. This allows the robot to navigate predetermined paths accurately within structured environments such as hospital wards or hostels. The data from the IR sensors is continuously read by a microcontroller or Raspberry Pi, which then adjusts the motor speed and direction to keep the robot on track. This sensor-based navigation is simple, reliable, and cost-effective, requiring minimal setup while offering precise control. Additionally, IR sensors can help detect endpoints or junctions along the path by identifying sudden changes in surface color. In this way, the IR sensors play a vital role in ensuring the robot moves autonomously and accurately between bed positions for timely medicine delivery, enhancing the overall effectiveness of the system.
 
 \begin{figure}[htbp!]
 \centering
-\includegraphics[width=0.5\textwidth]{images/3.4.png}
-\caption{\textbf{Flex Sensor}}
+\includegraphics[width=0.5\textwidth]{images/3.4.jpg}
+\caption{\textbf{IR array Sensors}}
 \label{fig:3.4}
+\end{figure}
+
+\vspace{1.5\baselineskip} % Adds 1.5 line spaces before next section
+
+\textbf{Metal Gear Servo: }In this project, the Metal Gear Servo MG996R is used in the top compartment to control the pill dispensing mechanism. This servo motor is known for its high torque, durability, and precision, making it ideal for applications requiring accurate and repeated movements. The MG996R operates using pulse-width modulation (PWM), allowing it to rotate to specific angles—typically between 0° and 180°. In the pill dispenser, the servo can be programmed to rotate a certain angle to open a slot, release a specific dose of medication, and then return to its original position. Its metal gear construction ensures strength and reliability, even under continuous or repeated use, which is essential in a healthcare setting where precision and consistency are critical. The servo is controlled by the Raspberry Pi or Arduino through a PWM signal, making integration into the system straightforward. It operates on 5V and can be powered from the same supply used for other components. With its ability to handle moderate mechanical loads and provide precise control, the MG996R ensures that pills are dispensed accurately according to the patient’s schedule. This makes it a key component in automating the medicine delivery process in your smart healthcare robot.
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width=0.5\textwidth]{images/3.5.jpg}
+\caption{\textbf{Metal Gear Servo MG996R}}
+\label{fig:3.5}
 \end{figure}
 
 \section{Software}
