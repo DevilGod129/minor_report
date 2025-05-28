@@ -76,6 +76,89 @@
     \end{itemize}
 \end{enumerate}
 
+\vspace{1.5\baselineskip}
+\newpage
+
+\section{Flowcharts}
+
+\subsection{Overall System Workflow}
+
+\begin{tikzpicture}[node distance=1.5cm]
+
+\node (start) [startstop] {System Start};
+\node (init) [process, below of=start] {Initialize RPi \& Arduino};
+\node (nav) [process, below of=init] {Start Line Following};
+\node (zone) [decision, below of=nav, yshift=-0.5cm] {Reached Patient Zone?};
+\node (capture) [process, right of=zone, xshift=5cm] {Capture Face Image};
+\node (match) [process, below of=capture] {Facial Recognition};
+\node (verify) [process, below of=match] {Verify Schedule (RTC)};
+\node (dispense) [process, below of=verify] {Dispense Medication};
+\node (log) [process, below of=dispense] {Log Data \& Notify};
+\node (continue) [process, below of=log] {Continue/Return to Base};
+\node (end) [startstop, below of=continue] {System End};
+
+\draw [arrow] (start) -- (init);
+\draw [arrow] (init) -- (nav);
+\draw [arrow] (nav) -- (zone);
+\draw [arrow] (zone.east) -- (capture.west) node[midway, above] {Yes};
+\draw [arrow] (capture) -- (match);
+\draw [arrow] (match) -- (verify);
+\draw [arrow] (verify) -- (dispense);
+\draw [arrow] (dispense) -- (log);
+\draw [arrow] (log) -- (continue);
+\draw [arrow] (continue) -- (end);
+
+\end{tikzpicture}
+
+
+\subsection{Pill Dispensing Subsystem}
+
+\begin{tikzpicture}[node distance=1.5cm and 3cm]
+
+\node (start) [startstop] {At Patient Zone};
+\node (face) [process, below of=start] {Face Recognition};
+\node (match) [decision, below of=face, yshift=-0.5cm] {Face Recognized?};
+\node (check) [process, right of=match, xshift=5cm] {Check Schedule};
+\node (abort) [process, left of=match, xshift=-5cm] {Abort \& Log};
+\node (endAbort) [startstop, below of=abort] {Subsystem End};
+\node (dispense) [process, below of=check] {Activate Servo \& Dispense};
+\node (log) [process, below of=dispense] {Log Success};
+\node (end) [startstop, below of=log] {Subsystem End};
+
+\draw [arrow] (start) -- (face);
+\draw [arrow] (face) -- (match);
+\draw [arrow] (match.east) -- (check.west) node[midway, above] {Yes};
+\draw [arrow] (match.west) -- (abort.east) node[midway, above] {No};
+\draw [arrow] (abort) -- (endAbort);
+\draw [arrow] (check) -- (dispense);
+\draw [arrow] (dispense) -- (log);
+\draw [arrow] (log) -- (end);
+
+\end{tikzpicture}
+
+
+\subsection{Navigation and Obstacle Handling}
+
+\begin{tikzpicture}[node distance=1.5cm and 3cm]
+
+\node (start) [startstop] {Start Line Following};
+\node (read) [process, below of=start] {Read IR Sensor Data};
+\node (pid) [process, below of=read] {PID-based Motor Control};
+\node (obstacle) [decision, below of=pid, yshift=-0.5cm] {Obstacle Detected?};
+\node (stop) [process, left of=obstacle, xshift=-5cm] {Stop \& Wait};
+\node (endStop) [startstop, below of=stop] {Navigation End};
+\node (move) [process, right of=obstacle, xshift=5cm] {Continue to Next Zone};
+\node (endMove) [startstop, below of=move] {Navigation End};
+
+\draw [arrow] (start) -- (read);
+\draw [arrow] (read) -- (pid);
+\draw [arrow] (pid) -- (obstacle);
+\draw [arrow] (obstacle.west) -- (stop.east) node[midway, above] {Yes};
+\draw [arrow] (obstacle.east) -- (move.west) node[midway, above] {No};
+\draw [arrow] (stop) -- (endStop);
+\draw [arrow] (move) -- (endMove);
+
+\end{tikzpicture}
 
 
 
