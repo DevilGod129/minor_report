@@ -50,3 +50,23 @@ The MG996R is a high-torque servo motor with metal gears and digital control. It
     \caption{Metal Gear Servo MG996R (Source: \cite{11})}
     \label{fig:3.5}
 \end{figure}
+\section{Software}
+
+\textbf{Arduino IDE:} The Arduino Integrated Development Environment (IDE) is used to program the Arduino microcontroller responsible for real-time control of motors, sensors, and actuators. Written in C/C++, the code implements PID algorithms for accurate line following, triggers pill dispensing via servo motors, and reads data from modules such as IR sensors, UHF RFID readers, and ultrasonic sensors. Libraries like \texttt{Servo.h}, \texttt{Wire.h}, and \texttt{SoftwareSerial.h} simplify hardware interactions. Serial communication with the Raspberry Pi enables synchronous operation and system-level decision-making. The IDE’s Serial Monitor is invaluable for debugging sensor readings and validating motor responses, supporting firmware-level coordination for the robot’s motion and dispensing tasks.
+
+\vspace{0.5em}
+
+\textbf{Raspberry Pi \& Camera Module:} The Raspberry Pi 4 Model B, paired with the Raspberry Pi Camera V2 (NoIR), serves as the high-level processing unit of the system. It runs Python scripts for facial recognition using OpenCV and manages scheduled pill dispensing through a timetable system. Sensor feedback and motor status are received from the Arduino via UART serial communication, enabling dynamic coordination based on environmental inputs and patient recognition. The onboard real-time clock (RTC, optional) ensures precise execution of time-based actions. Captured facial data is matched with a patient database to ensure accurate medication delivery. A local SQLite or CSV-based logging system maintains records for real-time auditing and system monitoring.
+
+\vspace{0.5em}
+
+\textbf{Blender:} Blender, while not central in the current phase, may be employed for visual prototyping, robot path planning simulation, and 3D modeling of the robot’s compartments—including sliding tray mechanisms and modular structures. Using Blender’s Python API (\texttt{bpy}), simulations of compartment stacking and CAD-like assemblies can be rendered, providing a clear indication of hardware integration points and assisting in early-stage design validation.
+
+\vspace{0.5em}
+
+\textbf{Python Middleware:} Python acts as a critical middleware layer, bridging hardware and software. With \texttt{PySerial}, it decodes raw Arduino sensor data (e.g., accelerometer, gyroscope) into actionable gesture commands. These commands can trigger Blender animations via the \texttt{bpy} API, mapping real-world motions to virtual actions like grabbing or rotating objects. Python scripts also handle sensor calibration, noise filtering, and data normalization, enhancing interaction accuracy. This versatile setup supports rapid prototyping—from adjusting sensor thresholds to automating simulation updates—ensuring seamless real-time communication between hardware and virtual environments.
+
+
+
+%\section{Dataset}
+%\lipsum[4-8]
