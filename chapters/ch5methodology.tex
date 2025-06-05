@@ -1,52 +1,115 @@
-\subsection*{3.1 Components used}
-This project consists of both hardware and software components. The hardware components used in this project are discussed below:
+\section{Flowcharts}
 
-\subsubsection*{3.1.1 Johnson motor}
-A Johnson motor is a brushed DC motor that contains permanent magnets. It is a high-speed motor with high torque and widely used in robotic applications. In this project, Johnson motors are used for driving the wheels of the robot.
+\subsection{Overall System Workflow}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{process} = [rectangle, minimum width=3.2cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{decision} = [diamond, aspect=2, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{arrow} = [thick,->,>=stealth]
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{3.1.jpg}
-    \caption{Johnson Motor (Source: \cite{7})}
-    \label{fig:3.1}
+\centering
+\resizebox{\textwidth}{!}{ % scales to page width
+\begin{tikzpicture}[node distance=1.5cm and 2.5cm]
+
+% Main vertical nodes
+\node (start) [startstop] {System Start};
+\node (init) [process, below of=start] {Initialize RPi \& Arduino};
+\node (nav) [process, below of=init] {Start Line Following};
+\node (zone) [decision, below of=nav, yshift=-0.5cm] {Reached Patient Zone?};
+
+% Yes branch (right)
+\node (capture) [process, right=4cm of zone] {Capture Face Image};
+\node (match) [process, below of=capture] {Facial Recognition};
+\node (verify) [process, below of=match] {Verify Schedule (RTC)};
+\node (dispense) [process, below of=verify] {Dispense Medication};
+\node (log) [process, below of=dispense] {Log Data \& Notify};
+\node (continue) [process, below of=log] {Continue/Return to Base};
+\node (end) [startstop, below of=continue] {System End};
+
+% No branch (left)
+\node (move) [process, left=4cm of zone] {Move to Another Patient};
+
+% Arrows - main flow
+\draw [arrow] (start) -- (init);
+\draw [arrow] (init) -- (nav);
+\draw [arrow] (nav) -- (zone);
+
+% Yes path
+\draw [arrow] (zone.east) -- node[above] {Yes} (capture.west);
+\draw [arrow] (capture) -- (match);
+\draw [arrow] (match) -- (verify);
+\draw [arrow] (verify) -- (dispense);
+\draw [arrow] (dispense) -- (log);
+\draw [arrow] (log) -- (continue);
+\draw [arrow] (continue) -- (end);
+
+% No path
+\draw [arrow] (zone.west) -- node[above] {No} (move.east);
+\draw [arrow] (move) |- (nav.west);
+
+\end{tikzpicture}
+}
+\caption{Overall System Workflow}
+\label{fig:overall_system_workflow}
 \end{figure}
 
-\subsubsection*{3.1.2 Raspberry Pi 4}
-Raspberry Pi 4 is a credit card-sized computer that can run an operating system and perform multiple functions. It is equipped with a Broadcom BCM2711, Quad core Cortex-A72 (ARM v8) 64-bit SoC @ 1.5GHz, 2GB RAM, and USB and HDMI ports. In this project, it processes voice commands, sends control signals to Arduino, and communicates with cloud services.
+
+\subsection{Pill Dispensing Subsystem}
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{fig3.2.jpg}
-    \caption{Raspberry Pi 4 (Source: \cite{8})}
-    \label{fig:3.2}
+\centering
+\begin{tikzpicture}[node distance=1.5cm and 3cm]
+
+\node (start) [startstop] {At Patient Zone};
+\node (face) [process, below of=start] {Face Recognition};
+\node (match) [decision, below of=face, yshift=-0.5cm] {Face Recognized?};
+\node (check) [process, right of=match, xshift=5cm] {Check Schedule};
+\node (abort) [process, left of=match, xshift=-5cm] {Abort \& Log};
+\node (endAbort) [startstop, below of=abort] {Subsystem End};
+\node (dispense) [process, below of=check] {Activate Servo \& Dispense};
+\node (log) [process, below of=dispense] {Log Success};
+\node (end) [startstop, below of=log] {Subsystem End};
+
+\draw [arrow] (start) -- (face);
+\draw [arrow] (face) -- (match);
+\draw [arrow] (match.east) -- (check.west) node[midway, above] {Yes};
+\draw [arrow] (match.west) -- (abort.east) node[midway, above] {No};
+\draw [arrow] (abort) -- (endAbort);
+\draw [arrow] (check) -- (dispense);
+\draw [arrow] (dispense) -- (log);
+\draw [arrow] (log) -- (end);
+
+\end{tikzpicture}
+\caption{Pill Dispensing Subsystem Flowchart}
+\label{fig:pill_dispensing_subsystem}
 \end{figure}
 
-\subsubsection*{3.1.3 Arduino UNO}
-The Arduino UNO is an open-source microcontroller board based on the Microchip ATmega328P microcontroller. It features 14 digital I/O pins, 6 analog inputs, a 16 MHz quartz crystal, and USB and power jack. In this project, it controls motors and sensors based on the instructions received from the Raspberry Pi.
+
+\subsection{Navigation and Obstacle Handling}
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{fig3.3.png}
-    \caption{Arduino UNO (Source: \cite{9})}
-    \label{fig:3.3}
-\end{figure}
+\centering
+\begin{tikzpicture}[node distance=1.5cm and 3cm]
 
-\subsubsection*{3.1.4 IR Array Sensor}
-IR (Infrared) array sensors are used to detect the path for line-following by emitting and detecting IR light. A group of IR sensors is arranged to detect black lines on a white surface. In this project, they help the robot follow the designated path.
+\node (start) [startstop] {Start Line Following};
+\node (read) [process, below of=start] {Read IR Sensor Data};
+\node (pid) [process, below of=read] {PID-based Motor Control};
+\node (obstacle) [decision, below of=pid, yshift=-0.5cm] {Obstacle Detected?};
+\node (stop) [process, left of=obstacle, xshift=-5cm] {Stop \& Wait};
+\node (endStop) [startstop, below of=stop] {Navigation End};
+\node (move) [process, right of=obstacle, xshift=5cm] {Continue to Next Zone};
+\node (endMove) [startstop, below of=move] {Navigation End};
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{3.4.jpg}
-    \caption{IR Array Sensor (Source: \cite{10})}
-    \label{fig:3.4}
-\end{figure}
+\draw [arrow] (start) -- (read);
+\draw [arrow] (read) -- (pid);
+\draw [arrow] (pid) -- (obstacle);
+\draw [arrow] (obstacle.west) -- (stop.east) node[midway, above] {Yes};
+\draw [arrow] (obstacle.east) -- (move.west) node[midway, above] {No};
+\draw [arrow] (stop) -- (endStop);
+\draw [arrow] (move) -- (endMove);
 
-\subsubsection*{3.1.5 Metal Gear Servo MG996R}
-The MG996R is a high-torque servo motor with metal gears and digital control. It provides accurate angle control and is used in the pill dispensing mechanism. It can rotate 0–180 degrees and is known for durability and stability.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{3.5.jpg}
-    \caption{Metal Gear Servo MG996R (Source: \cite{11})}
-    \label{fig:3.5}
+\end{tikzpicture}
+\caption{Navigation and Obstacle Handling Flowchart}
+\label{fig:navigation_obstacle_handling}
 \end{figure}
