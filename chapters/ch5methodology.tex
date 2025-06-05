@@ -1,99 +1,14 @@
-\section{System Block Diagram}
-
-\begin{figure}[h!]
-\centering
-\begin{tikzpicture}[node distance=1.6cm and 2cm, auto, >=latex', thick]
-
-    % Nodes
-    \node[draw, rectangle, rounded corners, minimum width=3.5cm, minimum height=1cm] (camera) {Camera};
-    \node[draw, rectangle, rounded corners, minimum width=4cm, minimum height=1.2cm, below=of camera] (pi) {Raspberry Pi};
-    \node[draw, rectangle, rounded corners, minimum width=4cm, minimum height=1cm, below=of pi] (arduino) {Arduino (2-Way Communication)};
-
-    % Bottom layer nodes
-    \node[draw, rectangle, rounded corners, minimum width=3cm, minimum height=0.9cm, below left=1.2cm and 1.8cm of arduino] (ir) {IR Sensor};
-    \node[draw, rectangle, rounded corners, minimum width=3cm, minimum height=0.9cm, below=1.2cm of arduino] (motor) {Motor Controller};
-    \node[draw, rectangle, rounded corners, minimum width=3cm, minimum height=0.9cm, below right=1.2cm and 1.8cm of arduino] (servo) {Servo Controller};
-
-    % Arrows
-    \draw[->] (camera) -- (pi);
-    \draw[<->] (pi) -- (arduino); % Two-way communication
-    \draw[->] (arduino) -- (ir);
-    \draw[->] (arduino) -- (motor);
-    \draw[->] (arduino) -- (servo);
-
-\end{tikzpicture}
-\caption{Block Diagram: Raspberry Pi with Camera, Arduino and Peripheral Controllers}
-\label{fig:block_diagram}
-\end{figure}
-
-
-\section{Algorithm}
-\begin{enumerate}
-    \item System Initialization
-    \begin{itemize}
-        \item Configure Raspberry Pi GPIOs for motor control
-        \item Initialize camera module and load known patient face encodings
-        \item Set up serial communication between Raspberry Pi and Arduino
-        \item Initialize Arduino for RFID, IR line sensors, and obstacle detection
-        \item Configure RTC module for pill dispensing schedule
-    \end{itemize}
-
-    \item Navigation and Obstacle Handling
-    \begin{itemize}
-        \item Read line sensor data for path following
-        \item Use PID control to adjust wheel speeds for stable line tracking
-        \item Monitor ultrasonic or IR sensors for obstacle detection
-        \item Identify patient delivery zones using floor markers or RFID
-    \end{itemize}
-
-    \item Patient Identification
-    \begin{itemize}
-        \item Capture image using Pi Camera at each stop
-        \item Perform face recognition using pre-stored encodings
-        \item Confirm patient identity before dispensing
-    \end{itemize}
-
-    \item Pill Dispensing
-    \begin{itemize}
-        \item Verify time with RTC or cloud schedule
-        \item Match medicine to patient's current prescription
-        \item Activate servo/stepper mechanism to release pills
-        \item Log successful or failed delivery
-    \end{itemize}
-
-    \item Data Logging and Communication
-    \begin{itemize}
-        \item Log patient ID, timestamp, and medicine dispensed
-        \item Send updates to local storage or cloud database
-        \item Support real-time monitoring via a dashboard
-    \end{itemize}
-
-    \item Return and Remote Update
-    \begin{itemize}
-        \item Navigate to next patient or return to base station
-        \item Sync prescription or face data remotely via web interface
-        \item Allow admin to register new patients and schedules
-    \end{itemize}
-\end{enumerate}
-
-\vspace{1.5\baselineskip}
-\newpage
-
 \section{Flowcharts}
 
 \subsection{Overall System Workflow}
-
-
 
 \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
 \tikzstyle{process} = [rectangle, minimum width=3.2cm, minimum height=1cm, text centered, draw=black, fill=white]
 \tikzstyle{decision} = [diamond, aspect=2, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=white]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
-
-
-
-\begin{center}
+\begin{figure}[H]
+\centering
 \resizebox{\textwidth}{!}{ % scales to page width
 \begin{tikzpicture}[node distance=1.5cm and 2.5cm]
 
@@ -135,14 +50,15 @@
 
 \end{tikzpicture}
 }
-\end{center}
-
-
-
+\caption{Overall System Workflow}
+\label{fig:overall_system_workflow}
+\end{figure}
 
 
 \subsection{Pill Dispensing Subsystem}
 
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[node distance=1.5cm and 3cm]
 
 \node (start) [startstop] {At Patient Zone};
@@ -165,10 +81,15 @@
 \draw [arrow] (log) -- (end);
 
 \end{tikzpicture}
+\caption{Pill Dispensing Subsystem Flowchart}
+\label{fig:pill_dispensing_subsystem}
+\end{figure}
 
 
 \subsection{Navigation and Obstacle Handling}
 
+\begin{figure}[H]
+\centering
 \begin{tikzpicture}[node distance=1.5cm and 3cm]
 
 \node (start) [startstop] {Start Line Following};
@@ -189,6 +110,6 @@
 \draw [arrow] (move) -- (endMove);
 
 \end{tikzpicture}
-
-
-
+\caption{Navigation and Obstacle Handling Flowchart}
+\label{fig:navigation_obstacle_handling}
+\end{figure}
