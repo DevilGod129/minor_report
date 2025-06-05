@@ -72,13 +72,11 @@
 \settowidth{\mylen}{\cftfigpresnum\cftfigaftersnum}
 \addtolength{\cftfignumwidth}{\mylen}
 
-
 \renewcommand{\cftdotsep}{0.5}
 \renewcommand{\cfttabpresnum}{\hspace*{-1.5em}\tablename\enspace}
 \renewcommand{\cfttabaftersnum}{:}
 \settowidth{\mylen}{\cfttabpresnum\cfttabaftersnum}
 \addtolength{\cfttabnumwidth}{\mylen}
-
 
 \titlecontents{chapter}
 [5.5em] %5.3
@@ -191,13 +189,16 @@
 \label{cost estimation}
 \input{cost estimation}
 
-
-\chapter*{References}
+% \chapter*{References}
+% \addcontentsline{toc}{chapter}{References}
+% \label{references}
+% \input{references}
+\renewcommand{\bibname}{References}  % Changes thebibliography title from Bibliography to References
 \addcontentsline{toc}{chapter}{References}
-\label{references}
 \input{references}
-%\bibliographystyle{plain} % or another style like ieee, unsrt, etc.
-%\bibliography{references} % references.bib (no .bib extension)
 
+
+%\bibliographystyle{plain} % or another style like ieee, unsrt, etc.
+%\bibliography{references} % references.bib (no .bib extension) 
 
 \end{document}
