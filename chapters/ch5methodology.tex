@@ -83,13 +83,28 @@
 
 \subsection{Overall System Workflow}
 
-\begin{tikzpicture}[node distance=1.5cm]
 
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{process} = [rectangle, minimum width=3.2cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{decision} = [diamond, aspect=2, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=white]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+
+
+\begin{center}
+\resizebox{\textwidth}{!}{ % scales to page width
+\begin{tikzpicture}[node distance=1.5cm and 2.5cm]
+
+% Main vertical nodes
 \node (start) [startstop] {System Start};
 \node (init) [process, below of=start] {Initialize RPi \& Arduino};
 \node (nav) [process, below of=init] {Start Line Following};
 \node (zone) [decision, below of=nav, yshift=-0.5cm] {Reached Patient Zone?};
-\node (capture) [process, right of=zone, xshift=5cm] {Capture Face Image};
+
+% Yes branch (right)
+\node (capture) [process, right=4cm of zone] {Capture Face Image};
 \node (match) [process, below of=capture] {Facial Recognition};
 \node (verify) [process, below of=match] {Verify Schedule (RTC)};
 \node (dispense) [process, below of=verify] {Dispense Medication};
@@ -97,10 +112,16 @@
 \node (continue) [process, below of=log] {Continue/Return to Base};
 \node (end) [startstop, below of=continue] {System End};
 
+% No branch (left)
+\node (move) [process, left=4cm of zone] {Move to Another Patient};
+
+% Arrows - main flow
 \draw [arrow] (start) -- (init);
 \draw [arrow] (init) -- (nav);
 \draw [arrow] (nav) -- (zone);
-\draw [arrow] (zone.east) -- (capture.west) node[midway, above] {Yes};
+
+% Yes path
+\draw [arrow] (zone.east) -- node[above] {Yes} (capture.west);
 \draw [arrow] (capture) -- (match);
 \draw [arrow] (match) -- (verify);
 \draw [arrow] (verify) -- (dispense);
@@ -108,7 +129,16 @@
 \draw [arrow] (log) -- (continue);
 \draw [arrow] (continue) -- (end);
 
+% No path
+\draw [arrow] (zone.west) -- node[above] {No} (move.east);
+\draw [arrow] (move) |- (nav.west);
+
 \end{tikzpicture}
+}
+\end{center}
+
+
+
 
 
 \subsection{Pill Dispensing Subsystem}
