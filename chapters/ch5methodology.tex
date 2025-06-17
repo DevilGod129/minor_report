@@ -177,18 +177,26 @@
 \node (pid) [process, below of=read] {PID-based Motor Control};
 \node (obstacle) [decision, below of=pid, yshift=-0.5cm] {Obstacle Detected?};
 \node (stop) [process, left of=obstacle, xshift=-5cm] {Stop \& Wait};
-\node (endStop) [startstop, below of=stop] {Navigation End};
+
 \node (move) [process, right of=obstacle, xshift=5cm] {Continue to Next Zone};
 \node (endMove) [startstop, below of=move] {Navigation End};
 
 \draw [arrow] (start) -- (read);
 \draw [arrow] (read) -- (pid);
 \draw [arrow] (pid) -- (obstacle);
+% \draw [arrow] (obstacle.west) -- (stop.east) node[midway, above] {Yes};
+% \draw [arrow] (obstacle.east) -- (move.west) node[midway, above] {No};
+% \draw [arrow] (stop.west) |- ++(-2, -2) |- (start.north);  % Improved routing
+% \draw [arrow] (move) -- (endMove);
 \draw [arrow] (obstacle.west) -- (stop.east) node[midway, above] {Yes};
 \draw [arrow] (obstacle.east) -- (move.west) node[midway, above] {No};
-\draw [arrow] (stop) -- (endStop);
 \draw [arrow] (move) -- (endMove);
 
+% Clean loop from stop to start
+\draw [arrow] (stop.west) -- ++(-1.5, 0) 
+                          -- ++(0, 6.5) 
+                          -- ++(9.6, 0) 
+                          -- (start.north);
 \end{tikzpicture}
 \caption{Navigation and Obstacle Handling Flowchart}
 \label{fig:navigation_obstacle_handling}
