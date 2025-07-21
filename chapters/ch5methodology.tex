@@ -166,7 +166,7 @@
 \end{figure}
 
 
-\subsection{Navigation and Obstacle Handling}
+\subsection{Navigation}
 
 \begin{figure}[H]
 \centering
@@ -175,7 +175,7 @@
 \node (start) [startstop] {Start Line Following};
 \node (read) [process, below of=start] {Read IR Sensor Data};
 \node (pid) [process, below of=read] {PID-based Motor Control};
-\node (obstacle) [decision, below of=pid, yshift=-0.5cm] {Obstacle Detected?};
+\node (obstacle) [decision, below of=pid, yshift=-0.5cm] {Zone Detected?};
 \node (stop) [process, left of=obstacle, xshift=-5cm] {Stop \& Wait};
 
 \node (move) [process, right of=obstacle, xshift=5cm] {Continue to Next Zone};
