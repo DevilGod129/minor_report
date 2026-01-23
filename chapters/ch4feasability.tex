@@ -6,19 +6,22 @@ The bottom compartment handles mobility and line-following functionality, employ
 
 The top compartment incorporates a Raspberry Pi equipped with a camera module for real-time patient recognition via facial recognition. This high-level processing unit manages time-based scheduling and activates a servo-driven pill dispensing mechanism based on the patient’s identity and medication schedule. 
 
-Communication between the Arduino and Raspberry Pi is established via UART or I2C protocols, enabling smooth coordination between navigation and pill dispensing functions. Wi-Fi modules (ESP8266/ESP32) are included for cloud integration, data logging, and alerts to healthcare personnel.
+Communication between the Arduino and Raspberry Pi is established via UART or I2C protocols, enabling smooth coordination between navigation and pill dispensing functions. Wi-Fi modules are included for cloud integration, data logging, and alerts to healthcare personnel.
 
 The system processes sensor data and camera inputs to make real-time decisions. Facial recognition utilizes open-source Python libraries such as OpenCV and \texttt{face\_recognition}, while the Arduino manages real-time control using standard libraries.
 
 The modular hardware design ensures flexibility for part replacement, independent testing of sections, and future upgrades. The jhonson motors offer robust and efficient movement, well-suited for indoor hospital or hostel environments. Overall, the project stands out for its adaptability, structured architecture, cost-effective components, and scalability, making it a technically feasible and reliable solution.
-
+\newline 
+\newline
+\newline
+\newline
 \section{Economic Feasibility}
 
 The proposed system exhibits strong economic feasibility through a cost-effective approach to hardware development and deployment. Most required components—such as the Arduino, Raspberry Pi, IR sensors, servo motors, and  jhonson motors—are readily available in local electronics markets and commonly stocked in standard college laboratories. These components are significantly more affordable compared to commercial healthcare robots, making the system accessible for educational and research use.
 
 Open-source platforms like the Arduino IDE and Python-based tools including OpenCV and \texttt{face\_recognition} eliminate the need for expensive proprietary software, substantially reducing development costs. Additionally, 3D printing parts using PLA filament allows low-cost prototyping and quick design iterations, enabling multiple refinements without heavy financial burden.
 
-The project’s modular design supports incremental development—each compartment (movement, storage, dispensing) can be developed and tested separately, which spreads financial investment over time and improves budget management. Many components can be reused or repurposed during testing and final deployment, maximizing resource efficiency.
+The project’s modular design supports incremental development each compartment (movement, storage, dispensing) can be developed and tested separately, which spreads financial investment over time and improves budget management. Many components can be reused or repurposed during testing and final deployment, maximizing resource efficiency.
 
 Further savings come from leveraging existing college infrastructure, such as power supplies, testing equipment, and computer systems, alongside the technical expertise of the team, which minimizes or eliminates external consultancy or training expenses.
 

@@ -1,24 +1,21 @@
-\begin{itemize}
-    \item \textbf{Autonomous Line Following and Navigation:} \\
-    The system will accurately follow predefined paths using IR sensor arrays, with a line detection accuracy of over 95\% on high-contrast surfaces. The square DC geared motors, controlled by an Arduino Mega, will ensure smooth and stable movement across hospital or hostel corridors. The robot will maintain a consistent speed suitable for indoor navigation (approx. 0.3–0.5 m/s), with minimal deviation from the line path even at junctions and turns.
+\section{Expected System Functionality and Outcomes}
 
-    \item \textbf{Scheduled Pill Dispensing with Patient Recognition:} \\
-    The top-mounted camera module, connected to the Raspberry Pi, will perform real-time facial recognition of patients using trained models with an expected accuracy of over 90\% in well-lit environments. Based on patient identity and the stored schedule, the system will trigger the appropriate servo motor to dispense the correct dosage from the designated pill compartment. The dispensing process will be completed within 3–5 seconds of successful identification.
+\subsection{Autonomous Line Following and Indoor Navigation}
+The robot is designed to navigate indoor environments smoothly and independently using a line-following mechanism. An array of IR sensors continuously detects the predefined path laid on the floor, allowing the system to accurately follow routes without manual intervention. This ensures reliable navigation through structured indoor settings such as hospital corridors, hostels, or care facilities.  
 
-    \item \textbf{Modular Operation and System Feedback:} \\
-    Each compartment of the bot will operate semi-independently under a unified control system. The Raspberry Pi and Arduino will communicate via serial protocol to synchronize motion with dispensing operations. The system will provide LED or sound-based feedback for key actions—such as arrival at a patient’s bed, successful identification, and pill dispensing—ensuring operational transparency.
+The navigation system enables stable motion at a controlled speed suitable for indoor environments, reducing the risk of collisions and ensuring safe operation around patients and staff. The autonomous navigation capability minimizes the need for human supervision and allows the robot to perform repeated delivery tasks efficiently.
 
-    \item \textbf{Real-Time Processing and Minimal Latency:} \\
-    The facial recognition and pill dispensing processes will maintain a latency of under 1 second, ensuring quick and reliable patient interactions. The line-following subsystem will update motor commands at over 50 Hz, providing responsive and accurate path tracking. Power-efficient components will enable up to 1–2 hours of autonomous operation on a single battery charge, depending on the load.
+\subsection{Patient Recognition and Scheduled Medicine Delivery}
+The system incorporates a patient recognition module to ensure that medicines are delivered to the correct individual at the right time. Using a camera-based recognition system, the robot identifies patients upon reaching their designated location. Once the patient is successfully recognized, the system verifies the corresponding medication schedule stored in its database.  
 
-    \item \textbf{Scalable and Adaptable Framework:} \\
-    The modular design allows for easy expansion—additional compartments or storage trays can be added for more patients or different types of medicines. The robot can also be reprogrammed to follow new routes or modified to integrate RFID or QR code-based patient recognition as future enhancements.
-\end{itemize}
+Based on this schedule, the robot dispenses the prescribed medicine automatically using a servo-controlled dispensing mechanism. This process ensures timely medication delivery, reduces human error, and improves adherence to prescribed treatment plans.
 
-\newpage
+\subsection{Coordinated System Operation and Feedback Mechanism}
+All subsystems of the robot operate in a coordinated manner under a unified control framework. The navigation, recognition, and dispensing modules work together seamlessly to complete the delivery task. Simple feedback mechanisms such as audio alerts are used to indicate important system states, including arrival at a patient location, successful patient recognition, and completion of medicine dispensing.  
 
-\begin{itemize}
-    \setcounter{enumi}{5} % continue numbering if using enumerate, can be removed if unordered
-    \item \textbf{Patient Database Management:} \\
-    The system will maintain a secure and up-to-date patient database storing personal information, medication schedules, and dispensing history. This database will enable accurate patient identification, scheduling, and audit trails, and it can be accessed or updated remotely through a cloud-based interface for ease of management by healthcare staff.
-\end{itemize}
+This feedback improves transparency and allows caregivers or staff to easily monitor the robot’s operation without requiring technical expertise.
+
+\subsection{Software Control, Scheduling, and Data Logging}
+The robot’s software is responsible for managing medication schedules, patient data, and system operation. It maintains records of medicine dispensing events, including time, patient identity, and delivery status. These logs provide an audit trail that can be reviewed for monitoring and analysis purposes.  
+
+By automating scheduling and record keeping, the system reduces administrative workload and helps ensure accurate and consistent medication management.
