@@ -1,0 +1,159 @@
+
+
+This chapter presents the software tools used in the project, the work completed so far, and the remaining tasks planned for future phases of development.
+
+\section{Software Tools Used}
+
+The development of the face-recognition-based medication dispensing system required the integration of multiple software tools and frameworks. The following software components were used:
+
+\begin{itemize}
+    \item \textbf{Python}: Used as the primary programming language for implementing the complete system logic due to its simplicity and extensive library support.
+    \item \textbf{OpenCV}: Used for real-time video capture, face detection, image preprocessing, and visual feedback.
+    \item \textbf{Face Recognition / Deep Learning Library}: Used for extracting facial embeddings and performing identity matching using cosine similarity.
+    \item \textbf{SQLite Database}: Used to store patient information, facial embeddings, medication schedules, and audit logs.
+    \item \textbf{NumPy}: Used for numerical computations and vector similarity calculations.
+    \item \textbf{Raspberry Pi OS (Planned)}: Intended operating system for deployment on embedded hardware.
+\end{itemize}
+
+These tools collectively ensure real-time performance, reliability, and scalability of the system.
+\newpage
+\section{Work Completed So Far}
+
+The core functionality of the proposed medication dispensing system has been successfully implemented in simulation mode. The completed work is described in detail below.
+
+\subsection{Face Recognition System Implementation}
+
+A complete face recognition pipeline has been implemented using computer vision and deep learning techniques.
+
+\begin{itemize}
+    \item Face detection and facial embedding extraction have been implemented.
+    \item Multiple face embeddings per patient are stored to improve recognition accuracy.
+    \item Cosine similarity is used to compare live face data with stored embeddings.
+    \item Confidence thresholds are applied to classify recognition results as recognized, uncertain, or unknown.
+\end{itemize}
+
+This approach minimizes false recognition and ensures safe system behavior.
+
+\subsection{Patient Registration Module}
+
+A patient registration system has been developed to manage user enrollment.
+
+\begin{itemize}
+    \item New patients can be registered, and additional face samples can be added for existing patients.
+    \item Multiple face samples are captured under different conditions.
+    \item The system enforces single-face capture during registration.
+    \item All patient data and embeddings are stored in a structured SQLite database.
+\end{itemize}
+
+This module ensures accurate and reliable face identification.
+
+\subsection{Medication Scheduling System}
+
+A medication scheduling subsystem has been implemented to control medication access.
+
+\begin{itemize}
+    \item Medication schedules include patient ID, compartment number, and time window.
+    \item The system verifies whether the current time falls within the scheduled window.
+    \item The scheduler returns states such as DISPENSE, NOT\_TIME, ALREADY\_TAKEN, or ERROR.
+\end{itemize}
+
+This ensures medications are dispensed strictly according to prescription timings.
+
+\subsection{Safety-Critical Decision Logic}
+
+Several safety mechanisms have been integrated to prevent misuse.
+
+\begin{itemize}
+    \item Confirmation delay requiring the patient to remain in front of the camera.
+    \item Cooldown period to prevent repeated dispensing.
+    \item Blocking of dispensing when multiple faces are detected.
+    \item Prevention of dispensing to unknown or unregistered individuals.
+    \item Graceful handling of camera and database errors.
+\end{itemize}
+
+These measures make the system suitable for healthcare applications.
+
+\subsection{Real-Time Performance Optimization}
+
+The system has been optimized for real-time operation.
+
+\begin{itemize}
+    \item Frame skipping is implemented to reduce computational load.
+    \item Real-time FPS monitoring is displayed.
+    \item Stable bounding box and label display prevents flickering.
+    \item Recognition performance remains consistent under movement.
+\end{itemize}
+
+This prepares the system for deployment on resource-constrained devices.
+
+\subsection{Event-Based Audit Logging System}
+
+An audit logging mechanism has been implemented for accountability.
+
+\begin{itemize}
+    \item Only system state changes are logged.
+    \item Logs include timestamp, patient identity, action taken, confidence score, and compartment number.
+    \item Duplicate log entries are avoided using state tracking.
+    \item Logs are stored in an SQLite database.
+\end{itemize}
+
+This is essential for monitoring and medical auditing.
+
+\subsection{Modular System Architecture}
+
+The system follows a modular design approach.
+
+\begin{itemize}
+    \item Separate modules for recognition, scheduling, dispensing, logging, and database handling.
+    \item Easy hardware replacement and feature extension.
+    \item Designed for future Raspberry Pi deployment.
+\end{itemize}
+
+\section{Work Remaining / Future Work}
+
+Although the core system is functional in simulation, the following tasks remain.
+
+\subsection{Raspberry Pi Deployment}
+
+\begin{itemize}
+    \item Port the system to Raspberry Pi.
+    \item Integrate Raspberry Pi Camera module.
+    \item Optimize performance for embedded hardware.
+\end{itemize}
+
+\subsection{Servo Motor Integration}
+
+\begin{itemize}
+    \item Integrate servo motors using GPIO pins.
+    \item Map medication compartments to physical dispensing units.
+    \item Implement calibration and fail-safe mechanisms.
+\end{itemize}
+
+\subsection{Dashboard and Monitoring Interface}
+
+\begin{itemize}
+    \item Develop a caregiver dashboard.
+    \item Display patient schedules and dispensing history.
+    \item Enable alert and warning notifications.
+\end{itemize}
+
+\subsection{Additional Enhancements}
+
+\begin{itemize}
+    \item Voice alerts for patients.
+    \item Emergency notifications for caregivers.
+    \item Multi-factor authentication using face and voice.
+\end{itemize}
+
+\subsection{Testing and Validation}
+
+\begin{itemize}
+    \item Long-term real-world testing.
+    \item User acceptance testing.
+    \item Stress testing with multiple users and schedules.
+\end{itemize}
+
+\section{Summary}
+
+The project has successfully achieved its primary objectives, including accurate face recognition, safe medication scheduling, robust decision-making, and real-time performance. Future work will focus on hardware integration, user interface development, and deployment optimization.
+

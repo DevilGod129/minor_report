@@ -120,9 +120,14 @@
 \setlength{\parindent}{0pt}
 
 \begin{document}
-\input{titlepage}
 
-\pagenumbering{roman}
+\input{titlepage}
+\chapter*{Certificate}
+\addcontentsline{toc}{chapter}{Certificate}
+\input{certificate}
+\newpage
+
+
 
 \chapter*{Acknowledgement}
 \addcontentsline{toc}{chapter}{Acknowledgement}
@@ -170,10 +175,13 @@
 \chapter{Feasibility Study}
 \label{feasiblity}
 \input{chapters/ch4feasability}
-
 \chapter{Methodology}
 \label{methodology}
 \input{chapters/ch5methodology}
+
+\chapter{Work Completed and Work Remaining}
+\label{workcompleted}
+\input{chapters/ch7workcompleted}
 
 \chapter{Expected Output}
 \label{result}
