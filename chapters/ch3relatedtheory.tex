@@ -28,7 +28,7 @@ In this project, the Arduino Mega 2560 is used to control motors and sensors and
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{fig3.3.png}
-    \caption{Arduino UNO (Source: \cite{9})}
+    \caption{Arduino Mega (Source: \cite{9})}
     \label{fig:3.3}
 \end{figure}
 
@@ -38,7 +38,7 @@ IR (Infrared) sensors are used to detect the path for line-following by emitting
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{3.4.jpg}
-    \caption{IR Array Sensor (Source: \cite{10})}
+    \caption{IR  Sensor (Source: \cite{10})}
     \label{fig:3.4}
 \end{figure}
 
@@ -51,6 +51,7 @@ The MG996R is a high-torque servo motor with metal gears and digital control. It
     \caption{Metal Gear Servo MG996R (Source: \cite{11})}
     \label{fig:3.5}
 \end{figure}
+\newpage
 \section{Software}
 
 \textbf{Arduino IDE:} The Arduino Integrated Development Environment (IDE) is used to program the Arduino microcontroller responsible for real-time control of motors, sensors, and actuators. Written in C/C++, the code implements PID algorithms for accurate line following, triggers pill dispensing via servo motors, and reads data from modules such as IR sensors, UHF RFID readers, and ultrasonic sensors. Libraries like \texttt{Servo.h}, \texttt{Wire.h}, and \texttt{SoftwareSerial.h} simplify hardware interactions. Serial communication with the Raspberry Pi enables synchronous operation and system-level decision-making. The IDE’s Serial Monitor is invaluable for debugging sensor readings and validating motor responses, supporting firmware-level coordination for the robot’s motion and dispensing tasks.
