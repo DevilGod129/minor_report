@@ -12,13 +12,13 @@ A Johnson motor is a brushed DC motor that contains permanent magnets. It is a h
 \end{figure}
 
 \subsubsection*{3.1.2 Raspberry Pi 3}
-RRaspberry Pi 3 is a credit card-sized single-board computer capable of running an operating system and performing multiple computing tasks. It is equipped with a Broadcom BCM2837, Quad-core Cortex-A53 (ARMv8) 64-bit SoC @ 1.2 GHz, 1 GB RAM, along with USB, HDMI, Ethernet, Wi-Fi, and Bluetooth connectivity.
+Raspberry Pi 3 is a credit card-sized single-board computer capable of running an operating system and performing multiple computing tasks. It is equipped with a Broadcom BCM2837, Quad-core Cortex-A53 (ARMv8) 64-bit SoC @ 1.2 GHz, 1 GB RAM, along with USB, HDMI, Ethernet, Wi-Fi, and Bluetooth connectivity.
 In this project, the Raspberry Pi 3 is used to  communicate with cloud services and send control signals to the Arduino for further actuation and control operations.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{fig3.2.jpg}
-    \caption{Raspberry Pi 4 (Source: \cite{8})}
+    \caption{Raspberry Pi 3 (Source: \cite{8})}
     \label{fig:3.2}
 \end{figure}
 
@@ -58,7 +58,7 @@ The MG996R is a high-torque servo motor with metal gears and digital control. It
 
 \vspace{0.5em}
 
-\textbf{Raspberry Pi \& Camera Module:} The Raspberry Pi 4 Model B, paired with the Raspberry Pi Camera V2 (NoIR), serves as the high-level processing unit of the system. It runs Python scripts for facial recognition using OpenCV and manages scheduled pill dispensing through a timetable system. Sensor feedback and motor status are received from the Arduino via UART serial communication, enabling dynamic coordination based on environmental inputs and patient recognition. The onboard real-time clock (RTC, optional) ensures precise execution of time-based actions. Captured facial data is matched with a patient database to ensure accurate medication delivery. A local SQLite or CSV-based logging system maintains records for real-time auditing and system monitoring.
+\textbf{Raspberry Pi :} The Raspberry Pi 3 Model B, serves as the high-level processing unit of the system. It runs Python scripts for facial recognition using OpenCV and manages scheduled pill dispensing through a timetable system. Sensor feedback and motor status are received from the Arduino via UART serial communication, enabling dynamic coordination based on environmental inputs and patient recognition. The onboard real-time clock (RTC, optional) ensures precise execution of time-based actions. Captured facial data is matched with a patient database to ensure accurate medication delivery. A local SQLite or CSV-based logging system maintains records for real-time auditing and system monitoring.
 
 \vspace{0.5em}
 
