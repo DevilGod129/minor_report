@@ -22,7 +22,7 @@
     \draw[->] (arduino) -- (servo);
 
 \end{tikzpicture}
-\caption{Block Diagram: Raspberry Pi with Camera, Arduino and Peripheral Controllers}
+\caption{Block diagram of the proposed system.}
 \label{fig:block_diagram}
 \end{figure}
 
@@ -104,7 +104,7 @@
 \node (dispense) [process, below of=verify] {Dispense Medication};
 \node (log) [process, below of=dispense] {Log Data \& Notify};
 \node (continue) [process, below of=log] {Continue/Return to Base};
-\node (end) [startstop, below of=continue] {System End};
+
 
 % No branch (left)
 \node (move) [process, left=4cm of zone] {Move to Another Patient};
@@ -121,7 +121,10 @@
 \draw [arrow] (verify) -- (dispense);
 \draw [arrow] (dispense) -- (log);
 \draw [arrow] (log) -- (continue);
-\draw [arrow] (continue) -- (end);
+\draw[arrow] (continue.south) 
+    -- ++(0,-0.8)
+    -| ([xshift=-2.5cm]nav.west)
+    |- (nav.north);
 
 % No path
 \draw [arrow] (zone.west) -- node[above] {No} (move.east);

@@ -15,6 +15,7 @@
 \usepackage{float}
 \usepackage{hyperref}
 \usepackage{xcolor}
+\usepackage{acronym}
 \pagecolor{white} % Sets the entire page background to white
 
 \usepackage{lipsum}
@@ -125,7 +126,7 @@
 
 \input{titlepage}
 
-\chapter*{Certificate}
+
 \addcontentsline{toc}{chapter}{Certificate}
 \input{certificate}
 \newpage
@@ -151,9 +152,9 @@
 \addcontentsline{toc}{chapter}{List of Figures}
 \newpage
 
-\listoftables
-\addcontentsline{toc}{chapter}{List of Tables}
-\newpage
+%\listoftables
+%\addcontentsline{toc}{chapter}{List of Tables}
+%\newpage
 
 \chapter*{List of Abbreviation}
 \addcontentsline{toc}{chapter}{List of Abbreviation}
@@ -171,45 +172,36 @@
 \label{literaturereview}
 \input{chapters/ch2lit}
 
-\chapter{Related Theory}
-\label{relatedtheory}
-\input{chapters/ch3relatedtheory}
+%\chapter{Related Theory}
+%\label{relatedtheory}
+%\input{chapters/ch3relatedtheory}
 
-\chapter{Feasibility Study}
-\label{feasiblity}
-\input{chapters/ch4feasability}
+%\chapter{Feasibility Study}
+%\label{feasiblity}
+%\input{chapters/ch4feasability}
 \chapter{Methodology}
 \label{methodology}
 \input{chapters/ch5methodology}
 
-\chapter{Work Completed and Work Remaining}
-\label{workcompleted}
-\input{chapters/ch7workcompleted}
+%\chapter{Work Completed and Work Remaining}
+%\label{workcompleted}
+%\input{chapters/ch7workcompleted}
 
-\chapter{Expected Output}
+\chapter{Result and Discussion}
 \label{result}
 \input{chapters/ch6result}
 
-\chapter*{Gantt Chart}
-\addcontentsline{toc}{chapter}{Gantt Chart}
-\label{ganttchart}
-\input{ganttchart}
+%\chapter*{Gantt Chart}
+%addcontentsline{toc}{chapter}{Gantt Chart}
+%\label{ganttchart}
+%\input{ganttchart}
 
-\chapter*{Cost Estimation}
-\addcontentsline{toc}{chapter}{Cost Estimation}
-\label{cost estimation}
-\input{cost estimation}
+%\chapter*{Cost Estimation}
+%\addcontentsline{toc}{chapter}{Cost Estimation}
+%\label{cost estimation}
+%\input{cost estimation}
 
-% \chapter*{References}
-% \addcontentsline{toc}{chapter}{References}
-% \label{references}
-% \input{references}
-\renewcommand{\bibname}{References}  % Changes thebibliography title from Bibliography to References
-\addcontentsline{toc}{chapter}{References}
-\input{references}
-
-
-%\bibliographystyle{plain} % or another style like ieee, unsrt, etc.
-%\bibliography{references} % references.bib (no .bib extension) 
-
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliography}
+\input{reference}
 \end{document}
