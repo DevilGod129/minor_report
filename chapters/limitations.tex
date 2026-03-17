@@ -1,0 +1,66 @@
+
+\section{Overview}
+
+Although the Medicare Bot system demonstrates successful integration of AI, embedded systems, and web technologies, certain limitations exist due to hardware constraints, environmental factors, and system design decisions.
+
+\section{Hardware Limitations}
+
+The system is built using a Raspberry Pi 3B, which has limited processing power and memory. This restricts the use of more complex and computationally intensive deep learning models.
+
+Additionally, servo motors require stable power supply. Any fluctuation in voltage can affect dispensing accuracy and reliability.
+
+\section{Face Recognition Limitations}
+
+The face recognition system is sensitive to environmental conditions. Performance may degrade under:
+
+\begin{itemize}
+    \item Poor lighting conditions
+    \item Partial occlusions such as masks or glasses
+    \item Extreme facial angles
+\end{itemize}
+
+The system currently supports recognition of one person at a time. If multiple faces are detected, the system blocks dispensing to avoid incorrect identification.
+
+\section{System Logic Limitations}
+
+The medication dispensing logic depends on predefined schedules. Currently, the system lacks advanced features such as:
+
+\begin{itemize}
+    \item Automatic detection of missed doses
+    \item Adaptive scheduling based on patient behavior
+\end{itemize}
+
+Additionally, improper handling of the \texttt{last\_dispensed} field can lead to repeated dispensing if not correctly updated.
+
+\section{Network Dependency}
+
+The system relies on network connectivity for communication between the Raspberry Pi and the backend server. In case of network failure:
+
+\begin{itemize}
+    \item Logs may not be transmitted
+    \item Real-time monitoring may be interrupted
+\end{itemize}
+
+\section{Scalability Limitations}
+
+The current implementation uses SQLite, which is suitable for small-scale systems but may not perform efficiently for large-scale deployments with multiple users and devices.
+
+\section{Security Limitations}
+
+Although API key authentication is implemented, the system does not include advanced security features such as:
+
+\begin{itemize}
+    \item Encrypted communication (HTTPS)
+    \item Role-based access control
+    \item Biometric spoof detection
+\end{itemize}
+
+\section{Mechanical Limitations}
+
+The dispensing mechanism is based on servo motors and fixed compartments. This design:
+
+\begin{itemize}
+    \item Limits the number of medications that can be stored
+    \item Requires manual refilling
+    \item May face wear and tear over long-term use
+\end{itemize}

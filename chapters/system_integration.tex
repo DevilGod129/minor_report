@@ -1,0 +1,125 @@
+
+
+\section{Overview}
+
+System integration is a critical part of the Medicare Bot project, where multiple subsystems including the Raspberry Pi, Arduino, backend server, and frontend dashboard are connected to function as a unified system. This integration enables real-time communication, automated decision-making, and synchronized operation across all components.
+The integration process builds upon the modules developed in Chapter \ref{softwareimplementation} and the face recognition system discussed in Chapter \ref{facerecognition}.
+\section{Raspberry Pi and Arduino Integration}
+
+The Raspberry Pi communicates with the Arduino Mega through USB serial communication. The Raspberry Pi acts as the master controller, while the Arduino acts as a slave device responsible for executing physical actions.
+
+\subsection{Serial Communication Protocol}
+
+Commands are sent from the Raspberry Pi in the form of encoded strings:
+
+\begin{itemize}
+\item \texttt{d1 -> Activate servo 1}
+\item \texttt{d2 -> Activate servo 2}
+\item \texttt{d3 -> Activate servo 3}
+\end{itemize}
+Upon receiving these commands, the Arduino interprets them and rotates the corresponding servo motor to dispense medication.
+
+\subsection{Challenges and Solutions}
+
+During development, issues related to unstable servo movement and power supply limitations were encountered. These were resolved by:
+
+\begin{itemize}
+    \item Separating power supply for Raspberry Pi and servos
+    \item Using a dedicated power bank for Arduino
+    \item Ensuring stable voltage using a buck converter
+\end{itemize}
+
+\section{Raspberry Pi and Backend Integration}
+
+The Raspberry Pi communicates with the backend server using HTTP requests. This enables data exchange such as logs, patient information, and images.
+
+\subsection{Log Transmission}
+
+After each dispensing event, the Raspberry Pi sends a POST request to the backend API containing:
+
+\begin{itemize}
+    \item Patient ID
+    \item Dispensing status
+    \item Compartment number
+    \item Confidence score
+    \item Captured image
+\end{itemize}
+
+\subsection{Image Upload Handling}
+
+Initially, the system encountered a \texttt{422 Unprocessable Entity} error when sending log data. This issue was caused by incorrect request formatting.
+
+The problem was resolved by switching from JSON-based requests to \texttt{multipart/form-data}, allowing both text data and image files to be transmitted correctly.
+
+\subsection{API Communication Issues}
+
+Other issues encountered included:
+
+\begin{itemize}
+    \item Incorrect API endpoint formatting
+    \item Typographical errors in URLs
+\end{itemize}
+
+These were resolved through debugging and testing API requests using proper request structures.
+
+\section{Backend and Frontend Integration}
+
+The frontend dashboard communicates with the backend server to fetch and display system data.
+
+\subsection{Image Display Issue}
+
+A major issue occurred where images were not displayed on the frontend despite being stored correctly.
+
+The root cause was an incorrect URL path:
+
+\begin{verbatim}
+/api/static/images -> Incorrect
+/static/images -> Correct
+\end{verbatim}
+
+Updating the frontend to use the correct path resolved the issue.
+
+\subsection{Real-Time Data Updates}
+
+The frontend periodically fetches updated logs from the backend using API calls, enabling near real-time monitoring of system activity.
+
+\section{End-to-End System Integration}
+
+The complete system operates through coordinated interaction between all components:
+
+\begin{enumerate}
+    \item Raspberry Pi performs face recognition
+    \item Medication schedule is verified
+    \item Command is sent to Arduino for dispensing
+    \item Image is captured
+    \item Data is sent to backend server
+    \item Backend stores logs and images
+    \item Frontend retrieves and displays updated information
+\end{enumerate}
+
+\section{Integration Challenges}
+
+Several challenges were encountered during system integration:
+
+\begin{itemize}
+    \item Power instability affecting servo performance
+    \item API communication errors
+    \item Incorrect data formats causing request failures
+    \item Image path misconfiguration
+\end{itemize}
+
+These challenges were resolved through iterative debugging and system testing, leading to a stable and fully integrated system.
+
+\section{Current System Status}
+
+After successful integration, the system is capable of:
+
+\begin{itemize}
+    \item Real-time face recognition
+    \item Automated medication dispensing
+    \item Image-based logging
+    \item Backend data storage and retrieval
+    \item Frontend visualization of logs
+\end{itemize}
+
+The system currently operates as a fully functional prototype with all major components successfully integrated.

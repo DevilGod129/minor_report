@@ -42,7 +42,14 @@ if errorlevel 1 goto :build_failed
 
 REM === DONE ===
 if exist "%BUILD_DIR%\main.pdf" (
+    copy /y "%BUILD_DIR%\main.pdf" "main.pdf" >nul
+    if errorlevel 1 (
+        echo ❌ Build succeeded but failed to update root main.pdf.
+        exit /b 1
+    )
+
     echo ✅ Build complete: %BUILD_DIR%\main.pdf
+    echo ✅ Root PDF updated: main.pdf
     echo Next version will be: %NEW_VERSION%
 
     set /a INDEX=0

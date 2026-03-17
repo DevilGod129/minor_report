@@ -1,0 +1,121 @@
+
+\section{Overview}
+
+The face recognition system is a core component of the Medicare Bot, enabling automatic patient identification before medication dispensing. This ensures that the correct medication is delivered to the intended patient, improving safety and reducing human error.
+
+The system is implemented on the Raspberry Pi using deep learning-based facial recognition techniques.
+
+\section{Face Recognition Model}
+
+The system uses the InsightFace framework with the \texttt{buffalo\_s} model. This model is selected due to its balance between accuracy and computational efficiency, making it suitable for deployment on resource-constrained devices such as the Raspberry Pi 3B.
+
+The model generates a fixed-length embedding vector for each detected face, which represents unique facial features.
+
+\section{Face Recognition Pipeline}
+
+The recognition process follows a multi-step pipeline:
+
+\begin{enumerate}
+    \item Capture image frame from camera
+    \item Detect face in the frame
+    \item Extract facial features (embedding)
+    \item Compare embedding with stored database
+    \item Identify the patient based on similarity score
+\end{enumerate}
+
+\section{Face Embeddings}
+
+Each face is converted into a numerical representation known as an embedding. The system uses a 512-dimensional vector to represent facial features.
+
+These embeddings are stored in the database and used for comparison during recognition.
+
+\section{Similarity Measurement}
+
+To compare two face embeddings, cosine similarity is used. It measures the similarity between two vectors based on the angle between them.
+
+\begin{equation}
+\text{similarity} = \frac{a \cdot b}{\|a\| \|b\|}
+\end{equation}
+
+Where:
+\begin{itemize}
+    \item $a$ = stored embedding
+    \item $b$ = detected embedding
+\end{itemize}
+
+\section{Threshold Selection}
+
+To determine whether a detected face matches a stored identity, predefined thresholds are used:
+
+\begin{itemize}
+    \item Recognition threshold: 0.45
+    \item Uncertain threshold: 0.35
+\end{itemize}
+
+If the similarity score is above the recognition threshold, the face is accepted as a valid match. If it falls below the uncertain threshold, it is rejected.
+
+\section{Performance Optimization}
+
+Due to hardware limitations of the Raspberry Pi, several optimizations were implemented:
+
+\subsection{Frame Skipping}
+
+Only every nth frame is processed to reduce computation:
+
+\begin{verbatim}
+PROCESS_EVERY_N = 5
+\end{verbatim}
+
+\subsection{Image Scaling}
+
+Input frames are resized to reduce processing load:
+
+\begin{verbatim}
+RESIZE_SCALE = 0.5
+\end{verbatim}
+
+\subsection{Resolution Reduction}
+
+The camera resolution is reduced to:
+
+\begin{verbatim}
+320 x 240
+\end{verbatim}
+
+\subsection{Model Selection}
+
+A lightweight model (\texttt{buffalo\_s}) is used instead of heavier alternatives to improve performance.
+
+\section{Safety Mechanisms}
+
+To prevent incorrect dispensing, additional safeguards are implemented:
+
+\subsection{Confirmation Timer}
+
+A face must be consistently detected for a certain duration before confirmation:
+
+\begin{verbatim}
+CONFIRM_SECONDS = 2.5
+\end{verbatim}
+
+\subsection{Multiple Face Detection}
+
+If multiple faces are detected, the system blocks dispensing to avoid ambiguity.
+
+\subsection{Cooldown Mechanism}
+
+To prevent repeated dispensing:
+
+\begin{verbatim}
+DISPENSE_COOLDOWN_SECONDS = 60
+\end{verbatim}
+
+\section{Limitations of Face Recognition}
+
+Despite its effectiveness, the face recognition system has certain limitations:
+
+\begin{itemize}
+    \item Performance may degrade under poor lighting conditions
+    \item Accuracy may be affected by occlusions such as masks or glasses
+    \item Limited processing power of Raspberry Pi restricts model complexity
+\end{itemize}

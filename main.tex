@@ -76,14 +76,14 @@
 {\smallskip}
 {\contentslabel[\bfseries{\chaptername}~\thecontentslabel{:}]{5.5em}\textbf}%\thecontentslabel
 {\hspace*{-5.5em}\textbf}% unnumbered chapters
-{\titlerule*[0.35pc]{.}\contentspage}[\smallskip]%
+{\hfill\contentspage}[\smallskip]%
 
 \titlecontents{section}
 [1.5em] % i
 {\smallskip}
 {\thecontentslabel\enspace}%\thecontentslabel
 {\hspace*{-5.5em}}
-{\titlerule*[0.35pc]{.}\contentspage}%]
+{\hfill\contentspage}%]
 
 \titlecontents{subsection}
 [7.12em] %
@@ -186,9 +186,32 @@
 %\label{workcompleted}
 %\input{chapters/ch7workcompleted}
 
+\chapter{System Architecture}
+\label{systemarchitecture}
+\input{chapters/system_architecture}
+
+\chapter{Software Implementation}
+\label{softwareimplementation}
+\input{chapters/software_implementation}
+
+\chapter{Face Recognition System}
+\label{facerecognition}
+\input{chapters/face_recognition}
+
+\chapter{System Integration}
+\label{systemintegration}
+\input{chapters/system_integration}
+
 \chapter{Result and Discussion}
 \label{result}
 \input{chapters/ch6result}
+\chapter{Limitations}
+\label{limitations}
+\input{chapters/limitations}
+
+\chapter{Conclusion}
+\label{conclusion}
+\input{chapters/conclusion}
 
 %\chapter*{Gantt Chart}
 %addcontentsline{toc}{chapter}{Gantt Chart}

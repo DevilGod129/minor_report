@@ -1,0 +1,113 @@
+
+\section{Overview}
+
+The software system of the Medicare Bot is composed of three main components: the Raspberry Pi processing unit, the backend server, and the frontend dashboard. These components work together to provide a complete end-to-end solution for patient identification, medication dispensing, and real-time monitoring.
+The implementation of the system is based on the architecture described in Chapter \ref{systemarchitecture}, where each component is developed and integrated to achieve complete functionality.
+The Raspberry Pi handles AI-based face recognition and system control, the backend server manages data and communication, and the frontend provides a user interface for visualization and monitoring.
+
+\section{Raspberry Pi Implementation}
+
+The Raspberry Pi serves as the core processing unit responsible for executing the main system logic. The implementation is developed in Python using various libraries such as OpenCV, InsightFace, and ONNX Runtime.
+
+\subsection{Face Recognition Pipeline}
+
+The face recognition system follows a structured pipeline:
+
+\begin{itemize}
+    \item Capture frames from the camera
+    \item Detect faces in the frame
+    \item Extract facial embeddings
+    \item Compare embeddings with stored database
+    \item Identify the patient based on similarity threshold
+\end{itemize}
+
+Cosine similarity is used to compare embeddings for accurate recognition.
+
+\subsection{Medication Scheduling}
+
+The system continuously checks the medication schedule stored locally or fetched from the backend. When a recognized patient matches the scheduled time, the system proceeds with dispensing.
+
+\subsection{Dispensing Control}
+
+Once conditions are satisfied, the Raspberry Pi sends a command to the Arduino via serial communication. The command format is:
+
+\begin{itemize}
+\item \texttt{d1 -> Activate servo 1}
+\item \texttt{d2 -> Activate servo 2}
+\item \texttt{d3 -> Activate servo 3}
+\end{itemize}
+
+\subsection{Image Capture and Logging}
+
+During dispensing, an image is captured and sent to the backend server along with relevant metadata such as patient ID, confidence score, and timestamp.
+
+\section{Backend Implementation (FastAPI)}
+
+The backend server is implemented using FastAPI and serves as the central system for data management and communication.
+
+\subsection{API Endpoints}
+
+The backend provides several REST API endpoints:
+
+\begin{itemize}
+    \item \texttt{/api/patients} – Manage patient records
+    \item \texttt{/api/medications} – Manage medication schedules
+    \item \texttt{/api/logs} – Store and retrieve dispensing logs
+\end{itemize}
+
+\subsection{Image Upload Handling}
+
+The backend supports image uploads using multipart/form-data. The images are stored in a static directory and the path is saved in the database.
+
+\subsection{Database Integration}
+
+The system uses SQLite with SQLAlchemy ORM for database operations. The database stores:
+
+\begin{itemize}
+    \item Patient information
+    \item Medication schedules
+    \item Dispensing logs
+    \item Image paths
+\end{itemize}
+
+\subsection{Authentication}
+
+An API key mechanism is implemented to secure communication between the Raspberry Pi and the backend server.
+
+\section{Frontend Implementation (React)}
+
+The frontend dashboard is implemented using React and provides a user-friendly interface for monitoring system activities.
+
+\subsection{Logs Display}
+
+The frontend fetches data from the backend and displays:
+
+\begin{itemize}
+    \item Patient ID
+    \item Dispensing status
+    \item Compartment number
+    \item Confidence score
+    \item Timestamp
+\end{itemize}
+
+\subsection{Image Visualization}
+
+Captured images are displayed using the correct static path from the backend server, allowing verification of dispensing events.
+
+\subsection{Auto Refresh Mechanism}
+
+The logs page automatically refreshes at regular intervals to provide real-time updates.
+
+\section{Software Workflow}
+
+The overall software workflow is as follows:
+
+\begin{enumerate}
+    \item The Raspberry Pi captures video input.
+    \item Face recognition is performed.
+    \item The system checks medication schedules.
+    \item If conditions are satisfied, dispensing is triggered.
+    \item An image is captured.
+    \item Data is sent to the backend server.
+    \item The frontend dashboard displays updated logs and images.
+\end{enumerate}

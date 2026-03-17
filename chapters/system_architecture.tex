@@ -1,0 +1,107 @@
+
+
+\section{Overview}
+
+The Medicare Bot system is designed as an integrated AI-powered healthcare solution that combines embedded systems, computer vision, and web technologies. The system enables automated patient identification, medication scheduling, and dispensing with real-time monitoring capabilities.
+
+The architecture follows a distributed approach where different subsystems handle specialized tasks. The system consists of four major components: the Raspberry Pi-based AI processing unit, the Arduino-based motor control unit, a backend server for data management, and a frontend dashboard for monitoring and visualization.
+
+\section{System Components}
+
+\subsection{Raspberry Pi (AI Processing Unit)}
+
+The Raspberry Pi 3B serves as the core processing unit of the system. It is responsible for executing the computer vision algorithms and coordinating overall system operations. Its functionalities include:
+
+\begin{itemize}
+    \item Capturing video input from the camera
+    \item Performing face detection and recognition using deep learning models
+    \item Checking medication schedules
+    \item Capturing images during dispensing events
+    \item Communicating with the backend server via HTTP requests
+    \item Sending serial commands to the Arduino for actuation
+\end{itemize}
+
+\subsection{Arduino Mega (Motor Control Unit)}
+
+The Arduino Mega is responsible for controlling the physical dispensing mechanism. It operates as a slave device receiving commands from the Raspberry Pi. Its functionalities include:
+
+\begin{itemize}
+    \item Controlling servo motors connected to medication compartments
+    \item Receiving serial commands from the Raspberry Pi
+    \item Executing dispensing actions based on received commands
+\end{itemize}
+
+\subsection{Backend Server (FastAPI)}
+
+The backend server is implemented using FastAPI and acts as the central data management system. It provides APIs for communication between the Raspberry Pi and the frontend interface. Its functionalities include:
+
+\begin{itemize}
+    \item Managing patient and medication records
+    \item Storing dispensing logs
+    \item Handling image uploads and storage
+    \item Providing API endpoints for system communication
+\end{itemize}
+
+\subsection{Frontend Dashboard (React)}
+
+The frontend dashboard provides a user interface for monitoring and managing the system. It enables real-time visualization of system activities. Its functionalities include:
+
+\begin{itemize}
+    \item Displaying dispensing logs
+    \item Showing captured images
+    \item Monitoring system status
+\end{itemize}
+
+\section{System Communication}
+
+The system components communicate using two primary communication methods:
+
+\subsection{Raspberry Pi to Arduino Communication}
+
+The Raspberry Pi communicates with the Arduino via USB serial communication. Commands are sent in the form of encoded strings such as:
+
+\begin{itemize}
+\item \texttt{d1 -> Activate servo 1}
+\item \texttt{d2 -> Activate servo 2}
+\item \texttt{d3 -> Activate servo 3}
+\end{itemize}
+
+These commands trigger the corresponding dispensing mechanism.
+
+\subsection{Raspberry Pi to Backend Communication}
+
+The Raspberry Pi communicates with the backend server using HTTP requests. The communication includes:
+
+\begin{itemize}
+    \item Sending dispensing logs using POST requests
+    \item Uploading images using multipart/form-data
+    \item Fetching patient and medication data
+\end{itemize}
+
+\section{System Workflow}
+
+The overall workflow of the system is as follows:
+
+\begin{enumerate}
+    \item The camera captures the video stream.
+    \item Face detection and recognition are performed on the Raspberry Pi.
+    \item The identified patient is matched with stored records.
+    \item The medication schedule is checked.
+    \item If conditions are satisfied, a command is sent to the Arduino.
+    \item The Arduino activates the corresponding servo motor.
+    \item The medication is dispensed.
+    \item An image is captured and a log is sent to the backend server.
+    \item The frontend dashboard displays the updated logs and images.
+\end{enumerate}
+
+\section{System Architecture Diagram}
+
+As shown in Figure \ref{fig:architecture}, the system integrates the Raspberry Pi, Arduino, backend server, and frontend dashboard to achieve complete system functionality.
+The diagram illustrates the flow of data and control signals between different subsystems, highlighting the interaction between hardware and software components.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\linewidth]{system_architecture.png}
+\caption{Overall System Architecture of Medicare Bot}
+\label{fig:architecture}
+\end{figure}

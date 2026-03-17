@@ -1,21 +1,155 @@
-\section{ System Functionality and Outcomes}
 
-\subsection{Autonomous Line Following and Indoor Navigation}
-The robot is designed to navigate indoor environments smoothly and independently using a line-following mechanism. An array of IR sensors continuously detects the predefined path laid on the floor, allowing the system to accurately follow routes without manual intervention. This ensures reliable navigation through structured indoor settings such as hospital corridors, hostels, or care facilities.  
+\section{Overview}
 
-The navigation system enables stable motion at a controlled speed suitable for indoor environments, reducing the risk of collisions and ensuring safe operation around patients and staff. The autonomous navigation capability minimizes the need for human supervision and allows the robot to perform repeated delivery tasks efficiently.
+This chapter presents the performance and evaluation of the Medicare Bot system after full integration of hardware and software components. The system was tested under real operating conditions to verify its functionality, accuracy, and reliability.
+The results presented in this chapter evaluate the performance of the system designed in Chapter \ref{systemarchitecture} and implemented in Chapter \ref{softwareimplementation}.
+\section{System Functionality}
 
-\subsection{Patient Recognition and Scheduled Medicine Delivery}
-The system incorporates a patient recognition module to ensure that medicines are delivered to the correct individual at the right time. Using a camera-based recognition system, the robot identifies patients upon reaching their designated location. Once the patient is successfully recognized, the system verifies the corresponding medication schedule stored in its database.  
+The system successfully performs the following operations:
 
-Based on this schedule, the robot dispenses the prescribed medicine automatically using a servo-controlled dispensing mechanism. This process ensures timely medication delivery, reduces human error, and improves adherence to prescribed treatment plans.
+\begin{itemize}
+    \item Face detection and recognition of registered patients
+    \item Verification of medication schedules
+    \item Automated dispensing using servo motors
+    \item Image capture during dispensing
+    \item Logging of events to backend server
+    \item Display of logs and images on frontend dashboard
+\end{itemize}
 
-\subsection{Coordinated System Operation and Feedback Mechanism}
-All subsystems of the robot operate in a coordinated manner under a unified control framework. The navigation, recognition, and dispensing modules work together seamlessly to complete the delivery task. Simple feedback mechanisms such as audio alerts are used to indicate important system states, including arrival at a patient location, successful patient recognition, and completion of medicine dispensing.  
+All subsystems, including Raspberry Pi, Arduino, backend, and frontend, operate in coordination to achieve end-to-end functionality.
 
-This feedback improves transparency and allows caregivers or staff to easily monitor the robot’s operation without requiring technical expertise.
+\section{Face Recognition Performance}
 
-\subsection{Software Control, Scheduling, and Data Logging}
-The robot’s software is responsible for managing medication schedules, patient data, and system operation. It maintains records of medicine dispensing events, including time, patient identity, and delivery status. These logs provide an audit trail that can be reviewed for monitoring and analysis purposes.  
+The face recognition system was tested under normal indoor lighting conditions.
 
-By automating scheduling and record keeping, the system reduces administrative workload and helps ensure accurate and consistent medication management.
+\begin{itemize}
+    \item Recognition accuracy: approximately 85\% -- 92\%
+    \item Average processing speed: 4 -- 6 frames per second
+    \item Recognition threshold: 0.45
+\end{itemize}
+
+The system performed reliably when faces were clearly visible and properly aligned. However, performance degraded under poor lighting or when faces were partially occluded.
+\section{System Performance Summary}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\textbf{Metric} & \textbf{Value} \\
+\hline
+Recognition Accuracy & 85--92\% \\
+Frames Per Second (FPS) & 4--6 \\
+Dispensing Success Rate & $>$95\% \\
+Response Time & 2--4 seconds \\
+\hline
+\end{tabular}
+\caption{Overall System Performance Metrics}
+\label{tab:performance}
+\end{table}
+As shown in Table \ref{tab:performance}, the system demonstrates reliable performance across key metrics including recognition accuracy and dispensing success rate.
+The results indicate that the system achieves a balance between accuracy and computational efficiency, making it suitable for real-time deployment on resource-constrained hardware.
+
+
+\section{Dispensing Accuracy}
+
+The dispensing mechanism was tested across multiple trials.
+
+\begin{itemize}
+    \item Successful dispensing rate: above 95\%
+    \item Response time (recognition to dispense): approximately 2 -- 4 seconds
+\end{itemize}
+
+The system correctly dispensed medication when all conditions were satisfied, including identity verification and schedule matching.
+
+\section{System Integration Performance}
+
+The integration between different components was tested to evaluate data flow and communication reliability.
+
+\subsection{Backend Communication}
+
+The Raspberry Pi successfully transmitted logs and images to the backend server using HTTP requests. The use of multipart/form-data ensured reliable image uploads.
+
+\subsection{Frontend Display}
+
+The frontend dashboard successfully retrieved and displayed logs along with captured images. The auto-refresh mechanism ensured near real-time updates.
+
+\section{Issues Encountered and Solutions}
+
+Several issues were encountered during development and testing:
+
+\subsection{Image Upload Error (422)}
+
+Initially, log transmission failed with a 422 error due to incorrect request formatting. This was resolved by switching to multipart/form-data for sending both text and image data.
+
+\subsection{Image Display Issue}
+
+Images were not displayed on the frontend due to incorrect static file paths. This was fixed by correcting the URL from:
+
+\begin{verbatim}
+/api/static/images -> Incorrect
+/static/images -> Correct
+\end{verbatim}
+
+\subsection{Power Supply Instability}
+
+Servo motors caused instability when powered directly from the same source as the Raspberry Pi. This was resolved by using separate power supplies and a buck converter.
+
+\subsection{Repeated Dispensing Issue}
+
+The system initially dispensed medication multiple times due to improper handling of the last\_dispensed field. This issue highlighted the need for improved scheduling logic.
+
+\section{System Limitations Observed During Testing}
+
+The following limitations were observed during testing:
+
+\begin{itemize}
+    \item Reduced accuracy in low lighting conditions
+    \item Slower processing speed due to Raspberry Pi limitations
+    \item Sensitivity to multiple faces in the frame
+\end{itemize}
+
+\section{System Interface Demonstration}
+
+\subsection{Frontend Interface}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{dashboard.png}
+\caption{Frontend Dashboard Interface}
+\label{fig:dashboard}
+\end{figure}
+
+The dashboard provides an overview of system activity and allows users to monitor system behavior in real time.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{patients.png}
+\caption{Patient Management Interface}
+\label{fig:patients}
+\end{figure}
+
+The patient interface enables management of patient records, which are used by the system for identification and medication assignment.
+
+\subsection{Backend Interface (API)}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{swagger.png}
+\caption{Backend API Documentation (Swagger UI - Part 1)}
+\label{fig:swagger1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\linewidth]{swagger2.png}
+\caption{Backend API Documentation (Swagger UI - Part 2)}
+\label{fig:swagger2}
+\end{figure}
+
+The backend system exposes RESTful APIs for managing patients, medications, and logs. Swagger UI is used for testing and verifying API endpoints, ensuring proper communication between system components.
+
+\section{Overall Evaluation}
+
+The Medicare Bot system successfully demonstrates a functional prototype of an AI-powered medication dispensing system. The integration of face recognition, embedded control, and web technologies enables automated and reliable operation.
+
+Despite minor limitations, the system achieves its primary objective of safe and automated medication delivery, making it suitable for further development and real-world applications.

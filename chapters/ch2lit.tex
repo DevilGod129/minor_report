@@ -1,18 +1,41 @@
-
-
-The advancement of healthcare robotics has led to the development of autonomous hospital service robots, medicine delivery platforms, and automated pill dispensing systems. This section reviews relevant prior work and identifies the research gaps addressed in the proposed system.
+The advancement of healthcare robotics has led to the development of autonomous hospital service robots, intelligent medicine delivery systems, and automated pill dispensing mechanisms. These systems aim to improve efficiency, reduce human error, and enhance patient care. This section reviews relevant prior work and highlights the research gaps addressed by the proposed system.
 
 \section{Line-Following Robots for Hospital Management}
 
-A line-following robot for hospital operations was developed in [1]. The system was designed to transport medicines, linens, and medical equipment along predefined floor paths within hospital environments. Infrared (IR) sensors were employed for path detection, while an Arduino Uno microcontroller handled navigation and control tasks. A Bluetooth-based Android interface enabled remote supervision and operational control. The study demonstrated that low-cost embedded systems can significantly improve hospital logistics efficiency and reduce manual workload. However, the proposed system was limited to basic navigation and transportation functions without incorporating intelligent scheduling, patient-specific delivery, or secure authentication mechanisms.
+A line-following robot for hospital operations was developed in \cite{ref1}. The system was designed to transport medicines, linens, and medical equipment along predefined floor paths within hospital environments. Infrared (IR) sensors were employed for path detection, while an Arduino Uno microcontroller handled navigation and control tasks. A Bluetooth-based Android interface enabled remote supervision. The study demonstrated that low-cost embedded systems can significantly improve hospital logistics efficiency. However, the system primarily focused on navigation and lacked intelligent decision-making capabilities, patient-specific identification, and automated dispensing mechanisms, limiting its applicability in advanced healthcare scenarios.
 
 \section{Medicine Delivery Robots}
 
-In [2], a Bluetooth-controlled medicine delivery robot named \textit{MedBuddy} was introduced to minimize direct interaction between healthcare workers and patients, particularly during infectious disease outbreaks. The system utilized an Arduino Uno platform integrated with ultrasonic sensors for obstacle detection and a smartphone camera for real-time video streaming to a mobile application. While the design enhanced contactless medicine distribution and remote monitoring, it relied primarily on manual teleoperation. The absence of autonomous navigation, patient identification, and automated dispensing mechanisms limited its scalability and operational intelligence.
+In \cite{ref2}, a Bluetooth-controlled medicine delivery robot named \textit{MedBuddy} was introduced to minimize direct interaction between healthcare workers and patients. The system utilized ultrasonic sensors for obstacle detection and provided real-time video streaming. Although the system improved safety during infectious conditions, its reliance on manual control significantly limited autonomy, and the absence of intelligent scheduling and patient-specific dispensing reduced its effectiveness as a fully automated healthcare solution.
 
 \section{Automated Pill Dispensing Systems}
 
-An automated pill dispensing system integrated with a Raspberry Pi platform was presented in [3]. The system employed a servo-controlled rotating disc mechanism synchronized with a real-time clock (RTC) module to ensure time-based medication release. Furthermore, facial recognition technology was incorporated to enable patient-specific medicine dispensing. Although this approach improved medication adherence and safety, the system was stationary and restricted to bedside usage. It lacked mobility and integration with hospital-wide logistics systems.
+An automated pill dispensing system using a Raspberry Pi was presented in \cite{ref3}. The system used a servo-controlled mechanism synchronized with a real-time clock (RTC) to release medication at scheduled times. It also incorporated facial recognition for patient identification. While this approach improved medication adherence, the system remained limited to stationary environments and lacked mobility and integration with broader healthcare logistics, restricting its scalability.   
 
+\section{AI-Based Healthcare Systems}
 
-Although existing systems demonstrate effective navigation and dispensing capabilities, most lack an integrated framework combining autonomous navigation, patient identification, and intelligent scheduling in a low-cost modular platform. The proposed system aims to address these limitations by incorporating AI-based recognition, modular hardware design, and real-time monitoring features.
+Recent studies have explored the use of artificial intelligence in healthcare automation, particularly for patient identification and monitoring. Deep learning-based face recognition systems have shown high accuracy in controlled environments, enabling personalized services in smart healthcare systems. However, deploying such models on resource-constrained devices like Raspberry Pi remains a challenge due to computational limitations.
+
+\section{IoT-Based Smart Healthcare Systems}
+
+IoT-based healthcare systems enable real-time monitoring, remote access, and data-driven decision-making. These systems integrate sensors, cloud platforms, and web applications to provide scalable healthcare solutions. However, many existing IoT healthcare systems focus on monitoring rather than actuation, lacking automated physical interaction such as medication dispensing.
+
+\section{Comparison with Existing Systems}
+
+\begin{tabular}{|p{4cm}|c|c|}
+\hline
+\textbf{Feature} & \textbf{Existing Systems} & \textbf{Proposed System} \\
+\hline
+Autonomous Navigation & Limited & Yes \\
+Face Recognition & Partial / None & Yes \\
+Automated Dispensing & Basic & Advanced \\
+Real-time Monitoring & Limited & Yes \\
+Mobility & No / Partial & Yes \\
+Cost & High & Low \\
+\hline
+\end{tabular}
+\section{Research Gap}
+
+From the reviewed literature, it is evident that most existing systems address individual aspects of healthcare automation such as navigation, dispensing, or monitoring in isolation. However, there is a lack of an integrated system that combines autonomous navigation, AI-based patient identification, real-time monitoring, and automated medication dispensing within a single platform. Furthermore, many solutions are either cost-intensive or lack scalability for practical deployment in resource-constrained environments. This highlights a significant research gap in developing a unified, low-cost, and intelligent healthcare system.
+
+The proposed system addresses these limitations by integrating artificial intelligence, embedded systems, and web-based technologies into a cohesive and scalable solution capable of autonomous operation and real-time monitoring.
