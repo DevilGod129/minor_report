@@ -1,26 +1,14 @@
-The advancement of healthcare robotics has led to the development of autonomous hospital service robots, intelligent medicine delivery systems, and automated pill dispensing mechanisms. These systems aim to improve efficiency, reduce human error, and enhance patient care. This section reviews relevant prior work and highlights the research gaps addressed by the proposed system.
+The advancement of healthcare robotics has led to the development of autonomous hospital service robots, intelligent medicine delivery systems, and automated pill dispensing mechanisms. These systems aim to improve efficiency, reduce human error, and enhance patient care. Various studies have explored different aspects of healthcare automation; however, most of them focus on specific functionalities rather than providing a unified solution.
 
-\section{Line-Following Robots for Hospital Management}
+A line-following robot for hospital operations was developed in \cite{ref1}, where the system was designed to transport medicines, linens, and medical equipment along predefined paths within hospital environments. The robot utilized infrared (IR) sensors for path detection and an Arduino Mega microcontroller for navigation and control.The robot's movement is typically achieved using DC geared motors such as Johnson motors, which provide high torque at low speeds and are widely used in robotic applications for precise motion control \cite{ref8}. A Bluetooth-based Android interface enabled remote supervision. The study demonstrated that low-cost embedded systems can improve hospital logistics efficiency. However, it lacked intelligent decision-making, patient-specific identification, and automated dispensing capabilities, limiting its application in advanced healthcare systems. The effectiveness of IR sensors in such applications is further supported in \cite{ref7}, where IR sensors are described as reliable components for detecting surface variations based on reflected infrared radiation. These sensors use an IR LED and photodiode pair, making them suitable for line-following robots due to their low cost, fast response, and non-contact operation.
 
-A line-following robot for hospital operations was developed in \cite{ref1}. The system was designed to transport medicines, linens, and medical equipment along predefined floor paths within hospital environments. Infrared (IR) sensors were employed for path detection, while an Arduino Uno microcontroller handled navigation and control tasks. A Bluetooth-based Android interface enabled remote supervision. The study demonstrated that low-cost embedded systems can significantly improve hospital logistics efficiency. However, the system primarily focused on navigation and lacked intelligent decision-making capabilities, patient-specific identification, and automated dispensing mechanisms, limiting its applicability in advanced healthcare scenarios.
+In another study \cite{ref2}, a Bluetooth-controlled medicine delivery robot named \textit{MedBuddy} was proposed to reduce direct interaction between healthcare workers and patients. The system incorporated ultrasonic sensors for obstacle detection and provided real-time video streaming. While it improved safety during infectious conditions, its reliance on manual control reduced autonomy, and the absence of intelligent scheduling and patient-specific dispensing limited its overall effectiveness.
 
-\section{Medicine Delivery Robots}
+An automated pill dispensing system using Raspberry Pi was presented in \cite{ref3}, where a servo-controlled mechanism was used along with a real-time clock (RTC) to dispense medicines at scheduled intervals. The system also implemented facial recognition for patient identification, enhancing medication adherence. However, the system was stationary and lacked mobility, which restricted its integration into broader hospital logistics.
 
-In \cite{ref2}, a Bluetooth-controlled medicine delivery robot named \textit{MedBuddy} was introduced to minimize direct interaction between healthcare workers and patients. The system utilized ultrasonic sensors for obstacle detection and provided real-time video streaming. Although the system improved safety during infectious conditions, its reliance on manual control significantly limited autonomy, and the absence of intelligent scheduling and patient-specific dispensing reduced its effectiveness as a fully automated healthcare solution.
+Recent advancements in artificial intelligence have enabled the development of smart healthcare systems, particularly in patient identification and monitoring. Deep learning-based face recognition techniques have shown high accuracy in controlled environments, allowing personalized healthcare services. However, deploying such models on resource-constrained platforms like Raspberry Pi remains challenging due to computational limitations.
 
-\section{Automated Pill Dispensing Systems}
-
-An automated pill dispensing system using a Raspberry Pi was presented in \cite{ref3}. The system used a servo-controlled mechanism synchronized with a real-time clock (RTC) to release medication at scheduled times. It also incorporated facial recognition for patient identification. While this approach improved medication adherence, the system remained limited to stationary environments and lacked mobility and integration with broader healthcare logistics, restricting its scalability.   
-
-\section{AI-Based Healthcare Systems}
-
-Recent studies have explored the use of artificial intelligence in healthcare automation, particularly for patient identification and monitoring. Deep learning-based face recognition systems have shown high accuracy in controlled environments, enabling personalized services in smart healthcare systems. However, deploying such models on resource-constrained devices like Raspberry Pi remains a challenge due to computational limitations.
-
-\section{IoT-Based Smart Healthcare Systems}
-
-IoT-based healthcare systems enable real-time monitoring, remote access, and data-driven decision-making. These systems integrate sensors, cloud platforms, and web applications to provide scalable healthcare solutions. However, many existing IoT healthcare systems focus on monitoring rather than actuation, lacking automated physical interaction such as medication dispensing.
-
-\section{Comparison with Existing Systems}
+Similarly, IoT-based healthcare systems provide real-time monitoring, remote access, and data-driven decision-making by integrating sensors, cloud platforms, and web applications. Despite these advantages, many existing IoT solutions focus primarily on monitoring rather than actuation, lacking automated physical interaction such as medicine dispensing.
 
 \begin{tabular}{|p{4cm}|c|c|}
 \hline
@@ -34,8 +22,5 @@ Mobility & No / Partial & Yes \\
 Cost & High & Low \\
 \hline
 \end{tabular}
-\section{Research Gap}
 
-From the reviewed literature, it is evident that most existing systems address individual aspects of healthcare automation such as navigation, dispensing, or monitoring in isolation. However, there is a lack of an integrated system that combines autonomous navigation, AI-based patient identification, real-time monitoring, and automated medication dispensing within a single platform. Furthermore, many solutions are either cost-intensive or lack scalability for practical deployment in resource-constrained environments. This highlights a significant research gap in developing a unified, low-cost, and intelligent healthcare system.
-
-The proposed system addresses these limitations by integrating artificial intelligence, embedded systems, and web-based technologies into a cohesive and scalable solution capable of autonomous operation and real-time monitoring.
+From the reviewed literature, it is evident that most existing systems address individual aspects of healthcare automation such as navigation, dispensing, or monitoring independently. There is a lack of an integrated system that combines autonomous navigation, AI-based patient identification, real-time monitoring, and automated medication dispensing within a single platform. Additionally, many solutions are either costly or not scalable for deployment in resource-constrained environments. Therefore, there is a clear research gap in developing a unified, low-cost, and intelligent healthcare system that integrates these functionalities into a cohesive and efficient solution.
