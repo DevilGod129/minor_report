@@ -1,0 +1,119 @@
+\section{Software Tools and Libraries Used}
+
+The implementation of the Medicare Bot system utilizes a combination of software libraries and frameworks for computer vision, backend development, and frontend visualization.
+
+\begin{itemize}
+\item \textbf{OpenCV}: Used for image processing and face detection.
+\item \textbf{InsightFace}: Used for deep learning-based face recognition.
+\item \textbf{ONNX Runtime}: Used for efficient execution of deep learning models.
+\item \textbf{FastAPI}: Used to develop backend APIs for communication and data management.
+\item \textbf{SQLite}: Used as the database for storing patients, medications, and logs.
+\item \textbf{React}: Used to develop the frontend dashboard interface.
+\item \textbf{Python}: Core programming language used for system implementation.
+\end{itemize}
+
+\section{Serial Communication Commands}
+
+The Raspberry Pi communicates with the Arduino using serial commands to control the dispensing mechanism.
+
+\begin{itemize}
+\item \texttt{d1 -> Activate servo 1}
+\item \texttt{d2 -> Activate servo 2}
+\item \texttt{d3 -> Activate servo 3}
+\end{itemize}
+
+These commands are transmitted via USB serial communication and interpreted by the Arduino to perform the corresponding dispensing action.
+
+\section{Sample API Request (Log Transmission)}
+
+The Raspberry Pi sends log data to the backend server using an HTTP POST request with multipart/form-data.
+
+\begin{verbatim}
+POST /api/logs
+Content-Type: multipart/form-data
+
+patient_id=1
+status=DISPENSED
+compartment=2
+confidence=0.87
+image=file.jpg
+\end{verbatim}
+
+This request ensures both textual data and image files are transmitted correctly to the backend server.
+
+\section{Configuration Parameters}
+
+The system uses several configuration parameters to control performance and behavior:
+
+\begin{itemize}
+\item \texttt{RECOGNITION\_THRESHOLD = 0.45}
+\item \texttt{UNCERTAIN\_THRESHOLD = 0.35}
+\item \texttt{PROCESS\_EVERY\_N = 5}
+\item \texttt{RESIZE\_SCALE = 0.5}
+\item \texttt{CONFIRM\_SECONDS = 2.5}
+\item \texttt{DISPENSE\_COOLDOWN\_SECONDS = 60}
+\end{itemize}
+
+These parameters are used to balance recognition accuracy, computational efficiency, and system safety.
+
+\section{Software Project Structure}
+
+The software system is organized into modular components as shown below:
+
+\begin{verbatim}
+Face_recognition/
+|
++-- main.py
++-- database/
+|   +-- db.py
++-- face/
+|   +-- register.py
+|   +-- recognize.py
+|   +-- utils.py
++-- medication/
+|   +-- scheduler.py
+|   +-- dispenser.py
++-- tools/
+|   +-- logger.py
++-- patients.db
+\end{verbatim}
+
+This modular structure improves maintainability, scalability, and readability of the system.
+
+\section{System Design and Implementation Gallery}
+
+\subsection{3D Design Models}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{design1.png}{\includegraphics[width=0.7\linewidth]{design1.png}}{\fbox{\parbox{0.7\linewidth}{\centering Missing image: design1.png}}}
+\caption{Initial 3D Design of the Robot Structure}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{design2.png}{\includegraphics[width=0.7\linewidth]{design2.png}}{\fbox{\parbox{0.7\linewidth}{\centering Missing image: design2.png}}}
+\caption{Final 3D Model with Modular Compartments}
+\end{figure}
+
+\subsection{Assembly Process}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{assembly1.png}{\includegraphics[width=0.7\linewidth]{assembly1.png}}{\fbox{\parbox{0.7\linewidth}{\centering Missing image: assembly1.png}}}
+\caption{Hardware Assembly of Base Unit}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{assembly2.png}{\includegraphics[width=0.7\linewidth]{assembly2.png}}{\fbox{\parbox{0.7\linewidth}{\centering Missing image: assembly2.png}}}
+\caption{Integration of Electronics Components}
+\end{figure}
+
+\subsection{Final System}
+
+\begin{figure}[H]
+\centering
+\IfFileExists{final_setup.png}{\includegraphics[width=0.7\linewidth]{final_setup.png}}{\fbox{\parbox{0.7\linewidth}{\centering Missing image: final\_setup.png}}}
+\caption{Final Medicare Bot System Implementation}
+\end{figure}
