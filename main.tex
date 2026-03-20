@@ -83,7 +83,7 @@
 {\smallskip}
 {\thecontentslabel\enspace}%\thecontentslabel
 {\hspace*{-5.5em}}
-{\hfill\contentspage}%]
+{\titlerule*[0.35pc]{.}\contentspage}
 
 \titlecontents{subsection}
 [7.12em] %
@@ -232,10 +232,11 @@
 \chapter*{Appendix}
 \addcontentsline{toc}{chapter}{Appendix}
 \label{appendix}
+\setcounter{chapter}{0}
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\theHsection}{appendix.\arabic{section}}
+\renewcommand{\theHsubsection}{appendix.\arabic{section}.\arabic{subsection}}
 \input{chapters/appendix}
 \end{document}
-
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{Appendix}
-\input{appendix}
