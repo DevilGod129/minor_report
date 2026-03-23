@@ -1,14 +1,14 @@
 
 
-\section{Overview}
+\subsection{Overview}
 
 System integration is a critical part of the Medicare Bot project, where multiple subsystems including the Raspberry Pi, Arduino, backend server, and frontend dashboard are connected to function as a unified system. This integration enables real-time communication, automated decision-making, and synchronized operation across all components.
 The integration process builds upon the modules developed in Chapter \ref{softwareimplementation} and the face recognition system discussed in Chapter \ref{facerecognition}.
-\section{Raspberry Pi and Arduino Integration}
+\subsection{Raspberry Pi and Arduino Integration}
 
 The Raspberry Pi communicates with the Arduino Mega through USB serial communication. The Raspberry Pi acts as the master controller, while the Arduino acts as a slave device responsible for executing physical actions.
 
-\subsection{Serial Communication Protocol}
+\subsubsection{Serial Communication Protocol}
 
 Commands are sent from the Raspberry Pi in the form of encoded strings:
 
@@ -19,7 +19,7 @@ Commands are sent from the Raspberry Pi in the form of encoded strings:
 \end{itemize}
 Upon receiving these commands, the Arduino interprets them and rotates the corresponding servo motor to dispense medication.
 
-\subsection{Challenges and Solutions}
+\subsubsection{Challenges and Solutions}
 
 During development, issues related to unstable servo movement and power supply limitations were encountered. These were resolved by:
 
@@ -29,11 +29,11 @@ During development, issues related to unstable servo movement and power supply l
     \item Ensuring stable voltage using a buck converter
 \end{itemize}
 
-\section{Raspberry Pi and Backend Integration}
+\subsection{Raspberry Pi and Backend Integration}
 
 The Raspberry Pi communicates with the backend server using HTTP requests. This enables data exchange such as logs, patient information, and images.
 
-\subsection{Log Transmission}
+\subsubsection{Log Transmission}
 
 After each dispensing event, the Raspberry Pi sends a POST request to the backend API containing:
 
@@ -45,13 +45,13 @@ After each dispensing event, the Raspberry Pi sends a POST request to the backen
     \item Captured image
 \end{itemize}
 
-\subsection{Image Upload Handling}
+\subsubsection{Image Upload Handling}
 
 Initially, the system encountered a \texttt{422 Unprocessable Entity} error when sending log data. This issue was caused by incorrect request formatting.
 
 The problem was resolved by switching from JSON-based requests to \texttt{multipart/form-data}, allowing both text data and image files to be transmitted correctly.
 
-\subsection{API Communication Issues}
+\subsubsection{API Communication Issues}
 
 Other issues encountered included:
 
@@ -62,11 +62,11 @@ Other issues encountered included:
 
 These were resolved through debugging and testing API requests using proper request structures.
 
-\section{Backend and Frontend Integration}
+\subsection{Backend and Frontend Integration}
 
 The frontend dashboard communicates with the backend server to fetch and display system data.
 
-\subsection{Image Display Issue}
+\subsubsection{Image Display Issue}
 
 A major issue occurred where images were not displayed on the frontend despite being stored correctly.
 
@@ -79,11 +79,11 @@ The root cause was an incorrect URL path:
 
 Updating the frontend to use the correct path resolved the issue.
 
-\subsection{Real-Time Data Updates}
+\subsubsection{Real-Time Data Updates}
 
 The frontend periodically fetches updated logs from the backend using API calls, enabling near real-time monitoring of system activity.
 
-\section{End-to-End System Integration}
+\subsection{End-to-End System Integration}
 
 The complete system operates through coordinated interaction between all components:
 
@@ -97,7 +97,7 @@ The complete system operates through coordinated interaction between all compone
     \item Frontend retrieves and displays updated information
 \end{enumerate}
 
-\section{Integration Challenges}
+\subsection{Integration Challenges}
 
 Several challenges were encountered during system integration:
 
@@ -110,7 +110,7 @@ Several challenges were encountered during system integration:
 
 These challenges were resolved through iterative debugging and system testing, leading to a stable and fully integrated system.
 
-\section{Current System Status}
+\subsection{Current System Status}
 
 After successful integration, the system is capable of:
 

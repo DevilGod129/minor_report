@@ -1,28 +1,27 @@
-\subsection*{3.1 Components used}
+\subsection{Components used}
 This project consists of both hardware and software components. The hardware components used in this project are discussed below:
-\section{Hardware}
-\subsubsection*{3.1.1 Johnson motor}
+\subsection{Hardware}
+\subsubsection{Johnson motor}
 A Johnson motor is a brushed DC motor that contains permanent magnets. It is a high-speed motor with high torque and widely used in robotic applications. In this project, Johnson motors are used for driving the wheels of the robot.
 
-\subsubsection*{3.1.2 Raspberry Pi 3}
+\subsubsection{Raspberry Pi 3}
 Raspberry Pi 3 is a credit card-sized single-board computer capable of running an operating system and performing multiple computing tasks. It is equipped with a Broadcom BCM2837, Quad-core Cortex-A53 (ARMv8) 64-bit SoC @ 1.2 GHz, 1 GB RAM, along with USB, HDMI, Ethernet, Wi-Fi, and Bluetooth connectivity.
 In this project, the Raspberry Pi 3 is used to  communicate with cloud services and send control signals to the Arduino for further actuation and control operations.
 
 
 
-\subsubsection*{3.1.3 Arduino Mega}
+\subsubsection{Arduino Mega}
 The Arduino Mega 2560 is an open-source microcontroller board based on the Microchip ATmega2560 microcontroller. It features 54 digital I/O pins, 16 analog input pins, 4 hardware serial ports (UARTs), a 16 MHz crystal oscillator, and USB and power jack support.
 In this project, the Arduino Mega 2560 is used to control motors and sensors and execute control actions based on the instructions received from the Raspberry Pi.
 
 
-\subsubsection*{3.1.4 IR Sensor}
+\subsubsection{IR Sensor}
 IR (Infrared) sensors are used to detect the path for line-following by emitting and detecting IR light. A group of IR sensors is arranged to detect black lines on a cemented floor. In this project, they help the bot follow the designated path.
 
-\subsubsection*{3.1.5 Metal Gear Servo MG996R}
+\subsubsection{Metal Gear Servo MG996R}
 The MG996R is a high-torque servo motor with metal gears and digital control. It provides accurate angle control and is used in the pill dispensing mechanism. It can rotate 0–180 degrees and is known for durability and stability.
 
-\newpage
-\section{Software}
+\subsection{Software}
 
 \textbf{Arduino IDE:} The Arduino Integrated Development Environment (IDE) is used to program the Arduino microcontroller responsible for real-time control of motors, sensors, and actuators. Written in C/C++, the code implements PID algorithms for accurate line following, triggers pill dispensing via servo motors, and reads data from modules such as IR sensors, UHF RFID readers, and ultrasonic sensors. Libraries like \texttt{Servo.h}, \texttt{Wire.h}, and \texttt{SoftwareSerial.h} simplify hardware interactions. Serial communication with the Raspberry Pi enables synchronous operation and system-level decision-making. The IDE’s Serial Monitor is invaluable for debugging sensor readings and validating motor responses, supporting firmware-level coordination for the robot’s motion and dispensing tasks.
 

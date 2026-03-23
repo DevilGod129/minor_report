@@ -1,15 +1,15 @@
 
-\section{Overview}
+\subsection{Overview}
 
 The software system of the Medicare Bot is composed of three main components: the Raspberry Pi processing unit, the backend server, and the frontend dashboard. These components work together to provide a complete end-to-end solution for patient identification, medication dispensing, and real-time monitoring.
 The implementation of the system is based on the architecture described in Chapter \ref{systemarchitecture}, where each component is developed and integrated to achieve complete functionality.
 The Raspberry Pi handles AI-based face recognition and system control, the backend server manages data and communication, and the frontend provides a user interface for visualization and monitoring.
 
-\section{Raspberry Pi Implementation}
+\subsection{Raspberry Pi Implementation}
 
 The Raspberry Pi serves as the core processing unit responsible for executing the main system logic. The implementation is developed in Python using various libraries such as OpenCV, InsightFace, and ONNX Runtime.
 
-\subsection{Face Recognition Pipeline}
+\subsubsection{Face Recognition Pipeline}
 
 The face recognition system follows a structured pipeline:
 
@@ -23,11 +23,11 @@ The face recognition system follows a structured pipeline:
 
 Cosine similarity is used to compare embeddings for accurate recognition.
 
-\subsection{Medication Scheduling}
+\subsubsection{Medication Scheduling}
 
 The system continuously checks the medication schedule stored locally or fetched from the backend. When a recognized patient matches the scheduled time, the system proceeds with dispensing.
 
-\subsection{Dispensing Control}
+\subsubsection{Dispensing Control}
 
 Once conditions are satisfied, the Raspberry Pi sends a command to the Arduino via serial communication. The command format is:
 
@@ -37,15 +37,15 @@ Once conditions are satisfied, the Raspberry Pi sends a command to the Arduino v
 \item \texttt{d3 -> Activate servo 3}
 \end{itemize}
 
-\subsection{Image Capture and Logging}
+\subsubsection{Image Capture and Logging}
 
 During dispensing, an image is captured and sent to the backend server along with relevant metadata such as patient ID, confidence score, and timestamp.
 
-\section{Backend Implementation (FastAPI)}
+\subsection{Backend Implementation (FastAPI)}
 
 The backend server is implemented using FastAPI and serves as the central system for data management and communication.
 
-\subsection{API Endpoints}
+\subsubsection{API Endpoints}
 
 The backend provides several REST API endpoints:
 
@@ -55,11 +55,11 @@ The backend provides several REST API endpoints:
     \item \texttt{/api/logs} – Store and retrieve dispensing logs
 \end{itemize}
 
-\subsection{Image Upload Handling}
+\subsubsection{Image Upload Handling}
 
 The backend supports image uploads using multipart/form-data. The images are stored in a static directory and the path is saved in the database.
 
-\subsection{Database Integration}
+\subsubsection{Database Integration}
 
 The system uses SQLite with SQLAlchemy ORM for database operations. The database stores:
 
@@ -70,15 +70,15 @@ The system uses SQLite with SQLAlchemy ORM for database operations. The database
     \item Image paths
 \end{itemize}
 
-\subsection{Authentication}
+\subsubsection{Authentication}
 
 An API key mechanism is implemented to secure communication between the Raspberry Pi and the backend server.
 
-\section{Frontend Implementation (React)}
+\subsection{Frontend Implementation (React)}
 
 The frontend dashboard is implemented using React and provides a user-friendly interface for monitoring system activities.
 
-\subsection{Logs Display}
+\subsubsection{Logs Display}
 
 The frontend fetches data from the backend and displays:
 
@@ -90,15 +90,15 @@ The frontend fetches data from the backend and displays:
     \item Timestamp
 \end{itemize}
 
-\subsection{Image Visualization}
+\subsubsection{Image Visualization}
 
 Captured images are displayed using the correct static path from the backend server, allowing verification of dispensing events.
 
-\subsection{Auto Refresh Mechanism}
+\subsubsection{Auto Refresh Mechanism}
 
 The logs page automatically refreshes at regular intervals to provide real-time updates.
 
-\section{Software Workflow}
+\subsection{Software Workflow}
 
 The overall software workflow is as follows:
 

@@ -1,15 +1,15 @@
 
-\section{Overview}
+\subsection{Overview}
 
 Although the Medicare Bot system demonstrates successful integration of AI, embedded systems, and web technologies, certain limitations exist due to hardware constraints, environmental factors, and system design decisions.
 
-\section{Hardware Limitations}
+\subsection{Hardware Limitations}
 
 The system is built using a Raspberry Pi 3B, which has limited processing power and memory. This restricts the use of more complex and computationally intensive deep learning models.
 
 Additionally, servo motors require stable power supply. Any fluctuation in voltage can affect dispensing accuracy and reliability.
 
-\section{Face Recognition Limitations}
+\subsection{Face Recognition Limitations}
 
 The face recognition system is sensitive to environmental conditions. Performance may degrade under:
 
@@ -21,7 +21,7 @@ The face recognition system is sensitive to environmental conditions. Performanc
 
 The system currently supports recognition of one person at a time. If multiple faces are detected, the system blocks dispensing to avoid incorrect identification.
 
-\section{System Logic Limitations}
+\subsection{System Logic Limitations}
 
 The medication dispensing logic depends on predefined schedules. Currently, the system lacks advanced features such as:
 
@@ -32,7 +32,7 @@ The medication dispensing logic depends on predefined schedules. Currently, the 
 
 Additionally, improper handling of the \texttt{last\_dispensed} field can lead to repeated dispensing if not correctly updated.
 
-\section{Network Dependency}
+\subsection{Network Dependency}
 
 The system relies on network connectivity for communication between the Raspberry Pi and the backend server. In case of network failure:
 
@@ -41,11 +41,11 @@ The system relies on network connectivity for communication between the Raspberr
     \item Real-time monitoring may be interrupted
 \end{itemize}
 
-\section{Scalability Limitations}
+\subsection{Scalability Limitations}
 
 The current implementation uses SQLite, which is suitable for small-scale systems but may not perform efficiently for large-scale deployments with multiple users and devices.
 
-\section{Security Limitations}
+\subsection{Security Limitations}
 
 Although API key authentication is implemented, the system does not include advanced security features such as:
 
@@ -55,7 +55,7 @@ Although API key authentication is implemented, the system does not include adva
     \item Biometric spoof detection
 \end{itemize}
 
-\section{Mechanical Limitations}
+\subsection{Mechanical Limitations}
 
 The dispensing mechanism is based on servo motors and fixed compartments. This design:
 

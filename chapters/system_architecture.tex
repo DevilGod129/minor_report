@@ -1,14 +1,14 @@
 
 
-\section{Overview}
+\subsection{Overview}
 
 The Medicare Bot system is designed as an integrated AI-powered healthcare solution that combines embedded systems, computer vision, and web technologies. The system enables automated patient identification, medication scheduling, and dispensing with real-time monitoring capabilities.
 
 The architecture follows a distributed approach where different subsystems handle specialized tasks. The system consists of four major components: the Raspberry Pi-based AI processing unit, the Arduino-based motor control unit, a backend server for data management, and a frontend dashboard for monitoring and visualization.
 
-\section{System Components}
+\subsection{System Components}
 
-\subsection{Raspberry Pi (AI Processing Unit)}
+\subsubsection{Raspberry Pi (AI Processing Unit)}
 
 The Raspberry Pi 3B serves as the core processing unit of the system. It is responsible for executing the computer vision algorithms and coordinating overall system operations. Its functionalities include:
 
@@ -21,7 +21,7 @@ The Raspberry Pi 3B serves as the core processing unit of the system. It is resp
     \item Sending serial commands to the Arduino for actuation
 \end{itemize}
 
-\subsection{Arduino Mega (Motor Control Unit)}
+\subsubsection{Arduino Mega (Motor Control Unit)}
 
 The Arduino Mega is responsible for controlling the physical dispensing mechanism. It operates as a slave device receiving commands from the Raspberry Pi. Its functionalities include:
 
@@ -31,7 +31,7 @@ The Arduino Mega is responsible for controlling the physical dispensing mechanis
     \item Executing dispensing actions based on received commands
 \end{itemize}
 
-\subsection{Backend Server (FastAPI)}
+\subsubsection{Backend Server (FastAPI)}
 
 The backend server is implemented using FastAPI and acts as the central data management system. It provides APIs for communication between the Raspberry Pi and the frontend interface. Its functionalities include:
 
@@ -42,7 +42,7 @@ The backend server is implemented using FastAPI and acts as the central data man
     \item Providing API endpoints for system communication
 \end{itemize}
 
-\subsection{Frontend Dashboard (React)}
+\subsubsection{Frontend Dashboard (React)}
 
 The frontend dashboard provides a user interface for monitoring and managing the system. It enables real-time visualization of system activities. Its functionalities include:
 
@@ -52,11 +52,11 @@ The frontend dashboard provides a user interface for monitoring and managing the
     \item Monitoring system status
 \end{itemize}
 
-\section{System Communication}
+\subsection{System Communication}
 
 The system components communicate using two primary communication methods:
 
-\subsection{Raspberry Pi to Arduino Communication}
+\subsubsection{Raspberry Pi to Arduino Communication}
 
 The Raspberry Pi communicates with the Arduino via USB serial communication. Commands are sent in the form of encoded strings such as:
 
@@ -68,7 +68,7 @@ The Raspberry Pi communicates with the Arduino via USB serial communication. Com
 
 These commands trigger the corresponding dispensing mechanism.
 
-\subsection{Raspberry Pi to Backend Communication}
+\subsubsection{Raspberry Pi to Backend Communication}
 
 The Raspberry Pi communicates with the backend server using HTTP requests. The communication includes:
 
@@ -78,7 +78,7 @@ The Raspberry Pi communicates with the backend server using HTTP requests. The c
     \item Fetching patient and medication data
 \end{itemize}
 
-\section{System Workflow}
+\subsection{System Workflow}
 
 The overall workflow of the system is as follows:
 
@@ -94,7 +94,7 @@ The overall workflow of the system is as follows:
     \item The frontend dashboard displays the updated logs and images.
 \end{enumerate}
 
-\section{System Architecture Diagram}
+\subsection{System Architecture Diagram}
 
 As shown in Figure \ref{fig:architecture}, the system integrates the Raspberry Pi, Arduino, backend server, and frontend dashboard to achieve complete system functionality.
 The diagram illustrates the flow of data and control signals between different subsystems, highlighting the interaction between hardware and software components.
