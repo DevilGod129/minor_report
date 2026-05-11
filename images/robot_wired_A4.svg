@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2480" height="1754" viewBox="0 0 2480 1754" xmlns="http://www.w3.org/2000/svg">
+<style>text{font-family:"Courier New",Courier,monospace;fill:#000;}</style>
+<rect x="0" y="0" width="2480" height="1754" rx="0" fill="white" stroke="white" stroke-width="0" />
+<rect x="0" y="0" width="2480" height="42" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="1240" y="28" text-anchor="middle" font-size="13" font-weight="bold" fill="white">ROBOT CONTROLLER -- WIRING SCHEMATIC  |  Arduino Mega 2560 . Raspberry Pi 4B . VHN Monster Moto . 4x DC Motors . 3x IR Sensors . 3x Servos</text>
+<rect x="60" y="55" width="260" height="870" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="60" y="55" width="260" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="190" y="78" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Arduino Mega 2560</text>
+<text x="190" y="490" text-anchor="middle" font-size="11" font-weight="normal" fill="#000">ATmega2560</text>
+<rect x="140" y="873" width="100" height="38" rx="3" fill="white" stroke="#000" stroke-width="2" />
+<text x="190" y="897" text-anchor="middle" font-size="10" font-weight="bold" fill="#000">USB-B</text>
+<line x1="320" y1="105" x2="332" y2="105" stroke="#000" stroke-width="1.3" />
+<text x="316" y="109" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D0/RX</text>
+<line x1="320" y1="123" x2="332" y2="123" stroke="#000" stroke-width="1.3" />
+<text x="316" y="127" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D1/TX</text>
+<line x1="320" y1="141" x2="332" y2="141" stroke="#000" stroke-width="1.3" />
+<text x="316" y="145" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D2</text>
+<line x1="320" y1="159" x2="332" y2="159" stroke="#000" stroke-width="1.3" />
+<text x="316" y="163" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D3</text>
+<line x1="320" y1="177" x2="332" y2="177" stroke="#000" stroke-width="1.3" />
+<text x="316" y="181" text-anchor="end" font-size="8" font-weight="bold" fill="#000">D4</text>
+<line x1="320" y1="195" x2="332" y2="195" stroke="#000" stroke-width="1.3" />
+<text x="316" y="199" text-anchor="end" font-size="8" font-weight="bold" fill="#000">D5</text>
+<line x1="320" y1="213" x2="332" y2="213" stroke="#000" stroke-width="1.3" />
+<text x="316" y="217" text-anchor="end" font-size="8" font-weight="bold" fill="#000">D6~</text>
+<line x1="320" y1="231" x2="332" y2="231" stroke="#000" stroke-width="1.3" />
+<text x="316" y="235" text-anchor="end" font-size="8" font-weight="bold" fill="#000">D7</text>
+<line x1="320" y1="249" x2="332" y2="249" stroke="#000" stroke-width="1.3" />
+<text x="316" y="253" text-anchor="end" font-size="8" font-weight="bold" fill="#000">D8</text>
+<line x1="320" y1="267" x2="332" y2="267" stroke="#000" stroke-width="1.3" />
+<text x="316" y="271" text-anchor="end" font-size="8" font-weight="bold" fill="#000">D9~</text>
+<line x1="320" y1="285" x2="332" y2="285" stroke="#000" stroke-width="1.3" />
+<text x="316" y="289" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D10~</text>
+<line x1="320" y1="303" x2="332" y2="303" stroke="#000" stroke-width="1.3" />
+<text x="316" y="307" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D11~</text>
+<line x1="320" y1="321" x2="332" y2="321" stroke="#000" stroke-width="1.3" />
+<text x="316" y="325" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D12</text>
+<line x1="320" y1="339" x2="332" y2="339" stroke="#000" stroke-width="1.3" />
+<text x="316" y="343" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D13</text>
+<line x1="320" y1="357" x2="332" y2="357" stroke="#000" stroke-width="1.3" />
+<text x="316" y="361" text-anchor="end" font-size="8" font-weight="bold" fill="#000">GND</text>
+<line x1="320" y1="375" x2="332" y2="375" stroke="#000" stroke-width="1.3" />
+<text x="316" y="379" text-anchor="end" font-size="8" font-weight="bold" fill="#000">5V</text>
+<line x1="320" y1="393" x2="332" y2="393" stroke="#000" stroke-width="1.3" />
+<text x="316" y="397" text-anchor="end" font-size="8" font-weight="bold" fill="#000">5V</text>
+<line x1="320" y1="411" x2="332" y2="411" stroke="#000" stroke-width="1.3" />
+<text x="316" y="415" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D22</text>
+<line x1="320" y1="429" x2="332" y2="429" stroke="#000" stroke-width="1.3" />
+<text x="316" y="433" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D23</text>
+<line x1="320" y1="447" x2="332" y2="447" stroke="#000" stroke-width="1.3" />
+<text x="316" y="451" text-anchor="end" font-size="8" font-weight="bold" fill="#000">D24</text>
+<line x1="320" y1="465" x2="332" y2="465" stroke="#000" stroke-width="1.3" />
+<text x="316" y="469" text-anchor="end" font-size="8" font-weight="bold" fill="#000">D25</text>
+<line x1="320" y1="483" x2="332" y2="483" stroke="#000" stroke-width="1.3" />
+<text x="316" y="487" text-anchor="end" font-size="8" font-weight="bold" fill="#000">D26</text>
+<line x1="320" y1="501" x2="332" y2="501" stroke="#000" stroke-width="1.3" />
+<text x="316" y="505" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D27</text>
+<line x1="320" y1="519" x2="332" y2="519" stroke="#000" stroke-width="1.3" />
+<text x="316" y="523" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D28</text>
+<line x1="320" y1="537" x2="332" y2="537" stroke="#000" stroke-width="1.3" />
+<text x="316" y="541" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D29</text>
+<line x1="320" y1="555" x2="332" y2="555" stroke="#000" stroke-width="1.3" />
+<text x="316" y="559" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D30</text>
+<line x1="320" y1="573" x2="332" y2="573" stroke="#000" stroke-width="1.3" />
+<text x="316" y="577" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D31</text>
+<line x1="320" y1="591" x2="332" y2="591" stroke="#000" stroke-width="1.3" />
+<text x="316" y="595" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D32</text>
+<line x1="320" y1="609" x2="332" y2="609" stroke="#000" stroke-width="1.3" />
+<text x="316" y="613" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D33</text>
+<line x1="320" y1="627" x2="332" y2="627" stroke="#000" stroke-width="1.3" />
+<text x="316" y="631" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D34</text>
+<line x1="320" y1="645" x2="332" y2="645" stroke="#000" stroke-width="1.3" />
+<text x="316" y="649" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D35</text>
+<line x1="320" y1="663" x2="332" y2="663" stroke="#000" stroke-width="1.3" />
+<text x="316" y="667" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D36</text>
+<line x1="320" y1="681" x2="332" y2="681" stroke="#000" stroke-width="1.3" />
+<text x="316" y="685" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D37</text>
+<line x1="320" y1="699" x2="332" y2="699" stroke="#000" stroke-width="1.3" />
+<text x="316" y="703" text-anchor="end" font-size="8" font-weight="bold" fill="#000">D38~</text>
+<line x1="320" y1="717" x2="332" y2="717" stroke="#000" stroke-width="1.3" />
+<text x="316" y="721" text-anchor="end" font-size="8" font-weight="bold" fill="#000">D39</text>
+<line x1="320" y1="735" x2="332" y2="735" stroke="#000" stroke-width="1.3" />
+<text x="316" y="739" text-anchor="end" font-size="8" font-weight="bold" fill="#000">D40</text>
+<line x1="320" y1="753" x2="332" y2="753" stroke="#000" stroke-width="1.3" />
+<text x="316" y="757" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D41</text>
+<line x1="320" y1="771" x2="332" y2="771" stroke="#000" stroke-width="1.3" />
+<text x="316" y="775" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D42</text>
+<line x1="320" y1="789" x2="332" y2="789" stroke="#000" stroke-width="1.3" />
+<text x="316" y="793" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D43</text>
+<line x1="320" y1="807" x2="332" y2="807" stroke="#000" stroke-width="1.3" />
+<text x="316" y="811" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D44</text>
+<line x1="320" y1="825" x2="332" y2="825" stroke="#000" stroke-width="1.3" />
+<text x="316" y="829" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D45</text>
+<line x1="320" y1="843" x2="332" y2="843" stroke="#000" stroke-width="1.3" />
+<text x="316" y="847" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D46</text>
+<line x1="320" y1="861" x2="332" y2="861" stroke="#000" stroke-width="1.3" />
+<text x="316" y="865" text-anchor="end" font-size="8" font-weight="normal" fill="#000">D50</text>
+<line x1="48" y1="105" x2="60" y2="105" stroke="#000" stroke-width="1.3" />
+<text x="46" y="109" text-anchor="end" font-size="8" font-weight="normal" fill="#000">IOREF</text>
+<line x1="48" y1="123" x2="60" y2="123" stroke="#000" stroke-width="1.3" />
+<text x="46" y="127" text-anchor="end" font-size="8" font-weight="normal" fill="#000">RST</text>
+<line x1="48" y1="141" x2="60" y2="141" stroke="#000" stroke-width="1.3" />
+<text x="46" y="145" text-anchor="end" font-size="8" font-weight="normal" fill="#000">3V3</text>
+<line x1="48" y1="159" x2="60" y2="159" stroke="#000" stroke-width="1.3" />
+<text x="46" y="163" text-anchor="end" font-size="8" font-weight="normal" fill="#000">5V</text>
+<line x1="48" y1="177" x2="60" y2="177" stroke="#000" stroke-width="1.3" />
+<text x="46" y="181" text-anchor="end" font-size="8" font-weight="normal" fill="#000">GND</text>
+<line x1="48" y1="195" x2="60" y2="195" stroke="#000" stroke-width="1.3" />
+<text x="46" y="199" text-anchor="end" font-size="8" font-weight="normal" fill="#000">GND</text>
+<line x1="48" y1="213" x2="60" y2="213" stroke="#000" stroke-width="1.3" />
+<text x="46" y="217" text-anchor="end" font-size="8" font-weight="normal" fill="#000">VIN</text>
+<line x1="48" y1="249" x2="60" y2="249" stroke="#000" stroke-width="1.3" />
+<text x="46" y="253" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A0</text>
+<line x1="48" y1="267" x2="60" y2="267" stroke="#000" stroke-width="1.3" />
+<text x="46" y="271" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A1</text>
+<line x1="48" y1="285" x2="60" y2="285" stroke="#000" stroke-width="1.3" />
+<text x="46" y="289" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A2</text>
+<line x1="48" y1="303" x2="60" y2="303" stroke="#000" stroke-width="1.3" />
+<text x="46" y="307" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A3</text>
+<line x1="48" y1="321" x2="60" y2="321" stroke="#000" stroke-width="1.3" />
+<text x="46" y="325" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A4</text>
+<line x1="48" y1="339" x2="60" y2="339" stroke="#000" stroke-width="1.3" />
+<text x="46" y="343" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A5</text>
+<line x1="48" y1="357" x2="60" y2="357" stroke="#000" stroke-width="1.3" />
+<text x="46" y="361" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A6</text>
+<line x1="48" y1="375" x2="60" y2="375" stroke="#000" stroke-width="1.3" />
+<text x="46" y="379" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A7</text>
+<line x1="48" y1="393" x2="60" y2="393" stroke="#000" stroke-width="1.3" />
+<text x="46" y="397" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A8</text>
+<line x1="48" y1="411" x2="60" y2="411" stroke="#000" stroke-width="1.3" />
+<text x="46" y="415" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A9</text>
+<line x1="48" y1="429" x2="60" y2="429" stroke="#000" stroke-width="1.3" />
+<text x="46" y="433" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A10</text>
+<line x1="48" y1="447" x2="60" y2="447" stroke="#000" stroke-width="1.3" />
+<text x="46" y="451" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A11</text>
+<line x1="48" y1="465" x2="60" y2="465" stroke="#000" stroke-width="1.3" />
+<text x="46" y="469" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A12</text>
+<line x1="48" y1="483" x2="60" y2="483" stroke="#000" stroke-width="1.3" />
+<text x="46" y="487" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A13</text>
+<line x1="48" y1="501" x2="60" y2="501" stroke="#000" stroke-width="1.3" />
+<text x="46" y="505" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A14</text>
+<line x1="48" y1="519" x2="60" y2="519" stroke="#000" stroke-width="1.3" />
+<text x="46" y="523" text-anchor="end" font-size="8" font-weight="normal" fill="#000">A15</text>
+<line x1="48" y1="555" x2="60" y2="555" stroke="#000" stroke-width="1.3" />
+<text x="46" y="559" text-anchor="end" font-size="8" font-weight="normal" fill="#000">GND</text>
+<line x1="48" y1="573" x2="60" y2="573" stroke="#000" stroke-width="1.3" />
+<text x="46" y="577" text-anchor="end" font-size="8" font-weight="normal" fill="#000">GND</text>
+<rect x="60" y="965" width="260" height="380" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="60" y="965" width="260" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="190" y="988" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Raspberry Pi 4B</text>
+<text x="190" y="1017" text-anchor="middle" font-size="9" font-weight="normal" fill="#000">40-pin GPIO header</text>
+<rect x="118" y="1027" width="144" height="300" rx="0" fill="#E8E8E8" stroke="#000" stroke-width="2" />
+<rect x="118" y="1027" width="144" height="22" rx="0" fill="#444" stroke="#444" stroke-width="0" />
+<text x="190" y="1043" text-anchor="middle" font-size="9" font-weight="bold" fill="white">GPIO</text>
+<rect x="126" y="1051" width="7" height="7" fill="#000"/>
+<text x="124" y="1058" text-anchor="end" font-size="6" font-weight="normal" fill="#000">3V3</text>
+<rect x="247" y="1051" width="7" height="7" fill="#000"/>
+<text x="256" y="1058" text-anchor="start" font-size="6" font-weight="normal" fill="#000">5V</text>
+<rect x="126" y="1065" width="7" height="7" fill="#000"/>
+<text x="124" y="1072" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO2</text>
+<rect x="247" y="1065" width="7" height="7" fill="#000"/>
+<text x="256" y="1072" text-anchor="start" font-size="6" font-weight="normal" fill="#000">5V</text>
+<rect x="126" y="1079" width="7" height="7" fill="#000"/>
+<text x="124" y="1086" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO3</text>
+<rect x="247" y="1079" width="7" height="7" fill="#000"/>
+<text x="256" y="1086" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GND</text>
+<rect x="126" y="1093" width="7" height="7" fill="#000"/>
+<text x="124" y="1100" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO4</text>
+<rect x="247" y="1093" width="7" height="7" fill="#000"/>
+<text x="256" y="1100" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GPIO14 TX</text>
+<rect x="126" y="1107" width="7" height="7" fill="#000"/>
+<text x="124" y="1114" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GND</text>
+<rect x="247" y="1107" width="7" height="7" fill="#000"/>
+<text x="256" y="1114" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GPIO15 RX</text>
+<rect x="126" y="1121" width="7" height="7" fill="#000"/>
+<text x="124" y="1128" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO17</text>
+<rect x="247" y="1121" width="7" height="7" fill="#000"/>
+<text x="256" y="1128" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GPIO18</text>
+<rect x="126" y="1135" width="7" height="7" fill="#000"/>
+<text x="124" y="1142" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO27</text>
+<rect x="247" y="1135" width="7" height="7" fill="#000"/>
+<text x="256" y="1142" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GND</text>
+<rect x="126" y="1149" width="7" height="7" fill="#000"/>
+<text x="124" y="1156" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO22</text>
+<rect x="247" y="1149" width="7" height="7" fill="#000"/>
+<text x="256" y="1156" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GPIO23</text>
+<rect x="126" y="1163" width="7" height="7" fill="#000"/>
+<text x="124" y="1170" text-anchor="end" font-size="6" font-weight="normal" fill="#000">3V3</text>
+<rect x="247" y="1163" width="7" height="7" fill="#000"/>
+<text x="256" y="1170" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GPIO24</text>
+<rect x="126" y="1177" width="7" height="7" fill="#000"/>
+<text x="124" y="1184" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO10</text>
+<rect x="247" y="1177" width="7" height="7" fill="#000"/>
+<text x="256" y="1184" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GND</text>
+<rect x="126" y="1191" width="7" height="7" fill="#000"/>
+<text x="124" y="1198" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO9</text>
+<rect x="247" y="1191" width="7" height="7" fill="#000"/>
+<text x="256" y="1198" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GPIO25</text>
+<rect x="126" y="1205" width="7" height="7" fill="#000"/>
+<text x="124" y="1212" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO11</text>
+<rect x="247" y="1205" width="7" height="7" fill="#000"/>
+<text x="256" y="1212" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GPIO8</text>
+<rect x="126" y="1219" width="7" height="7" fill="#000"/>
+<text x="124" y="1226" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GND</text>
+<rect x="247" y="1219" width="7" height="7" fill="#000"/>
+<text x="256" y="1226" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GPIO7</text>
+<rect x="126" y="1233" width="7" height="7" fill="#000"/>
+<text x="124" y="1240" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO0</text>
+<rect x="247" y="1233" width="7" height="7" fill="#000"/>
+<text x="256" y="1240" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GPIO1</text>
+<rect x="126" y="1247" width="7" height="7" fill="#000"/>
+<text x="124" y="1254" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO5</text>
+<rect x="247" y="1247" width="7" height="7" fill="#000"/>
+<text x="256" y="1254" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GND</text>
+<rect x="126" y="1261" width="7" height="7" fill="#000"/>
+<text x="124" y="1268" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO6</text>
+<rect x="247" y="1261" width="7" height="7" fill="#000"/>
+<text x="256" y="1268" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GPIO12</text>
+<rect x="126" y="1275" width="7" height="7" fill="#000"/>
+<text x="124" y="1282" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO13</text>
+<rect x="247" y="1275" width="7" height="7" fill="#000"/>
+<text x="256" y="1282" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GND</text>
+<rect x="126" y="1289" width="7" height="7" fill="#000"/>
+<text x="124" y="1296" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO19</text>
+<rect x="247" y="1289" width="7" height="7" fill="#000"/>
+<text x="256" y="1296" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GPIO16</text>
+<rect x="126" y="1303" width="7" height="7" fill="#000"/>
+<text x="124" y="1310" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GPIO26</text>
+<rect x="247" y="1303" width="7" height="7" fill="#000"/>
+<text x="256" y="1310" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GPIO20</text>
+<rect x="126" y="1317" width="7" height="7" fill="#000"/>
+<text x="124" y="1324" text-anchor="end" font-size="6" font-weight="normal" fill="#000">GND</text>
+<rect x="247" y="1317" width="7" height="7" fill="#000"/>
+<text x="256" y="1324" text-anchor="start" font-size="6" font-weight="normal" fill="#000">GPIO21</text>
+<rect x="65" y="1037" width="44" height="56" rx="2" fill="white" stroke="#000" stroke-width="2" />
+<text x="87" y="1063" text-anchor="middle" font-size="8" font-weight="bold" fill="#000">USB</text>
+<text x="87" y="1077" text-anchor="middle" font-size="8" font-weight="normal" fill="#000">-A</text>
+<polyline points="109,1064 38,1064 38,892 140,892" stroke="#000" stroke-width="1.8" fill="none" stroke-dasharray="12 5"/>
+<text x="20" y="1165" text-anchor="middle" font-size="8" font-weight="normal" fill="#000">USB cable</text>
+<text x="24" y="978" text-anchor="middle" font-size="8" transform="rotate(-90,24,978)">USB-A to USB-B</text>
+<rect x="460" y="55" width="280" height="440" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="460" y="55" width="280" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="600" y="78" text-anchor="middle" font-size="12" font-weight="bold" fill="white">VHN Monster Moto Shield</text>
+<text x="600" y="105" text-anchor="middle" font-size="9" font-weight="normal" fill="#000">Stacks on Arduino Mega headers</text>
+<line x1="448" y1="147" x2="460" y2="147" stroke="#000" stroke-width="1.5" />
+<text x="446" y="151" text-anchor="end" font-size="9" font-weight="bold" fill="#000">INA1</text>
+<line x1="448" y1="169" x2="460" y2="169" stroke="#000" stroke-width="1.5" />
+<text x="446" y="173" text-anchor="end" font-size="9" font-weight="bold" fill="#000">INB1</text>
+<line x1="448" y1="191" x2="460" y2="191" stroke="#000" stroke-width="1.5" />
+<text x="446" y="195" text-anchor="end" font-size="9" font-weight="bold" fill="#000">EN1~</text>
+<line x1="448" y1="225" x2="460" y2="225" stroke="#000" stroke-width="1.5" />
+<text x="446" y="229" text-anchor="end" font-size="9" font-weight="bold" fill="#000">INA2</text>
+<line x1="448" y1="247" x2="460" y2="247" stroke="#000" stroke-width="1.5" />
+<text x="446" y="251" text-anchor="end" font-size="9" font-weight="bold" fill="#000">INB2</text>
+<line x1="448" y1="269" x2="460" y2="269" stroke="#000" stroke-width="1.5" />
+<text x="446" y="273" text-anchor="end" font-size="9" font-weight="bold" fill="#000">EN2~</text>
+<line x1="448" y1="307" x2="460" y2="307" stroke="#000" stroke-width="1.5" />
+<text x="446" y="311" text-anchor="end" font-size="9" font-weight="bold" fill="#000">VIN+</text>
+<line x1="448" y1="329" x2="460" y2="329" stroke="#000" stroke-width="1.5" />
+<text x="446" y="333" text-anchor="end" font-size="9" font-weight="bold" fill="#000">GND</text>
+<rect x="480" y="143" width="240" height="120" rx="0" fill="white" stroke="#000" stroke-width="2" />
+<rect x="480" y="143" width="240" height="24" rx="0" fill="#444" stroke="#444" stroke-width="0" />
+<text x="600" y="159" text-anchor="middle" font-size="11" font-weight="bold" fill="white">Channel 1</text>
+<text x="600" y="185" text-anchor="middle" font-size="9" font-weight="normal" fill="#000">INA1 / INB1 / EN1~</text>
+<text x="600" y="201" text-anchor="middle" font-size="9" font-weight="normal" fill="#000">M1 // M2  parallel</text>
+<line x1="720" y1="223" x2="734" y2="223" stroke="#000" stroke-width="3.2" />
+<text x="736" y="227" text-anchor="start" font-size="9" font-weight="bold" fill="#000">OUT1A</text>
+<line x1="720" y1="243" x2="734" y2="243" stroke="#000" stroke-width="3.2" />
+<text x="736" y="247" text-anchor="start" font-size="9" font-weight="bold" fill="#000">OUT1B</text>
+<rect x="480" y="273" width="240" height="120" rx="0" fill="white" stroke="#000" stroke-width="2" />
+<rect x="480" y="273" width="240" height="24" rx="0" fill="#444" stroke="#444" stroke-width="0" />
+<text x="600" y="289" text-anchor="middle" font-size="11" font-weight="bold" fill="white">Channel 2</text>
+<text x="600" y="315" text-anchor="middle" font-size="9" font-weight="normal" fill="#000">INA2 / INB2 / EN2~</text>
+<text x="600" y="331" text-anchor="middle" font-size="9" font-weight="normal" fill="#000">M3 // M4  parallel</text>
+<line x1="720" y1="353" x2="734" y2="353" stroke="#000" stroke-width="3.2" />
+<text x="736" y="357" text-anchor="start" font-size="9" font-weight="bold" fill="#000">OUT2A</text>
+<line x1="720" y1="373" x2="734" y2="373" stroke="#000" stroke-width="3.2" />
+<text x="736" y="377" text-anchor="start" font-size="9" font-weight="bold" fill="#000">OUT2B</text>
+<text x="600" y="467" text-anchor="middle" font-size="9" font-weight="normal" fill="#000">VIN: LiPo 7.4–11.1V</text>
+<rect x="480" y="475" width="240" height="18" rx="2" fill="#000" stroke="#000" stroke-width="0" />
+<text x="600" y="489" text-anchor="middle" font-size="9" font-weight="bold" fill="white">!! 15A fuse on VIN+ !!</text>
+<polyline points="332,231 382,231 382,147 448,147" stroke="#000" stroke-width="1.8" fill="none" />
+<circle cx="332" cy="231" r="4" fill="#000"/>
+<polyline points="332,249 390,249 390,169 448,169" stroke="#000" stroke-width="1.8" fill="none" />
+<circle cx="332" cy="249" r="4" fill="#000"/>
+<polyline points="332,267 398,267 398,191 448,191" stroke="#000" stroke-width="1.8" fill="none" />
+<circle cx="332" cy="267" r="4" fill="#000"/>
+<polyline points="332,177 406,177 406,225 448,225" stroke="#000" stroke-width="1.8" fill="none" />
+<circle cx="332" cy="177" r="4" fill="#000"/>
+<polyline points="332,195 414,195 414,247 448,247" stroke="#000" stroke-width="1.8" fill="none" />
+<circle cx="332" cy="195" r="4" fill="#000"/>
+<polyline points="332,213 422,213 422,269 448,269" stroke="#000" stroke-width="1.8" fill="none" />
+<circle cx="332" cy="213" r="4" fill="#000"/>
+<rect x="460" y="510" width="280" height="295" rx="5" fill="white" stroke="#000" stroke-width="2.5" stroke-dasharray="10 5"/>
+<rect x="460" y="510" width="280" height="34" rx="5" fill="#555" stroke="#555" stroke-width="0" />
+<text x="600" y="532" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Matrix / Perfboard</text>
+<text x="600" y="558" text-anchor="middle" font-size="9" font-weight="normal" fill="#000">Solder all connections</text>
+<rect x="476" y="568" width="248" height="106" rx="0" fill="white" stroke="#000" stroke-width="2" />
+<rect x="476" y="568" width="248" height="24" rx="0" fill="#444" stroke="#444" stroke-width="0" />
+<text x="600" y="584" text-anchor="middle" font-size="10" font-weight="bold" fill="white">IR Sensor Rail</text>
+<line x1="486" y1="616" x2="714" y2="616" stroke="#000" stroke-width="3" />
+<text x="600" y="610" text-anchor="middle" font-size="8" font-weight="normal" fill="#000">+5V VCC</text>
+<line x1="486" y1="660" x2="714" y2="660" stroke="#000" stroke-width="3" />
+<text x="600" y="672" text-anchor="middle" font-size="8" font-weight="normal" fill="#000">GND</text>
+<line x1="724" y1="622" x2="736" y2="622" stroke="#000" stroke-width="1.6" stroke-dasharray="9 4"/>
+<text x="738" y="626" text-anchor="start" font-size="8" font-weight="bold" fill="#000">-&gt; D24</text>
+<line x1="724" y1="640" x2="736" y2="640" stroke="#000" stroke-width="1.6" stroke-dasharray="9 4"/>
+<text x="738" y="644" text-anchor="start" font-size="8" font-weight="bold" fill="#000">-&gt; D25</text>
+<line x1="724" y1="658" x2="736" y2="658" stroke="#000" stroke-width="1.6" stroke-dasharray="9 4"/>
+<text x="738" y="662" text-anchor="start" font-size="8" font-weight="bold" fill="#000">-&gt; D26</text>
+<rect x="476" y="688" width="248" height="106" rx="0" fill="white" stroke="#000" stroke-width="2" />
+<rect x="476" y="688" width="248" height="24" rx="0" fill="#444" stroke="#444" stroke-width="0" />
+<text x="600" y="704" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Servo Rail</text>
+<line x1="486" y1="736" x2="714" y2="736" stroke="#000" stroke-width="3" stroke-dasharray="8 4"/>
+<text x="600" y="730" text-anchor="middle" font-size="8" font-weight="normal" fill="#000">+5V PB2</text>
+<line x1="486" y1="780" x2="714" y2="780" stroke="#000" stroke-width="3" />
+<text x="600" y="792" text-anchor="middle" font-size="8" font-weight="normal" fill="#000">GND</text>
+<line x1="724" y1="742" x2="736" y2="742" stroke="#000" stroke-width="1.6" stroke-dasharray="3 3"/>
+<text x="738" y="746" text-anchor="start" font-size="8" font-weight="bold" fill="#000">-&gt; D38</text>
+<line x1="724" y1="760" x2="736" y2="760" stroke="#000" stroke-width="1.6" stroke-dasharray="3 3"/>
+<text x="738" y="764" text-anchor="start" font-size="8" font-weight="bold" fill="#000">-&gt; D39</text>
+<line x1="724" y1="778" x2="736" y2="778" stroke="#000" stroke-width="1.6" stroke-dasharray="3 3"/>
+<text x="738" y="782" text-anchor="start" font-size="8" font-weight="bold" fill="#000">-&gt; D40</text>
+<polyline points="332,447 393,447 393,622 724,622" stroke="#000" stroke-width="1.6" fill="none" stroke-dasharray="9 4"/>
+<circle cx="332" cy="447" r="4" fill="#000"/>
+<polyline points="332,465 403,465 403,640 724,640" stroke="#000" stroke-width="1.6" fill="none" stroke-dasharray="9 4"/>
+<circle cx="332" cy="465" r="4" fill="#000"/>
+<polyline points="332,483 413,483 413,658 724,658" stroke="#000" stroke-width="1.6" fill="none" stroke-dasharray="9 4"/>
+<circle cx="332" cy="483" r="4" fill="#000"/>
+<polyline points="332,699 421,699 421,742 724,742" stroke="#000" stroke-width="1.6" fill="none" stroke-dasharray="3 3"/>
+<circle cx="332" cy="699" r="4" fill="#000"/>
+<polyline points="332,717 431,717 431,760 724,760" stroke="#000" stroke-width="1.6" fill="none" stroke-dasharray="3 3"/>
+<circle cx="332" cy="717" r="4" fill="#000"/>
+<polyline points="332,735 441,735 441,778 724,778" stroke="#000" stroke-width="1.6" fill="none" stroke-dasharray="3 3"/>
+<circle cx="332" cy="735" r="4" fill="#000"/>
+<text x="1065" y="77" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">Johnson DC Motors (x4)</text>
+<text x="1065" y="95" text-anchor="middle" font-size="9" font-weight="normal" fill="#000">M1 // M2 on Channel 1  |  M3 // M4 on Channel 2</text>
+<circle cx="950" cy="175" r="53" fill="white" stroke="#000" stroke-width="1.5"/>
+<circle cx="950" cy="175" r="48" fill="white" stroke="#000" stroke-width="2.5"/>
+<text x="950" y="167" text-anchor="middle" font-size="24" font-weight="bold" fill="#000">M</text>
+<text x="950" y="189" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">M1</text>
+<line x1="897" y1="159" x2="880" y2="159" stroke="#000" stroke-width="2.5" />
+<text x="878" y="162" text-anchor="end" font-size="11" font-weight="bold" fill="#000">+</text>
+<line x1="897" y1="191" x2="880" y2="191" stroke="#000" stroke-width="2.5" />
+<text x="878" y="194" text-anchor="end" font-size="11" font-weight="bold" fill="#000">-</text>
+<circle cx="1180" cy="175" r="53" fill="white" stroke="#000" stroke-width="1.5"/>
+<circle cx="1180" cy="175" r="48" fill="white" stroke="#000" stroke-width="2.5"/>
+<text x="1180" y="167" text-anchor="middle" font-size="24" font-weight="bold" fill="#000">M</text>
+<text x="1180" y="189" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">M2</text>
+<line x1="1127" y1="159" x2="1110" y2="159" stroke="#000" stroke-width="2.5" />
+<text x="1108" y="162" text-anchor="end" font-size="11" font-weight="bold" fill="#000">+</text>
+<line x1="1127" y1="191" x2="1110" y2="191" stroke="#000" stroke-width="2.5" />
+<text x="1108" y="194" text-anchor="end" font-size="11" font-weight="bold" fill="#000">-</text>
+<circle cx="950" cy="345" r="53" fill="white" stroke="#000" stroke-width="1.5"/>
+<circle cx="950" cy="345" r="48" fill="white" stroke="#000" stroke-width="2.5"/>
+<text x="950" y="337" text-anchor="middle" font-size="24" font-weight="bold" fill="#000">M</text>
+<text x="950" y="359" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">M3</text>
+<line x1="897" y1="329" x2="880" y2="329" stroke="#000" stroke-width="2.5" />
+<text x="878" y="332" text-anchor="end" font-size="11" font-weight="bold" fill="#000">+</text>
+<line x1="897" y1="361" x2="880" y2="361" stroke="#000" stroke-width="2.5" />
+<text x="878" y="364" text-anchor="end" font-size="11" font-weight="bold" fill="#000">-</text>
+<circle cx="1180" cy="345" r="53" fill="white" stroke="#000" stroke-width="1.5"/>
+<circle cx="1180" cy="345" r="48" fill="white" stroke="#000" stroke-width="2.5"/>
+<text x="1180" y="337" text-anchor="middle" font-size="24" font-weight="bold" fill="#000">M</text>
+<text x="1180" y="359" text-anchor="middle" font-size="11" font-weight="bold" fill="#000">M4</text>
+<line x1="1127" y1="329" x2="1110" y2="329" stroke="#000" stroke-width="2.5" />
+<text x="1108" y="332" text-anchor="end" font-size="11" font-weight="bold" fill="#000">+</text>
+<line x1="1127" y1="361" x2="1110" y2="361" stroke="#000" stroke-width="2.5" />
+<text x="1108" y="364" text-anchor="end" font-size="11" font-weight="bold" fill="#000">-</text>
+<polyline points="894,159 880,159" stroke="#000" stroke-width="3.2" fill="none" />
+<circle cx="880" cy="159" r="4" fill="#000"/>
+<polyline points="1110,135 1110,159" stroke="#000" stroke-width="3.2" fill="none" />
+<polyline points="894,159 894,135 1110,135" stroke="#000" stroke-width="3.2" fill="none" />
+<circle cx="894" cy="159" r="4" fill="#000"/>
+<circle cx="1110" cy="135" r="4" fill="#000"/>
+<polyline points="902,191 880,191" stroke="#000" stroke-width="3.2" fill="none" />
+<circle cx="880" cy="191" r="4" fill="#000"/>
+<polyline points="902,191 902,215 1110,215 1110,191" stroke="#000" stroke-width="3.2" fill="none" />
+<circle cx="902" cy="191" r="4" fill="#000"/>
+<polyline points="894,329 880,329" stroke="#000" stroke-width="3.2" fill="none" />
+<circle cx="880" cy="329" r="4" fill="#000"/>
+<polyline points="894,329 894,305 1110,305 1110,329" stroke="#000" stroke-width="3.2" fill="none" />
+<circle cx="894" cy="329" r="4" fill="#000"/>
+<polyline points="902,361 880,361" stroke="#000" stroke-width="3.2" fill="none" />
+<circle cx="880" cy="361" r="4" fill="#000"/>
+<polyline points="902,361 902,385 1110,385 1110,361" stroke="#000" stroke-width="3.2" fill="none" />
+<circle cx="902" cy="361" r="4" fill="#000"/>
+<polyline points="734,223 770,223 770,159 894,159" stroke="#000" stroke-width="3.2" fill="none" />
+<circle cx="894" cy="159" r="4" fill="#000"/>
+<polyline points="734,243 780,243 780,191 902,191" stroke="#000" stroke-width="3.2" fill="none" />
+<circle cx="902" cy="191" r="4" fill="#000"/>
+<polyline points="734,353 790,353 790,329 894,329" stroke="#000" stroke-width="3.2" fill="none" />
+<polyline points="734,373 800,373 800,361 902,361" stroke="#000" stroke-width="3.2" fill="none" />
+<text x="1055" y="500" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">IR Sensors (x3)</text>
+<rect x="880" y="512" width="110" height="88" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="880" y="512" width="110" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="935" y="535" text-anchor="middle" font-size="9" font-weight="bold" fill="white">IR Sensor 1</text>
+<text x="935" y="572" text-anchor="middle" font-size="8" font-weight="normal" fill="#000">TCRT5000</text>
+<line x1="868" y1="564" x2="880" y2="564" stroke="#000" stroke-width="1.8" />
+<text x="866" y="568" text-anchor="end" font-size="8" font-weight="bold" fill="#000">VCC</text>
+<line x1="868" y1="584" x2="880" y2="584" stroke="#000" stroke-width="1.8" />
+<text x="866" y="588" text-anchor="end" font-size="8" font-weight="normal" fill="#000">GND</text>
+<line x1="990" y1="574" x2="1004" y2="574" stroke="#000" stroke-width="1.6" stroke-dasharray="9 4"/>
+<text x="1006" y="578" text-anchor="start" font-size="8" font-weight="bold" fill="#000">OUT</text>
+<rect x="1005" y="512" width="110" height="88" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="1005" y="512" width="110" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="1060" y="535" text-anchor="middle" font-size="9" font-weight="bold" fill="white">IR Sensor 2</text>
+<text x="1060" y="572" text-anchor="middle" font-size="8" font-weight="normal" fill="#000">TCRT5000</text>
+<line x1="993" y1="564" x2="1005" y2="564" stroke="#000" stroke-width="1.8" />
+<text x="991" y="568" text-anchor="end" font-size="8" font-weight="bold" fill="#000">VCC</text>
+<line x1="993" y1="584" x2="1005" y2="584" stroke="#000" stroke-width="1.8" />
+<text x="991" y="588" text-anchor="end" font-size="8" font-weight="normal" fill="#000">GND</text>
+<line x1="1115" y1="574" x2="1129" y2="574" stroke="#000" stroke-width="1.6" stroke-dasharray="9 4"/>
+<text x="1131" y="578" text-anchor="start" font-size="8" font-weight="bold" fill="#000">OUT</text>
+<rect x="1130" y="512" width="110" height="88" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="1130" y="512" width="110" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="1185" y="535" text-anchor="middle" font-size="9" font-weight="bold" fill="white">IR Sensor 3</text>
+<text x="1185" y="572" text-anchor="middle" font-size="8" font-weight="normal" fill="#000">TCRT5000</text>
+<line x1="1118" y1="564" x2="1130" y2="564" stroke="#000" stroke-width="1.8" />
+<text x="1116" y="568" text-anchor="end" font-size="8" font-weight="bold" fill="#000">VCC</text>
+<line x1="1118" y1="584" x2="1130" y2="584" stroke="#000" stroke-width="1.8" />
+<text x="1116" y="588" text-anchor="end" font-size="8" font-weight="normal" fill="#000">GND</text>
+<line x1="1240" y1="574" x2="1254" y2="574" stroke="#000" stroke-width="1.6" stroke-dasharray="9 4"/>
+<text x="1256" y="578" text-anchor="start" font-size="8" font-weight="bold" fill="#000">OUT</text>
+<polyline points="486,616 506,616 506,564" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="486" cy="616" r="4" fill="#000"/>
+<polyline points="506,564 868,564" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="506" cy="564" r="4" fill="#000"/>
+<polyline points="506,564 993,564" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="506" cy="564" r="4" fill="#000"/>
+<polyline points="506,564 1118,564" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="506" cy="564" r="4" fill="#000"/>
+<polyline points="486,660 518,660 518,584" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="486" cy="660" r="4" fill="#000"/>
+<polyline points="518,584 868,584" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="518" cy="584" r="4" fill="#000"/>
+<polyline points="518,584 993,584" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="518" cy="584" r="4" fill="#000"/>
+<polyline points="518,584 1118,584" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="518" cy="584" r="4" fill="#000"/>
+<polyline points="1004,574 754,574 754,622 724,622" stroke="#000" stroke-width="1.6" fill="none" stroke-dasharray="9 4"/>
+<polyline points="1129,574 764,574 764,640 724,640" stroke="#000" stroke-width="1.6" fill="none" stroke-dasharray="9 4"/>
+<polyline points="1254,574 774,574 774,658 724,658" stroke="#000" stroke-width="1.6" fill="none" stroke-dasharray="9 4"/>
+<text x="1055" y="700" text-anchor="middle" font-size="13" font-weight="bold" fill="#000">Servos (x3)</text>
+<rect x="880" y="712" width="110" height="128" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="880" y="712" width="110" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="935" y="735" text-anchor="middle" font-size="9" font-weight="bold" fill="white">Servo 1</text>
+<text x="935" y="770" text-anchor="middle" font-size="7" font-weight="normal" fill="#000">SG90/MG996R</text>
+<line x1="868" y1="764" x2="880" y2="764" stroke="#000" stroke-width="1.8" />
+<text x="866" y="768" text-anchor="end" font-size="8" font-weight="bold" fill="#000">VCC</text>
+<line x1="868" y1="787" x2="880" y2="787" stroke="#000" stroke-width="1.8" />
+<text x="866" y="791" text-anchor="end" font-size="8" font-weight="normal" fill="#000">GND</text>
+<line x1="868" y1="810" x2="880" y2="810" stroke="#000" stroke-width="1.6" stroke-dasharray="3 3"/>
+<text x="866" y="814" text-anchor="end" font-size="8" font-weight="bold" fill="#000">SIG</text>
+<text x="935" y="828" text-anchor="middle" font-size="7" font-weight="normal" fill="#000">PB2 5V</text>
+<rect x="1005" y="712" width="110" height="128" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="1005" y="712" width="110" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="1060" y="735" text-anchor="middle" font-size="9" font-weight="bold" fill="white">Servo 2</text>
+<text x="1060" y="770" text-anchor="middle" font-size="7" font-weight="normal" fill="#000">SG90/MG996R</text>
+<line x1="993" y1="764" x2="1005" y2="764" stroke="#000" stroke-width="1.8" />
+<text x="991" y="768" text-anchor="end" font-size="8" font-weight="bold" fill="#000">VCC</text>
+<line x1="993" y1="787" x2="1005" y2="787" stroke="#000" stroke-width="1.8" />
+<text x="991" y="791" text-anchor="end" font-size="8" font-weight="normal" fill="#000">GND</text>
+<line x1="993" y1="810" x2="1005" y2="810" stroke="#000" stroke-width="1.6" stroke-dasharray="3 3"/>
+<text x="991" y="814" text-anchor="end" font-size="8" font-weight="bold" fill="#000">SIG</text>
+<text x="1060" y="828" text-anchor="middle" font-size="7" font-weight="normal" fill="#000">PB2 5V</text>
+<rect x="1130" y="712" width="110" height="128" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="1130" y="712" width="110" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="1185" y="735" text-anchor="middle" font-size="9" font-weight="bold" fill="white">Servo 3</text>
+<text x="1185" y="770" text-anchor="middle" font-size="7" font-weight="normal" fill="#000">SG90/MG996R</text>
+<line x1="1118" y1="764" x2="1130" y2="764" stroke="#000" stroke-width="1.8" />
+<text x="1116" y="768" text-anchor="end" font-size="8" font-weight="bold" fill="#000">VCC</text>
+<line x1="1118" y1="787" x2="1130" y2="787" stroke="#000" stroke-width="1.8" />
+<text x="1116" y="791" text-anchor="end" font-size="8" font-weight="normal" fill="#000">GND</text>
+<line x1="1118" y1="810" x2="1130" y2="810" stroke="#000" stroke-width="1.6" stroke-dasharray="3 3"/>
+<text x="1116" y="814" text-anchor="end" font-size="8" font-weight="bold" fill="#000">SIG</text>
+<text x="1185" y="828" text-anchor="middle" font-size="7" font-weight="normal" fill="#000">PB2 5V</text>
+<polyline points="486,736 506,736 506,764" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="486" cy="736" r="4" fill="#000"/>
+<polyline points="506,764 868,764" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="506" cy="764" r="4" fill="#000"/>
+<polyline points="506,764 993,764" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="506" cy="764" r="4" fill="#000"/>
+<polyline points="506,764 1118,764" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="506" cy="764" r="4" fill="#000"/>
+<polyline points="486,780 520,780 520,787" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="486" cy="780" r="4" fill="#000"/>
+<polyline points="520,787 868,787" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="520" cy="787" r="4" fill="#000"/>
+<polyline points="520,787 993,787" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="520" cy="787" r="4" fill="#000"/>
+<polyline points="520,787 1118,787" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="520" cy="787" r="4" fill="#000"/>
+<polyline points="868,810 752,810 752,742 724,742" stroke="#000" stroke-width="1.6" fill="none" stroke-dasharray="3 3"/>
+<polyline points="993,810 762,810 762,760 724,760" stroke="#000" stroke-width="1.6" fill="none" stroke-dasharray="3 3"/>
+<polyline points="1118,810 772,810 772,778 724,778" stroke="#000" stroke-width="1.6" fill="none" stroke-dasharray="3 3"/>
+<rect x="60" y="1395" width="260" height="200" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="60" y="1395" width="260" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="190" y="1418" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Power Bank 1</text>
+<text x="190" y="1451" text-anchor="middle" font-size="10" font-weight="normal" fill="#000">5V USB  &gt;= 2A</text>
+<text x="190" y="1467" text-anchor="middle" font-size="9" font-weight="normal" fill="#000">Arduino VIN + IR VCC</text>
+<line x1="112" y1="1491" x2="112" y2="1529" stroke="#000" stroke-width="5" />
+<line x1="126" y1="1500" x2="126" y2="1520" stroke="#000" stroke-width="2.5" />
+<text x="107" y="1488" text-anchor="end" font-size="13" font-weight="bold" fill="#000">+</text>
+<text x="107" y="1535" text-anchor="end" font-size="13" font-weight="normal" fill="#000">-</text>
+<line x1="60" y1="1503" x2="106" y2="1503" stroke="#000" stroke-width="2.8" />
+<text x="56" y="1507" text-anchor="end" font-size="9" font-weight="bold" fill="#000">5V+</text>
+<line x1="60" y1="1525" x2="106" y2="1525" stroke="#000" stroke-width="2.8" />
+<text x="56" y="1529" text-anchor="end" font-size="9" font-weight="normal" fill="#000">GND</text>
+<line x1="60" y1="1485" x2="106" y2="1485" stroke="#000" stroke-width="2.8" />
+<text x="56" y="1489" text-anchor="end" font-size="9" font-weight="bold" fill="#000">VIN</text>
+<text x="150" y="1489" text-anchor="start" font-size="8" font-weight="normal" fill="#000">-&gt; Arduino VIN</text>
+<text x="150" y="1507" text-anchor="start" font-size="8" font-weight="normal" fill="#000">-&gt; IR Sensor VCC</text>
+<rect x="370" y="1395" width="260" height="200" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="370" y="1395" width="260" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="500" y="1418" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Power Bank 2</text>
+<text x="500" y="1451" text-anchor="middle" font-size="10" font-weight="normal" fill="#000">5V USB  &gt;= 2A</text>
+<text x="500" y="1467" text-anchor="middle" font-size="9" font-weight="normal" fill="#000">Servo power (isolated)</text>
+<line x1="422" y1="1491" x2="422" y2="1529" stroke="#000" stroke-width="5" />
+<line x1="436" y1="1500" x2="436" y2="1520" stroke="#000" stroke-width="2.5" />
+<text x="417" y="1488" text-anchor="end" font-size="13" font-weight="bold" fill="#000">+</text>
+<text x="417" y="1535" text-anchor="end" font-size="13" font-weight="normal" fill="#000">-</text>
+<line x1="370" y1="1503" x2="416" y2="1503" stroke="#000" stroke-width="2.8" stroke-dasharray="8 4"/>
+<text x="366" y="1507" text-anchor="end" font-size="9" font-weight="bold" fill="#000">5V+</text>
+<line x1="370" y1="1525" x2="416" y2="1525" stroke="#000" stroke-width="2.8" />
+<text x="366" y="1529" text-anchor="end" font-size="9" font-weight="normal" fill="#000">GND</text>
+<text x="460" y="1505" text-anchor="start" font-size="8" font-weight="normal" fill="#000">-&gt; Servo VCC</text>
+<text x="460" y="1521" text-anchor="start" font-size="8" font-weight="normal" fill="#000">(must be isolated)</text>
+<rect x="680" y="1395" width="270" height="200" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="680" y="1395" width="270" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="815" y="1418" text-anchor="middle" font-size="12" font-weight="bold" fill="white">LiPo Battery</text>
+<text x="815" y="1451" text-anchor="middle" font-size="10" font-weight="normal" fill="#000">7.4V (2S)  /  11.1V (3S)</text>
+<text x="815" y="1467" text-anchor="middle" font-size="9" font-weight="normal" fill="#000">Motor shield power only</text>
+<line x1="732" y1="1491" x2="732" y2="1529" stroke="#000" stroke-width="5" />
+<line x1="746" y1="1500" x2="746" y2="1520" stroke="#000" stroke-width="2.5" />
+<text x="727" y="1488" text-anchor="end" font-size="13" font-weight="bold" fill="#000">+</text>
+<text x="727" y="1535" text-anchor="end" font-size="13" font-weight="normal" fill="#000">-</text>
+<line x1="680" y1="1503" x2="726" y2="1503" stroke="#000" stroke-width="2.2" stroke-dasharray="14 5"/>
+<text x="676" y="1507" text-anchor="end" font-size="9" font-weight="bold" fill="#000">VIN+</text>
+<line x1="680" y1="1525" x2="726" y2="1525" stroke="#000" stroke-width="2.8" />
+<text x="676" y="1529" text-anchor="end" font-size="9" font-weight="normal" fill="#000">GND</text>
+<rect x="696" y="1543" width="238" height="26" rx="3" fill="#000" stroke="#000" stroke-width="0" />
+<text x="815" y="1560" text-anchor="middle" font-size="9" font-weight="bold" fill="white">!! 15A fuse on VIN+ !!</text>
+<polyline points="60,1485 44,1485 44,213 48,213" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="48" cy="213" r="4" fill="#000"/>
+<circle cx="44" cy="1485" r="4" fill="#000"/>
+<polyline points="60,1503 52,1503 52,616 486,616" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="486" cy="616" r="4" fill="#000"/>
+<circle cx="52" cy="1503" r="4" fill="#000"/>
+<polyline points="370,1503 60,1503 60,736 486,736" stroke="#000" stroke-width="2.8" fill="none" />
+<polyline points="370,1503 60,1503 60,736 486,736" stroke="#000" stroke-width="2.8" fill="none" stroke-dasharray="8 4"/>
+<circle cx="486" cy="736" r="4" fill="#000"/>
+<circle cx="60" cy="1503" r="4" fill="#000"/>
+<polyline points="680,1503 70,1503 70,307 448,307" stroke="#000" stroke-width="2.2" fill="none" stroke-dasharray="14 5"/>
+<circle cx="70" cy="1503" r="4" fill="#000"/>
+<line x1="30" y1="1716" x2="2450" y2="1716" stroke="#000" stroke-width="6" />
+<text x="1240" y="1706" text-anchor="middle" font-size="10" font-weight="bold" fill="#000">COMMON GROUND BUS  --  Arduino GND = LiPo(-) = PB1(-) = PB2(-) = All Sensor / Servo GNDs</text>
+<polyline points="48,1525 48,1716" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="48" cy="1716" r="4" fill="#000"/>
+<polyline points="370,1525 370,1716" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="370" cy="1716" r="4" fill="#000"/>
+<polyline points="680,1525 680,1716" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="680" cy="1716" r="4" fill="#000"/>
+<polyline points="48,177 46,177 46,1716" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="46" cy="1716" r="4" fill="#000"/>
+<polyline points="486,660 486,1716" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="486" cy="1716" r="4" fill="#000"/>
+<polyline points="486,660 486,1716" stroke="#000" stroke-width="2.8" fill="none" />
+<circle cx="486" cy="1716" r="4" fill="#000"/>
+<rect x="1300" y="55" width="330" height="490" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="1300" y="55" width="330" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="1465" y="78" text-anchor="middle" font-size="13" font-weight="bold" fill="white">LEGEND</text>
+<line x1="1318" y1="98" x2="1388" y2="98" stroke="#000" stroke-width="2.8" />
+<text x="1396" y="93" text-anchor="start" font-size="10" font-weight="bold" fill="#000">Power / VCC</text>
+<text x="1396" y="107" text-anchor="start" font-size="8" font-weight="normal" fill="#000">(Thick solid)</text>
+<line x1="1318" y1="148" x2="1388" y2="148" stroke="#000" stroke-width="2.8" />
+<text x="1396" y="143" text-anchor="start" font-size="10" font-weight="bold" fill="#000">Ground (GND)</text>
+<text x="1396" y="157" text-anchor="start" font-size="8" font-weight="normal" fill="#000">(Thick solid)</text>
+<line x1="1318" y1="198" x2="1388" y2="198" stroke="#000" stroke-width="1.8" />
+<text x="1396" y="193" text-anchor="start" font-size="10" font-weight="bold" fill="#000">Shield ctrl (D4-D9)</text>
+<text x="1396" y="207" text-anchor="start" font-size="8" font-weight="normal" fill="#000">(Medium solid)</text>
+<line x1="1318" y1="248" x2="1388" y2="248" stroke="#000" stroke-width="1.6" stroke-dasharray="9 4"/>
+<text x="1396" y="243" text-anchor="start" font-size="10" font-weight="bold" fill="#000">IR Signal (D24-26)</text>
+<text x="1396" y="257" text-anchor="start" font-size="8" font-weight="normal" fill="#000">(Long dash)</text>
+<line x1="1318" y1="298" x2="1388" y2="298" stroke="#000" stroke-width="1.6" stroke-dasharray="3 3"/>
+<text x="1396" y="293" text-anchor="start" font-size="10" font-weight="bold" fill="#000">Servo PWM (D38-40)</text>
+<text x="1396" y="307" text-anchor="start" font-size="8" font-weight="normal" fill="#000">(Short dot)</text>
+<line x1="1318" y1="348" x2="1388" y2="348" stroke="#000" stroke-width="3.2" />
+<text x="1396" y="343" text-anchor="start" font-size="10" font-weight="bold" fill="#000">Motor power</text>
+<text x="1396" y="357" text-anchor="start" font-size="8" font-weight="normal" fill="#000">(Extra thick)</text>
+<line x1="1318" y1="398" x2="1388" y2="398" stroke="#000" stroke-width="1.8" stroke-dasharray="12 5"/>
+<text x="1396" y="393" text-anchor="start" font-size="10" font-weight="bold" fill="#000">USB serial</text>
+<text x="1396" y="407" text-anchor="start" font-size="8" font-weight="normal" fill="#000">(Med dash)</text>
+<line x1="1318" y1="448" x2="1388" y2="448" stroke="#000" stroke-width="2.2" stroke-dasharray="14 5"/>
+<text x="1396" y="443" text-anchor="start" font-size="10" font-weight="bold" fill="#000">LiPo power</text>
+<text x="1396" y="457" text-anchor="start" font-size="8" font-weight="normal" fill="#000">(Long dash2)</text>
+<circle cx="1352" cy="512" r="5" fill="#000"/>
+<text x="1396" y="507" text-anchor="start" font-size="9" font-weight="bold" fill="#000">Junction node = connected wires</text>
+<text x="1396" y="521" text-anchor="start" font-size="7" font-weight="normal" fill="#000">(no dot = wires crossing, not connected)</text>
+<circle cx="1344" cy="558" r="24" fill="white" stroke="#000" stroke-width="2.5"/>
+<circle cx="1344" cy="558" r="20" fill="white" stroke="#000" stroke-width="1.5"/>
+<text x="1344" y="565" text-anchor="middle" font-size="16" font-weight="bold" fill="#000">M</text>
+<text x="1396" y="554" text-anchor="start" font-size="9" font-weight="bold" fill="#000">DC Motor symbol</text>
+<text x="1396" y="567" text-anchor="start" font-size="7" font-weight="normal" fill="#000">(double ring with M)</text>
+<rect x="1300" y="582" width="330" height="1126" rx="0" fill="white" stroke="#000" stroke-width="3" />
+<rect x="1300" y="582" width="330" height="34" rx="0" fill="#000" stroke="#000" stroke-width="0" />
+<text x="1465" y="605" text-anchor="middle" font-size="11" font-weight="bold" fill="white">CONNECTION REFERENCE</text>
+<text x="1314" y="638" text-anchor="start" font-size="9" font-weight="bold" fill="#000">Connections at a glance:</text>
+<rect x="1310" y="642" width="310" height="20" rx="0" fill="#F2F2F2" stroke="#F2F2F2" stroke-width="0" />
+<text x="1314" y="654" text-anchor="start" font-size="8" font-weight="bold" fill="#000">D4-&gt;INA2</text>
+<text x="1420" y="654" text-anchor="start" font-size="8" font-weight="normal" fill="#000">D5-&gt;INB2</text>
+<text x="1540" y="654" text-anchor="start" font-size="7" font-weight="normal" fill="#444">D6~-&gt;EN2 (Ch2)</text>
+<text x="1314" y="674" text-anchor="start" font-size="8" font-weight="bold" fill="#000">D7-&gt;INA1</text>
+<text x="1420" y="674" text-anchor="start" font-size="8" font-weight="normal" fill="#000">D8-&gt;INB1</text>
+<text x="1540" y="674" text-anchor="start" font-size="7" font-weight="normal" fill="#444">D9~-&gt;EN1 (Ch1)</text>
+<rect x="1310" y="682" width="310" height="20" rx="0" fill="#F2F2F2" stroke="#F2F2F2" stroke-width="0" />
+<text x="1314" y="694" text-anchor="start" font-size="8" font-weight="bold" fill="#000">D24-&gt;IR1</text>
+<text x="1420" y="694" text-anchor="start" font-size="8" font-weight="normal" fill="#000">D25-&gt;IR2</text>
+<text x="1540" y="694" text-anchor="start" font-size="7" font-weight="normal" fill="#444">D26-&gt;IR3</text>
+<text x="1314" y="714" text-anchor="start" font-size="8" font-weight="bold" fill="#000">D38~-&gt;SV1</text>
+<text x="1420" y="714" text-anchor="start" font-size="8" font-weight="normal" fill="#000">D39-&gt;SV2</text>
+<text x="1540" y="714" text-anchor="start" font-size="7" font-weight="normal" fill="#444">D40-&gt;SV3</text>
+<rect x="1310" y="722" width="310" height="20" rx="0" fill="#F2F2F2" stroke="#F2F2F2" stroke-width="0" />
+<text x="1314" y="734" text-anchor="start" font-size="8" font-weight="bold" fill="#000">OUT1A/1B</text>
+<text x="1420" y="734" text-anchor="start" font-size="8" font-weight="normal" fill="#000">-&gt; M1+ M2+ / M1- M2-</text>
+<text x="1540" y="734" text-anchor="start" font-size="7" font-weight="normal" fill="#444">parallel</text>
+<text x="1314" y="754" text-anchor="start" font-size="8" font-weight="bold" fill="#000">OUT2A/2B</text>
+<text x="1420" y="754" text-anchor="start" font-size="8" font-weight="normal" fill="#000">-&gt; M3+ M4+ / M3- M4-</text>
+<text x="1540" y="754" text-anchor="start" font-size="7" font-weight="normal" fill="#444">parallel</text>
+<rect x="1310" y="762" width="310" height="20" rx="0" fill="#F2F2F2" stroke="#F2F2F2" stroke-width="0" />
+<text x="1314" y="774" text-anchor="start" font-size="8" font-weight="bold" fill="#000">PB1 5V</text>
+<text x="1420" y="774" text-anchor="start" font-size="8" font-weight="normal" fill="#000">-&gt; Arduino VIN</text>
+<text x="1540" y="774" text-anchor="start" font-size="7" font-weight="normal" fill="#444">-&gt; IR VCC rail</text>
+<text x="1314" y="794" text-anchor="start" font-size="8" font-weight="bold" fill="#000">PB2 5V</text>
+<text x="1420" y="794" text-anchor="start" font-size="8" font-weight="normal" fill="#000">-&gt; Servo VCC</text>
+<text x="1540" y="794" text-anchor="start" font-size="7" font-weight="normal" fill="#444">(isolated from Arduino)</text>
+<rect x="1310" y="802" width="310" height="20" rx="0" fill="#F2F2F2" stroke="#F2F2F2" stroke-width="0" />
+<text x="1314" y="814" text-anchor="start" font-size="8" font-weight="bold" fill="#000">LiPo +</text>
+<text x="1420" y="814" text-anchor="start" font-size="8" font-weight="normal" fill="#000">-&gt; Shield VIN</text>
+<text x="1540" y="814" text-anchor="start" font-size="7" font-weight="normal" fill="#444">(15A fuse!)</text>
+<text x="1314" y="834" text-anchor="start" font-size="8" font-weight="bold" fill="#000">GND bus</text>
+<text x="1420" y="834" text-anchor="start" font-size="8" font-weight="normal" fill="#000">All ground pins</text>
+<text x="1540" y="834" text-anchor="start" font-size="7" font-weight="normal" fill="#444">share common bus</text>
+<rect x="1310" y="842" width="310" height="20" rx="0" fill="#F2F2F2" stroke="#F2F2F2" stroke-width="0" />
+<text x="1314" y="854" text-anchor="start" font-size="8" font-weight="bold" fill="#000">USB-B</text>
+<text x="1420" y="854" text-anchor="start" font-size="8" font-weight="normal" fill="#000">Arduino &lt;-&gt; RPi</text>
+<text x="1540" y="854" text-anchor="start" font-size="7" font-weight="normal" fill="#444">USB-A, /dev/ttyACM0</text>
+<rect x="1310" y="1666" width="310" height="46" rx="4" fill="#000" stroke="#000" stroke-width="0" />
+<text x="1465" y="1688" text-anchor="middle" font-size="10" font-weight="bold" fill="white">Print: A4 Landscape, Monochrome</text>
+<text x="1465" y="1706" text-anchor="middle" font-size="9" font-weight="normal" fill="white">Scale to Fit  |  Black &amp; White mode</text>
+</svg>
